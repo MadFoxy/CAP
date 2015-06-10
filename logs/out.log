@@ -1,0 +1,1800 @@
+[INFO] 2015-06-10 15:18:15 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 15:18:15 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 15:18:15 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 15:18:15 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.password:************
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 15:18:15 | cap.ds.minIdle:1
+[INFO] 2015-06-10 15:18:15 | 初始化DataSource完成.
+[INFO] 2015-06-10 15:18:15 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 15:18:16 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 15:18:16 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 15:18:16 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 15:18:16 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(7),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4 varchar(2),A5 varchar(2),A6 varchar(2),A7 varchar(2));
+[INFO] 2015-06-10 15:18:16 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 15:18:16 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 15:18:16 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 15:18:16 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 15:18:16 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 15:18:16 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 15:19:02 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 15:19:02 | 正在将,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 15:19:02 | ,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 15:19:54 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 15:19:54 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 15:19:54 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 15:19:54 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.password:************
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 15:19:54 | cap.ds.minIdle:1
+[INFO] 2015-06-10 15:19:54 | 初始化DataSource完成.
+[INFO] 2015-06-10 15:19:54 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 15:19:54 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 15:19:54 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 15:19:54 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 15:19:54 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(7),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4 varchar(2),A5 varchar(2),A6 varchar(2),A7 varchar(2));
+[INFO] 2015-06-10 15:19:54 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 15:19:54 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 15:19:54 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 15:19:54 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 15:19:54 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 15:19:54 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 15:21:13 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 15:21:13 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 15:21:13 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 15:21:13 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.password:************
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 15:21:13 | cap.ds.minIdle:1
+[INFO] 2015-06-10 15:21:13 | 初始化DataSource完成.
+[INFO] 2015-06-10 15:21:13 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 15:21:13 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 15:21:13 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 15:21:13 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 15:21:13 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 15:21:13 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 15:21:13 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 15:21:13 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 15:21:13 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 15:21:13 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 15:21:13 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 15:21:13 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 15:21:13 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 15:21:13 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 15:23:54 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 15:23:54 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 15:23:54 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 15:23:54 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.password:************
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 15:23:54 | cap.ds.minIdle:1
+[INFO] 2015-06-10 15:23:54 | 初始化DataSource完成.
+[INFO] 2015-06-10 15:23:54 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 15:23:54 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 15:23:54 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 15:23:54 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 15:23:54 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 15:23:54 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 15:23:54 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 15:23:54 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 15:23:54 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 15:23:54 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 15:23:54 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 15:23:54 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 15:23:54 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 15:23:54 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 15:57:58 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 15:57:58 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 15:57:58 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 15:57:58 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.password:************
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 15:57:58 | cap.ds.minIdle:1
+[INFO] 2015-06-10 15:57:58 | 初始化DataSource完成.
+[INFO] 2015-06-10 15:57:58 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 15:57:59 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 15:57:59 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 15:57:59 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 15:57:59 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 15:57:59 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 15:57:59 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 15:57:59 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 15:57:59 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 15:57:59 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 15:57:59 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 15:57:59 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 15:57:59 | 正在将lee5hx.CategoryList,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 15:57:59 | lee5hx.CategoryList,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:00:23 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:00:23 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:00:23 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:00:23 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:00:23 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:00:23 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:00:23 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:00:23 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:00:23 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:00:23 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:00:23 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:00:23 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:00:23 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:00:23 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:00:23 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:00:23 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:00:23 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:00:23 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:00:23 | 正在将lee5hx.CategoryList,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:00:23 | lee5hx.CategoryList,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:07:48 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:07:48 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:07:48 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:07:48 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:07:48 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:07:48 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:07:48 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:07:48 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:07:48 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:07:48 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:07:48 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:07:48 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:07:48 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:07:48 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:07:48 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:07:48 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:07:48 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:07:48 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:07:48 | 正在将lee5hx.CategoryList,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:07:48 | lee5hx.CategoryList,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:08:27 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:08:27 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:08:27 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:08:27 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:08:27 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:08:27 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:08:27 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:08:27 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:08:27 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:08:27 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:08:27 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:08:27 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:08:27 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:08:27 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:08:27 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:08:27 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:08:27 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:08:27 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:08:27 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:08:27 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:09:33 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:09:33 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:09:33 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:09:33 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:09:33 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:09:33 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:09:33 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:09:33 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:09:33 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:09:33 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:09:33 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(33),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:09:33 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:09:33 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:09:33 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:09:33 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:09:33 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:09:33 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:09:33 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:09:33 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:09:33 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:10:14 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:10:14 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:10:14 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:10:14 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:10:14 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:10:14 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:10:14 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:10:14 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:10:14 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:10:14 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:10:14 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(33),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:10:14 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:10:14 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:10:14 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:10:14 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:10:14 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:10:14 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:10:14 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:10:14 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:10:14 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:13:20 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:13:20 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:13:20 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:13:20 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:13:20 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:13:20 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:13:20 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:13:33 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:13:33 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:13:33 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:13:33 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(33),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:13:33 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:13:33 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:13:33 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:13:33 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:13:33 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:13:33 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:13:33 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:13:33 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:13:33 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:14:57 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:14:57 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:14:57 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:14:57 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:14:57 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:14:57 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:14:57 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:15:32 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:15:32 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:15:32 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:15:32 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(1000),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:15:32 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:15:32 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:15:32 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:15:32 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:15:32 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:15:32 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:15:32 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:15:32 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:15:32 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:15:49 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:15:49 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:15:49 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:15:49 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:15:49 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:15:49 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:15:49 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:15:49 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:15:49 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:15:49 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:15:49 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(1000),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:15:49 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:15:49 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:15:49 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:15:49 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:15:49 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:15:49 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:15:49 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:15:49 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:15:49 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:17:49 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:17:49 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:17:49 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:17:49 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:17:49 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:17:49 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:17:49 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:17:49 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:18:11 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:18:11 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:18:11 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:18:11 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:18:11 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:18:11 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:18:11 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:18:11 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:18:44 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:18:44 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:18:44 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:18:44 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:18:44 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:18:44 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:18:44 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:18:44 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:21:26 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:21:26 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:21:26 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:21:26 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:21:26 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:21:26 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:21:26 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:21:26 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:22:05 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:22:05 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:22:05 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:22:05 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:22:05 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:22:05 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:22:05 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:22:05 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:22:46 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:22:46 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:22:46 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:22:46 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:22:46 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:22:46 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:22:46 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:22:46 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:23:18 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:23:18 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:23:18 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:23:18 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:23:18 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:23:18 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:23:18 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:23:18 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:28:22 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:28:22 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:28:22 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:28:22 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:28:22 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:28:22 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:28:22 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:28:22 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:28:48 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:28:48 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:28:48 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:28:48 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:28:48 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:28:48 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:28:48 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:28:48 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:29:06 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:29:06 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:29:06 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:29:06 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:29:06 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:29:06 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:29:06 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:29:06 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:30:21 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:30:21 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:30:21 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:30:21 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:30:21 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:30:21 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:30:21 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:30:21 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:30:43 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:30:43 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:30:43 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:30:43 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:30:43 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:30:43 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:30:43 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:30:44 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:36:15 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:36:15 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:36:15 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:36:15 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:36:15 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:36:15 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:36:15 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:36:15 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:37:49 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:37:49 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:37:49 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:37:49 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:37:49 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:37:49 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:37:49 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:37:49 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:38:09 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:38:09 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:38:09 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:38:09 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:38:09 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:38:09 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:38:09 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:38:10 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:38:31 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:38:31 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:38:31 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:38:31 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:38:31 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:38:31 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:38:31 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:38:32 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:39:39 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:39:39 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:39:39 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:39:39 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:39:39 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:39:39 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:39:39 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:39:39 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:42:57 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:42:57 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:42:57 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:42:57 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:42:57 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:42:57 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:42:57 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:42:57 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:43:30 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:43:30 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:43:30 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:43:30 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:43:30 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:43:30 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:43:30 | 正在将../tmp/lee5hx.CategoryList.sql,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:43:31 | ../tmp/lee5hx.CategoryList.sql,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:46:09 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:46:09 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:46:09 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:46:09 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:46:09 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:46:09 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:46:09 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:46:10 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:46:36 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:46:36 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:46:36 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:46:36 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:46:36 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:46:36 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:46:36 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:46:36 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:46:36 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:46:36 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:46:36 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(1000),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:46:36 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:46:36 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:46:36 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:46:36 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:46:36 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:46:36 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:46:36 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:46:36 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:46:36 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:47:34 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:47:34 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:47:34 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:47:34 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:47:34 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:47:34 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:47:34 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:47:45 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:47:45 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:47:45 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:47:45 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:47:45 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:47:45 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:47:45 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:48:06 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:48:06 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:48:06 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:48:06 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:48:06 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:48:06 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:48:06 | 正在删除schema[lee5hx]及schema下所有的对象
+[ERROR] 2015-06-10 16:48:17 | 错误: 模式 "lee5hx" 不存在 Query: DROP SCHEMA lee5hx CASCADE; Parameters: []
+[INFO] 2015-06-10 16:48:17 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:48:17 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:48:17 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:48:17 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2));
+[INFO] 2015-06-10 16:48:17 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:48:17 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:48:17 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:48:17 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:48:17 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:48:17 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:48:17 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:48:17 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:48:17 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:50:25 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:50:25 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:50:25 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:50:25 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:50:25 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:50:25 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:50:25 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:50:25 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:50:25 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:50:25 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:50:25 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 16:50:25 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:50:25 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:50:25 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:50:25 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:50:25 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:50:25 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:50:26 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:50:26 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:50:26 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:51:24 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:51:24 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:51:24 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:51:24 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:51:24 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:51:24 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:51:24 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:51:25 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:51:25 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:51:25 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:51:25 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 16:51:25 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:51:25 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:51:25 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:51:25 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:51:25 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:51:25 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:51:25 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:51:25 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:51:25 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:57:56 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:57:56 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:57:56 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:57:56 | 正在清除历史.
+[INFO] 2015-06-10 16:57:56 | 正在清除历史完成!
+[INFO] 2015-06-10 16:57:56 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:57:56 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:57:56 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:57:56 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:57:56 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:57:56 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:57:56 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:57:56 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 16:57:56 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:57:56 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:57:56 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:57:56 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:57:56 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:57:56 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:57:57 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:57:57 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:57:57 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 16:58:20 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 16:58:20 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 16:58:20 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 16:58:20 | 正在清除历史.
+[INFO] 2015-06-10 16:58:20 | 正在清除历史完成!
+[INFO] 2015-06-10 16:58:20 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.password:************
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 16:58:20 | cap.ds.minIdle:1
+[INFO] 2015-06-10 16:58:20 | 初始化DataSource完成.
+[INFO] 2015-06-10 16:58:20 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 16:58:20 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 16:58:20 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 16:58:20 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 16:58:20 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 16:58:20 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 16:58:20 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 16:58:20 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 16:58:20 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 16:58:20 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 16:58:20 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 16:58:21 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 16:58:21 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 16:58:21 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:00:17 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:00:17 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:00:17 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:00:17 | 正在清除历史.
+[INFO] 2015-06-10 17:00:17 | 正在清除历史完成!
+[INFO] 2015-06-10 17:00:17 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:00:17 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:00:17 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:00:17 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:00:17 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:00:17 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:00:17 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:00:17 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:00:17 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:00:17 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:00:17 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:00:17 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:00:17 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:00:17 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:00:18 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:00:18 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:00:18 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:00:29 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:00:29 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:00:29 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:00:29 | 正在清除历史.
+[INFO] 2015-06-10 17:00:29 | 正在清除历史完成!
+[INFO] 2015-06-10 17:00:29 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:00:29 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:00:29 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:00:29 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:00:29 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:00:29 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:00:29 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:00:29 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:00:29 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:00:29 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:00:29 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:00:29 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:00:29 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:00:29 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:00:30 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:00:30 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:00:30 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:00:49 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:00:49 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:00:49 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:00:49 | 正在清除历史.
+[INFO] 2015-06-10 17:00:49 | 正在清除历史完成!
+[INFO] 2015-06-10 17:00:49 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:00:49 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:00:49 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:00:49 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:00:49 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:00:49 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:00:49 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:00:49 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:00:49 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:00:49 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:00:49 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:00:49 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:00:49 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:00:49 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:00:50 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:00:50 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:00:50 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:00:53 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:00:53 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:00:53 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:00:53 | 正在清除历史.
+[INFO] 2015-06-10 17:00:53 | 正在清除历史完成!
+[INFO] 2015-06-10 17:00:53 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:00:53 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:00:53 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:00:53 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:00:53 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:00:53 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:00:53 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:00:53 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:00:53 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:00:53 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:00:53 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:00:53 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:00:53 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:00:53 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:00:54 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:00:54 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:00:54 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:01:00 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:01:00 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:01:00 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:01:00 | 正在清除历史.
+[INFO] 2015-06-10 17:01:00 | 正在清除历史完成!
+[INFO] 2015-06-10 17:01:00 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:01:00 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:01:00 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:01:00 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:01:00 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:01:00 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:01:00 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:01:00 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:01:00 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:01:00 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:01:00 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:01:00 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:01:00 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:01:00 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:01:01 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:01:01 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:01:01 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:01:08 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:01:08 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:01:08 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:01:08 | 正在清除历史.
+[INFO] 2015-06-10 17:01:08 | 正在清除历史完成!
+[INFO] 2015-06-10 17:01:08 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:01:08 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:01:08 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:01:08 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:01:09 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:01:09 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:01:09 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:01:09 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:01:09 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:01:09 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:01:09 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:01:09 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:01:09 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:01:09 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:01:09 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:01:09 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:01:09 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:01:48 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:01:48 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:01:48 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:01:48 | 正在清除历史.
+[INFO] 2015-06-10 17:01:48 | 正在清除历史完成!
+[INFO] 2015-06-10 17:01:48 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:01:48 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:01:48 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:01:48 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:01:48 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:01:48 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:01:48 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:01:48 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:01:48 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:01:48 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:01:48 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:01:48 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:01:48 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:01:48 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:01:49 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:01:49 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:01:49 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:02:21 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:02:21 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:02:21 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:02:21 | 正在清除历史.
+[INFO] 2015-06-10 17:02:21 | 正在清除历史完成!
+[INFO] 2015-06-10 17:02:21 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:02:21 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:02:21 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:02:21 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:02:21 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:02:21 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:02:21 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:02:21 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:02:21 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:02:21 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:02:21 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:02:21 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:02:21 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:02:21 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:02:22 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:02:22 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:02:22 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:03:44 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:03:44 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:03:44 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:03:44 | 正在清除历史.
+[INFO] 2015-06-10 17:03:44 | 正在清除历史完成!
+[INFO] 2015-06-10 17:03:44 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:03:44 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:03:44 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:03:44 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:03:44 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:03:44 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:03:44 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:03:44 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:03:44 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:03:44 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:03:44 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:03:44 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:03:44 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:03:44 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:03:45 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:03:45 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:03:45 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:04:02 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:04:02 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:04:02 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:04:02 | 正在清除历史.
+[INFO] 2015-06-10 17:04:02 | 正在清除历史完成!
+[INFO] 2015-06-10 17:04:02 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:04:02 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:04:02 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:04:02 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:04:02 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:04:02 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:04:02 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:04:02 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:04:02 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:04:02 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:04:02 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:04:02 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:04:02 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:04:02 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:04:03 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:04:03 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:04:03 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:05:05 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:05:05 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:05:05 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:05:05 | 正在清除历史.
+[INFO] 2015-06-10 17:05:05 | 正在清除历史完成!
+[INFO] 2015-06-10 17:05:05 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:05:05 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:05:05 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:05:05 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:05:05 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:05:05 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:05:05 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:05:05 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:05:05 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:05:05 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:05:05 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:05:05 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:05:05 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:05:05 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:05:06 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:05:06 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:05:06 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:05:10 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:05:10 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:05:10 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:05:10 | 正在清除历史.
+[INFO] 2015-06-10 17:05:10 | 正在清除历史完成!
+[INFO] 2015-06-10 17:05:10 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:05:10 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:05:10 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:05:10 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:05:11 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:05:11 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:05:11 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:05:11 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:05:11 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:05:11 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:05:11 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:05:11 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:05:11 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:05:11 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:05:11 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:05:11 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:05:11 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:05:18 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:05:18 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:05:18 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:05:18 | 正在清除历史.
+[INFO] 2015-06-10 17:05:18 | 正在清除历史完成!
+[INFO] 2015-06-10 17:05:18 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:05:18 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:05:18 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:05:18 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:05:19 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:05:19 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:05:19 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:05:19 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:05:19 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:05:19 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:05:19 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:05:19 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:05:19 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:05:19 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:05:19 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:05:19 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:05:19 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:08:34 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:08:34 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:08:34 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:08:34 | 正在清除历史.
+[INFO] 2015-06-10 17:08:34 | 正在清除历史完成!
+[INFO] 2015-06-10 17:08:34 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:08:34 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:08:34 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:08:34 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:08:34 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:08:34 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:08:34 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:08:34 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:08:34 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:08:34 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:08:34 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:08:34 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:08:34 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:08:34 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:08:35 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:08:35 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:08:35 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:08:41 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:08:41 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:08:41 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:08:41 | 正在清除历史.
+[INFO] 2015-06-10 17:08:41 | 正在清除历史完成!
+[INFO] 2015-06-10 17:08:41 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:08:41 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:08:41 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:08:41 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:08:41 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:08:41 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:08:41 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:08:41 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:08:41 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:08:41 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:08:41 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:08:41 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:08:41 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:08:41 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:08:42 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:08:42 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:08:42 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:08:48 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:08:48 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:08:48 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:08:48 | 正在清除历史.
+[INFO] 2015-06-10 17:08:48 | 正在清除历史完成!
+[INFO] 2015-06-10 17:08:48 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:08:48 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:08:48 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:08:48 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:08:48 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:08:48 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:08:48 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:08:48 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:08:48 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:08:48 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:08:48 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:08:48 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:08:48 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:08:48 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:08:48 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:08:48 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:08:49 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:08:53 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:08:53 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:08:53 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:08:53 | 正在清除历史.
+[INFO] 2015-06-10 17:08:53 | 正在清除历史完成!
+[INFO] 2015-06-10 17:08:53 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:08:53 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:08:53 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:08:53 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:08:54 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:08:54 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:08:54 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:08:54 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:08:54 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:08:54 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:08:54 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:08:54 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:08:54 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:08:54 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:08:54 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:08:54 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:08:54 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:09:02 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:09:02 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:09:02 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:09:02 | 正在清除历史.
+[INFO] 2015-06-10 17:09:02 | 正在清除历史完成!
+[INFO] 2015-06-10 17:09:02 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:09:02 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:09:02 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:09:02 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:09:02 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:09:02 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:09:02 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:09:02 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(4),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:09:02 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:09:02 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:09:02 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:09:02 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:09:02 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:09:02 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:09:03 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:09:03 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:09:03 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:09:15 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:09:15 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:09:15 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:09:15 | 正在清除历史.
+[INFO] 2015-06-10 17:09:15 | 正在清除历史完成!
+[INFO] 2015-06-10 17:09:15 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:09:15 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:09:15 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:09:15 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:09:15 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:09:15 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:09:15 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:09:15 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:09:15 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:09:15 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:09:15 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:09:15 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:09:15 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:09:15 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:09:38 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:09:38 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:09:39 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:10:19 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:10:19 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:10:19 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:10:19 | 正在清除历史.
+[INFO] 2015-06-10 17:10:19 | 正在清除历史完成!
+[INFO] 2015-06-10 17:10:19 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:10:19 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:10:19 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:10:19 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:10:19 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:10:19 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:10:19 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:10:19 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:10:19 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:10:19 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:10:19 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:10:19 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:10:19 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:10:19 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:10:42 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:10:42 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:10:43 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:14:07 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:14:07 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:14:07 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:14:07 | 正在清除历史.
+[INFO] 2015-06-10 17:14:07 | 正在清除历史完成!
+[INFO] 2015-06-10 17:14:07 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:14:07 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:14:07 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:14:07 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:14:12 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:14:12 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:14:12 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:14:12 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:14:12 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:14:12 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:14:12 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:14:12 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:14:12 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:14:12 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:14:34 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:14:34 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:14:35 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:14:57 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:14:57 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:14:57 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:14:57 | 正在清除历史.
+[INFO] 2015-06-10 17:14:57 | 正在清除历史完成!
+[INFO] 2015-06-10 17:14:57 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.maxtotal:100
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.maxIdle:30
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:14:57 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:14:57 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:14:57 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:14:57 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:14:57 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:14:57 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:14:57 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:14:57 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:14:57 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:14:57 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:14:57 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:14:57 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:14:57 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:15:19 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:15:19 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:15:21 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:17:39 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:17:39 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:17:39 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:17:39 | 正在清除历史.
+[INFO] 2015-06-10 17:17:39 | 正在清除历史完成!
+[INFO] 2015-06-10 17:17:39 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:17:39 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:17:39 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:17:39 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:18:13 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:18:13 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:18:13 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:18:13 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:18:13 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:18:13 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:18:13 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:18:13 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:18:13 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:18:13 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:18:35 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:18:35 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:18:36 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:19:54 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:19:54 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:19:54 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:19:54 | 正在清除历史.
+[INFO] 2015-06-10 17:19:54 | 正在清除历史完成!
+[INFO] 2015-06-10 17:19:54 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:19:54 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:19:54 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:19:54 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:19:54 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:19:54 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:19:54 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:19:54 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:19:54 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:19:54 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:19:54 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:19:54 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:19:54 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:19:54 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:20:16 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:20:16 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:20:17 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 17:22:24 | 开始执行:cap jfksdf -init
+[ERROR] 2015-06-10 17:22:24 | CAP conf/jfksdf.properties Error:java.io.FileNotFoundException: ../conf/jfksdf.properties (没有那个文件或目录)
+[INFO] 2015-06-10 17:22:24 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:22:50 | 开始执行:cap jfksdf -init
+[ERROR] 2015-06-10 17:22:50 | CAP conf/jfksdf.properties Error:java.io.FileNotFoundException: ../conf/jfksdf.properties (没有那个文件或目录)
+[INFO] 2015-06-10 17:22:50 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:22:59 | 开始执行:cap jfksdf -init
+[ERROR] 2015-06-10 17:22:59 | CAP conf/jfksdf.properties Error:java.io.FileNotFoundException: ../conf/jfksdf.properties (没有那个文件或目录)
+[INFO] 2015-06-10 17:22:59 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:23:00 | 开始执行:cap jfksdf -init
+[ERROR] 2015-06-10 17:23:00 | CAP conf/jfksdf.properties Error:java.io.FileNotFoundException: ../conf/jfksdf.properties (没有那个文件或目录)
+[INFO] 2015-06-10 17:23:00 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:23:05 | 开始执行:cap cap_demo -init
+[INFO] 2015-06-10 17:23:05 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 17:23:05 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 17:23:05 | 正在清除历史.
+[INFO] 2015-06-10 17:23:05 | 正在清除历史完成!
+[INFO] 2015-06-10 17:23:05 | 正在初始化DataSource.
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.password:************
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 17:23:05 | cap.ds.minIdle:1
+[INFO] 2015-06-10 17:23:05 | 初始化DataSource完成.
+[INFO] 2015-06-10 17:23:05 | 正在删除schema[lee5hx]及schema下所有的对象
+[INFO] 2015-06-10 17:23:06 | 删除schema[lee5hx]完成!
+[INFO] 2015-06-10 17:23:06 | 正在创建schema[lee5hx]
+[INFO] 2015-06-10 17:23:06 | 创建schema[lee5hx]完成!
+[DEBUG] 2015-06-10 17:23:06 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 17:23:06 | 正在创建CategoryListTable.
+[INFO] 2015-06-10 17:23:06 | 创建CategoryListTable完成!
+[DEBUG] 2015-06-10 17:23:06 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 17:23:06 | 正在创建CategoryListTable-Index.
+[INFO] 2015-06-10 17:23:06 | 创建CategoryListTable-Index完成.
+[INFO] 2015-06-10 17:23:06 | 正在生成InsertCategorySQL.
+[INFO] 2015-06-10 17:23:28 | 生成InsertCategorySQL完成.
+[INFO] 2015-06-10 17:23:28 | 正在将../tmp/lee5hx.CategoryList.cvs,以Copy_Insert方式批量插入.
+[INFO] 2015-06-10 17:23:29 | ../tmp/lee5hx.CategoryList.cvs,以Copy_Insert批量插入完成!
+[INFO] 2015-06-10 20:12:27 | ��ʼִ��:cap cap_demo -init
+[INFO] 2015-06-10 20:12:27 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 20:12:27 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 20:12:27 | ���������ʷ.
+[INFO] 2015-06-10 20:12:27 | ���������ʷ���!
+[INFO] 2015-06-10 20:12:27 | ���ڳ�ʼ��DataSource.
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.password:************
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.url:jdbc:postgresql://192.168.189.138:5432/CAPDB
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 20:12:27 | cap.ds.minIdle:1
+[INFO] 2015-06-10 20:12:27 | ��ʼ��DataSource���.
+[INFO] 2015-06-10 20:12:27 | ����ɾ��schema[lee5hx]��schema�����еĶ���
+[ERROR] 2015-06-10 20:12:48 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.138:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:12:48 | ɾ��schema[lee5hx]���!
+[INFO] 2015-06-10 20:12:48 | ���ڴ���schema[lee5hx]
+[ERROR] 2015-06-10 20:13:09 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.138:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:13:09 | ����schema[lee5hx]���!
+[DEBUG] 2015-06-10 20:13:09 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 20:13:09 | ���ڴ���CategoryListTable.
+[ERROR] 2015-06-10 20:13:30 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.138:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:13:30 | ����CategoryListTable���!
+[INFO] 2015-06-10 20:36:37 | ��ʼִ��:cap cap_demox -init
+[ERROR] 2015-06-10 20:36:37 | CAP conf/cap_demox.properties Error:java.io.FileNotFoundException: ..\conf\cap_demox.properties (ϵͳ�Ҳ���ָ�����ļ���)
+[INFO] 2015-06-10 20:36:37 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 20:36:40 | ��ʼִ��:cap cap_demo -init
+[INFO] 2015-06-10 20:36:40 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 20:36:40 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 20:36:40 | ���������ʷ.
+[INFO] 2015-06-10 20:36:40 | ���������ʷ���!
+[INFO] 2015-06-10 20:36:40 | ���ڳ�ʼ��DataSource.
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.password:************
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.url:jdbc:postgresql://192.168.189.130:5432/CAPDB
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 20:36:40 | cap.ds.minIdle:1
+[INFO] 2015-06-10 20:36:40 | ��ʼ��DataSource���.
+[INFO] 2015-06-10 20:36:40 | ����ɾ��schema[lee5hx]��schema�����еĶ���
+[ERROR] 2015-06-10 20:37:01 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.130:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:37:01 | ɾ��schema[lee5hx]���!
+[INFO] 2015-06-10 20:37:01 | ���ڴ���schema[lee5hx]
+[ERROR] 2015-06-10 20:37:22 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.130:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:37:22 | ����schema[lee5hx]���!
+[DEBUG] 2015-06-10 20:37:22 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 20:37:22 | ���ڴ���CategoryListTable.
+[ERROR] 2015-06-10 20:37:43 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.130:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:37:43 | ����CategoryListTable���!
+[DEBUG] 2015-06-10 20:37:43 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 20:37:43 | ���ڴ���CategoryListTable-Index.
+[ERROR] 2015-06-10 20:38:04 | Cannot create PoolableConnectionFactory (Connection to 192.168.189.130:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.)
+[INFO] 2015-06-10 20:38:04 | ����CategoryListTable-Index���.
+[INFO] 2015-06-10 20:38:04 | ��������InsertCategorySQL.
+[INFO] 2015-06-10 20:40:36 | ����InsertCategorySQL���.
+[INFO] 2015-06-10 20:40:36 | ���ڽ�../tmp/lee5hx.CategoryList.cvs,��Copy_Insert��ʽ��������.
+[INFO] 2015-06-10 20:40:36 | ../tmp/lee5hx.CategoryList.cvs,��Copy_Insert�����������!
+[INFO] 2015-06-10 20:42:05 | ��ʼִ��:cap cap_demo -init
+[INFO] 2015-06-10 20:42:05 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 20:42:05 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 20:42:05 | ���������ʷ.
+[INFO] 2015-06-10 20:42:05 | ���������ʷ���!
+[INFO] 2015-06-10 20:42:05 | ���ڳ�ʼ��DataSource.
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.password:************
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.url:jdbc:postgresql://192.168.189.130:5432/CAPDB
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 20:42:05 | cap.ds.minIdle:1
+[INFO] 2015-06-10 20:42:05 | ��ʼ��DataSource���.
+[INFO] 2015-06-10 20:42:05 | ����ɾ��schema[lee5hx]��schema�����еĶ���
+[ERROR] 2015-06-10 20:42:06 | ����: ģʽ "lee5hx" ������ Query: DROP SCHEMA lee5hx CASCADE; Parameters: []
+[INFO] 2015-06-10 20:42:06 | ɾ��schema[lee5hx]���!
+[INFO] 2015-06-10 20:42:06 | ���ڴ���schema[lee5hx]
+[INFO] 2015-06-10 20:42:06 | ����schema[lee5hx]���!
+[DEBUG] 2015-06-10 20:42:06 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 20:42:06 | ���ڴ���CategoryListTable.
+[INFO] 2015-06-10 20:42:06 | ����CategoryListTable���!
+[DEBUG] 2015-06-10 20:42:06 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 20:42:06 | ���ڴ���CategoryListTable-Index.
+[INFO] 2015-06-10 20:42:06 | ����CategoryListTable-Index���.
+[INFO] 2015-06-10 20:42:06 | ��������InsertCategorySQL.
+[INFO] 2015-06-10 20:44:38 | ����InsertCategorySQL���.
+[INFO] 2015-06-10 20:44:38 | ���ڽ�../tmp/lee5hx.CategoryList.cvs,��Copy_Insert��ʽ��������.
+[INFO] 2015-06-10 20:44:42 | ../tmp/lee5hx.CategoryList.cvs,��Copy_Insert�����������!
+[INFO] 2015-06-10 20:46:27 | ��ʼִ��:cap cap_demo -init
+[INFO] 2015-06-10 20:46:27 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 20:46:27 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 20:46:27 | ���������ʷ.
+[INFO] 2015-06-10 20:46:27 | ���������ʷ���!
+[INFO] 2015-06-10 20:46:27 | ���ڳ�ʼ��DataSource.
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.password:************
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.url:jdbc:postgresql://192.168.189.130:5432/CAPDB
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 20:46:27 | cap.ds.minIdle:1
+[INFO] 2015-06-10 20:46:27 | ��ʼ��DataSource���.
+[INFO] 2015-06-10 20:46:27 | ����ɾ��schema[lee5hx]��schema�����еĶ���
+[INFO] 2015-06-10 20:46:27 | ɾ��schema[lee5hx]���!
+[INFO] 2015-06-10 20:46:27 | ���ڴ���schema[lee5hx]
+[INFO] 2015-06-10 20:46:27 | ����schema[lee5hx]���!
+[DEBUG] 2015-06-10 20:46:27 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 20:46:27 | ���ڴ���CategoryListTable.
+[INFO] 2015-06-10 20:46:27 | ����CategoryListTable���!
+[DEBUG] 2015-06-10 20:46:27 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 20:46:27 | ���ڴ���CategoryListTable-Index.
+[INFO] 2015-06-10 20:46:27 | ����CategoryListTable-Index���.
+[INFO] 2015-06-10 20:46:27 | ��������InsertCategorySQL.
+[INFO] 2015-06-10 20:49:06 | ����InsertCategorySQL���.
+[INFO] 2015-06-10 20:49:06 | ���ڽ�../tmp/lee5hx.CategoryList.cvs,��Copy_Insert��ʽ��������.
+[INFO] 2015-06-10 20:49:11 | ../tmp/lee5hx.CategoryList.cvs,��Copy_Insert�����������!
+[INFO] 2015-06-10 20:52:41 | ��ʼִ��:cap cap_demo -init
+[INFO] 2015-06-10 20:52:41 | CAP conf/cap_demo.properties complete.
+[INFO] 2015-06-10 20:52:41 | CAP conf/db_conf.properties complete.
+[INFO] 2015-06-10 20:52:41 | ���������ʷ.
+[INFO] 2015-06-10 20:52:41 | ���������ʷ���!
+[INFO] 2015-06-10 20:52:41 | ���ڳ�ʼ��DataSource.
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.driverClassName:org.postgresql.Driver
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.username:postgres
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.password:************
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.url:jdbc:postgresql://192.168.189.130:5432/CAPDB
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.initialSize:5
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.maxtotal:20
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.maxIdle:10
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.maxWaitMillis:10000
+[DEBUG] 2015-06-10 20:52:41 | cap.ds.minIdle:1
+[INFO] 2015-06-10 20:52:41 | ��ʼ��DataSource���.
+[INFO] 2015-06-10 20:52:41 | ����ɾ��schema[lee5hx]��schema�����еĶ���
+[INFO] 2015-06-10 20:52:42 | ɾ��schema[lee5hx]���!
+[INFO] 2015-06-10 20:52:42 | ���ڴ���schema[lee5hx]
+[INFO] 2015-06-10 20:52:42 | ����schema[lee5hx]���!
+[DEBUG] 2015-06-10 20:52:42 | CategoryList CreateTable:CREATE TABLE lee5hx.CategoryList(Condition_UUID varchar(32),Comb_Order varchar(6),A1 varchar(2),A2 varchar(2),A3 varchar(2),A4x varchar(3),A5x varchar(3));
+[INFO] 2015-06-10 20:52:42 | ���ڴ���CategoryListTable.
+[INFO] 2015-06-10 20:52:42 | ����CategoryListTable���!
+[DEBUG] 2015-06-10 20:52:42 | CategoryList CreateIndex:CREATE INDEX categoryList_CombOrder_index ON lee5hx.CategoryList(Comb_Order);
+[INFO] 2015-06-10 20:52:42 | ���ڴ���CategoryListTable-Index.
+[INFO] 2015-06-10 20:52:42 | ����CategoryListTable-Index���.
+[INFO] 2015-06-10 20:52:42 | ��������InsertCategorySQL.
+[INFO] 2015-06-10 20:55:16 | ����InsertCategorySQL���.
+[INFO] 2015-06-10 20:55:16 | ���ڽ�../tmp/lee5hx.CategoryList.cvs,��Copy_Insert��ʽ��������.
+[INFO] 2015-06-10 20:55:17 | ../tmp/lee5hx.CategoryList.cvs,��Copy_Insert�����������!

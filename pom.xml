@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>CAP</name>
+    <groupId>org.pin</groupId>
+    <artifactId>CAP</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java-version>1.7</java-version>
+
+    </properties>
+
+    <dependencies>
+    <!--
+            mvn install:install-file -DgroupId=net.sourceforge -DartifactId=jtds -Dversion=1.2.7 -Dpackaging=jar -Dfile=C:\Works\JavaWSK\lib\jtds.jar
+            mvn install:install-file -DgroupId=com.ibm -DartifactId=db2jcc4 -Dversion=4.15.82 -Dpackaging=jar -Dfile=C:\Works\JavaWSK\lib\db2jcc4.jar
+            mvn install:install-file -DgroupId=com.originyin -DartifactId=Log4j-originyin -Dversion=1.0.0 -Dpackaging=jar -Dfile=/home/lee5hx/java_works/originyin/customization/Log4j-originyin/out/artifacts/Log4j_originyin_jar/Log4j-originyin.jar
+            mvn install:install-file -DgroupId=com.originyin -DartifactId=GetKey -Dversion=1.0.0 -Dpackaging=jar -Dfile=/home/lee5hx/java_works/originyin/customization/gout/customization/GetKey/lib/GetKey.jar
+
+
+        -->
+
+
+
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+
+
+    <repositories>
+        <!-- For testing against latest Spring snapshots-->
+        <repository>
+            <id>org.springframework.maven.snapshot</id>
+            <name>Spring Maven Snapshot Repository</name>
+            <url>http://maven.springframework.org/snapshot</url>
+            <releases><enabled>false</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <!-- For developing against latest Spring milestones-->
+        <repository>
+            <id>org.springframework.maven.milestone</id>
+            <name>Spring Maven Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+
+        </plugins>
+    </build>
+
+
+
+</project>
