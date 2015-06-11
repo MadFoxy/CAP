@@ -89,7 +89,7 @@ public class CategoryListInit extends Thread {
         bar.tick(2d, "生成InsertCategory.cvs完成.");
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
-        dbBase.copyInsertCategoryListTable(schemaName + "." + tableName, "../tmp/" + schemaName + "." + tableName+".cvs");
+        dbBase.copyInsertCategoryListTable(schemaName, tableName);
         bar.tick(4d, "Cap Init CategoryList 运行成功!");
         logger.info("Cap Init CategoryList 运行成功!");
 

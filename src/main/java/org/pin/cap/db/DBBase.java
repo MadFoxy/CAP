@@ -108,34 +108,12 @@ public class DBBase {
         }
         logger.info("创建CategoryListTable-Index完成.");
     }
-//    public void copyInsertCategoryListTable(String tableName,String insertFile){
-//        logger.info("正在将"+insertFile+",以Copy_Insert方式批量插入.");
-//        try {
-//
-//            run.getDataSource()
-//
-//            Connection conn = run.getDataSource().getConnection();
-//           // Connection
-//            CopyManager copyManager = new CopyManager(conn);
-//
-//            FileReader fileReader = new FileReader(insertFile);
-//            copyManager.copyIn("COPY t FROM " + tableName, fileReader);
-//
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//    }
-
-
-
-    public void copyInsertCategoryListTable(String tableName, String insertFile)
+    public void copyInsertCategoryListTable(String schemaName, String tableName)
     {
+        String insertFile = "../tmp/" + schemaName + "." + tableName+".cvs";
         logger.info("正在将"+insertFile+",以Copy_Insert方式批量插入.");
         FileInputStream fileInputStream = null;
-        String sql = "COPY " + tableName + " FROM STDIN WITH DELIMITER ','";
+        String sql = "COPY " + schemaName + "." + tableName + " FROM STDIN WITH DELIMITER ','";
         try {
             //Connection connection = dataSource.getConnection();
 
