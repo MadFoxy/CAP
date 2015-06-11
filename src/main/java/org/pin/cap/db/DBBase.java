@@ -18,7 +18,7 @@ import java.util.Properties;
 
 
 /**
- * DBBase Jinny on 2015/6/8.
+ * DBBase lee5hx on 2015/6/8.
  */
 public class DBBase {
 
