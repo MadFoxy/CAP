@@ -47,9 +47,12 @@ public class Main {
                         }catch (Exception e){
                             e.printStackTrace();
                         }
-
-                        if(bar._currentTick>=99d){
-                            bar.tick(1d, "Cap Init CategoryList 运行成功!");
+//
+                        if(bar._currentTick>=100d){
+                            break;
+                        }else if(bar._currentTick>=99d){
+                            //System.out.println(bar._currentTick);
+                            bar.tick(100 - bar._currentTick, "Cap Init CategoryList 运行成功!");
                             break;
                         }
 

@@ -63,40 +63,40 @@ public class CategoryListInit extends Thread {
         String schemaName = capConf.getProperty("cap.targetName");
         bar.tick(1d, "正在清除历史.");
         cleanHistory(schemaName);
-        bar.tick(5d, "正在清除历史完成!");
+        bar.tick(2d, "正在清除历史完成!");
 
         bar.tick(1d, "正在初始化DataSource.");
         initDBbase();
-        bar.tick(5d, "初始化DataSource完成.");
+        bar.tick(3d, "初始化DataSource完成.");
         DBBase dbBase = DBBase.getInstance();
         bar.tick(1d, "正在删除schema[" + schemaName + "]及schema下所有的对象");
         dbBase.dropSchema(schemaName);
-        bar.tick(4d, "删除schema[" + schemaName + "]完成!");
+        bar.tick(2d, "删除schema[" + schemaName + "]完成!");
 
         bar.tick(1d, "正在创建schema[" + schemaName + "]");
         dbBase.createSchema(schemaName);
-        bar.tick(4d, "创建schema[" + schemaName + "]完成!");
+        bar.tick(2d, "创建schema[" + schemaName + "]完成!");
 
         bar.tick(1d, "正在创建CategoryListTable");
         IGenerate ig = new CreateCategoryTBSQL(capConf);
         dbBase.createCategoryListTable(ig.generateSQL());
-        bar.tick(4d, "创建CategoryListTable成功!");
+        bar.tick(2d, "创建CategoryListTable成功!");
 
         bar.tick(1d, "正在创建CategoryListTable-Index.");
         ig = new CreateCategoryIndexSQL(capConf);
         dbBase.createCategoryListTableIndex(ig.generateSQL());
-        bar.tick(4d, "创建CategoryListTable-Index完成.");
+        bar.tick(2d, "创建CategoryListTable-Index完成.");
 
 
         bar.tick(1d, "正在生成InsertCategorySQL.");
         ig = new InsertCategorySQL(capConf,bar);
         ig.generateSQL();
-        bar.tick(6d, "生成InsertCategorySQL完成.");
+        bar.tick(2d, "生成InsertCategorySQL完成.");
 
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
         dbBase.copyInsertCategoryListTable(schemaName + ".CategoryList", "../tmp/" + schemaName + ".CategoryList.cvs");
-        bar.tick(6d, "完成CopyInsert CategoryList.");
+        bar.tick(4d, "Cap Init CategoryList 运行成功!");
 
 
 

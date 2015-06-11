@@ -50,23 +50,6 @@ public class InsertCategorySQL implements IGenerate {
             tempStr = cap_properties.getProperty("cap.category."+i+".col");
         }
 
-
-
-
-
-//        String[] A1 = {"A1","B1","C1"};
-//        aNList.add(A1);
-//        String[] A2 = {"E2","D2"};
-//        aNList.add(A2);
-//        String[] A3 = {"T3","Y3","U3"};
-//        aNList.add(A3);
-//        String[] A4 = {"G4","X4","H4","Z4"};
-//        aNList.add(A4);
-//        String[] A5 = {"T5","Y5","U5","H5"};
-//        aNList.add(A5);
-//        String[] A6 = {"T6","Y6","U6","H6"};
-//        aNList.add(A6);
-
         table = cap_properties.getProperty("cap.targetName")+".CategoryList";
 
         //File outfile = new File(conf.getProperty("leads.insert.savepath") + insertfile);
@@ -85,8 +68,6 @@ public class InsertCategorySQL implements IGenerate {
         logger.info("正在生成InsertCategorySQL.");
         try {
             perm(order, 0, order.length - 1);
-//            logger.debug("sumcount:" + sumcount);
-//            logger.debug("sumcount/20:"+sumcount/20*sumcount);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -167,7 +148,7 @@ public class InsertCategorySQL implements IGenerate {
 
             count = count+1;
             _lastCount = _currentCount;
-            _currentCount = count/sumcount*54;
+            _currentCount = count/sumcount*73;
 
             bar.tick(_currentCount - _lastCount,"");
             //System.out.println();
