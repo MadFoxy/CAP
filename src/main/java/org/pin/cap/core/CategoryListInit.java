@@ -15,7 +15,7 @@ import java.io.File;
 import java.util.Properties;
 
 /**
- * Created by Jinny on 2015/6/9.
+ * Created by lee5hx on 2015/6/9.
  */
 public class CategoryListInit extends Thread {
 
