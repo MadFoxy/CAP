@@ -25,9 +25,6 @@ public class CategoryListInit extends Thread {
     private Properties capConf;
     private ProgressBar bar;
 
-
-
-
     public CategoryListInit(Properties dbConf,Properties capConf,ProgressBar bar){
         this.dbConf = dbConf;
         this.capConf = capConf;
@@ -86,12 +83,10 @@ public class CategoryListInit extends Thread {
         dbBase.createCategoryListTableIndex(ig.generateSQL());
         bar.tick(2d, "创建CategoryListTable-Index完成.");
 
-
         bar.tick(1d, "正在生成InsertCategorySQL.");
         ig = new InsertCategorySQL(capConf,bar);
         ig.generateSQL();
         bar.tick(2d, "生成InsertCategorySQL完成.");
-
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
         dbBase.copyInsertCategoryListTable(schemaName + "." + tableName, "../tmp/" + schemaName + "." + tableName+".cvs");
