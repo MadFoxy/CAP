@@ -50,10 +50,14 @@ public class DBBase {
     public void createSchema(String schemaName){
 
         logger.info("正在创建schema[" + schemaName+"]");
+        String sql = "CREATE SCHEMA "+schemaName+";";
         //logger.debug("rt["+i+"]:"+rt[i]);
         try {
             //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
-            run.update("CREATE SCHEMA "+schemaName+";");
+
+            logger.debug(sql);
+            run.update(sql);
+
         } catch (SQLException e) {
             e.printStackTrace();
             logger.error(e.getMessage());
@@ -63,10 +67,11 @@ public class DBBase {
 
     public void dropSchema(String schemaName){
         logger.info("正在删除schema["+schemaName+"]及schema下所有的对象");
-        //logger.debug("rt["+i+"]:"+rt[i]);
+        String sql = "DROP SCHEMA "+schemaName+" CASCADE;";
         try {
             //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
-            run.update("DROP SCHEMA "+schemaName+" CASCADE;");
+            logger.debug(sql);
+            run.update(sql);
 
         } catch (SQLException e) {
             //e.printStackTrace();
@@ -94,6 +99,7 @@ public class DBBase {
         //logger.debug("rt["+i+"]:"+rt[i]);
         try {
             //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
+            logger.debug("CategoryList CreateIndex:"+sql);
             run.update(sql);
         } catch (SQLException e) {
             //e.printStackTrace();
@@ -129,7 +135,7 @@ public class DBBase {
     {
         logger.info("正在将"+insertFile+",以Copy_Insert方式批量插入.");
         FileInputStream fileInputStream = null;
-
+        String sql = "COPY " + tableName + " FROM STDIN WITH DELIMITER ','";
         try {
             //Connection connection = dataSource.getConnection();
 
@@ -138,7 +144,8 @@ public class DBBase {
             PGConnection con = (PGConnection)del.getInnermostDelegate();
             CopyManager copyManager = new CopyManager((BaseConnection)con);
             fileInputStream = new FileInputStream(insertFile);
-            copyManager.copyIn("COPY " + tableName + " FROM STDIN WITH DELIMITER ','", fileInputStream);
+            logger.debug(sql);
+            copyManager.copyIn(sql, fileInputStream);
         }catch (Exception e){
             e.printStackTrace();
         }finally {

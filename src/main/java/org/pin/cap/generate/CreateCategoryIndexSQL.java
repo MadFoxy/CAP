@@ -36,7 +36,7 @@ public class CreateCategoryIndexSQL implements IGenerate {
     public String generateSQL() {
         sqlbuf = new StringBuffer("CREATE INDEX "+tableName+"_CombOrder_index ON "+schemaName+"."+tableName+"(Comb_Order);");
 
-        logger.debug("CategoryList CreateIndex:"+sqlbuf.toString());
+
         return sqlbuf.toString();
     }
 }

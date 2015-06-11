@@ -42,11 +42,12 @@ public class CategoryListInit extends Thread {
         db.init();
         logger.info("初始化DataSource完成.");
     }
-    private void cleanHistory(String schemaName){
+    private void cleanHistory(String schemaName,String tableName){
         logger.info("正在清除历史.");
-        File file  = new File("../tmp/"+schemaName+".CategoryList.cvs");
+        File file  = new File("../tmp/"+schemaName+"."+tableName+".cvs");
         if(file.exists()){
             try {
+
                 FileUtils.forceDelete(file);
             }catch (Exception e){
                 e.printStackTrace();
@@ -60,7 +61,7 @@ public class CategoryListInit extends Thread {
         String tableName = capConf.getProperty("cap.category.table.name");
 
         bar.tick(1d, "正在清除历史.");
-        cleanHistory(schemaName);
+        cleanHistory(schemaName,tableName);
         bar.tick(2d, "正在清除历史完成!");
 
         bar.tick(1d, "正在初始化DataSource.");
@@ -93,7 +94,7 @@ public class CategoryListInit extends Thread {
 
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
-        dbBase.copyInsertCategoryListTable(schemaName + "."+tableName, "../tmp/" + schemaName + "."+tableName+".cvs");
+        dbBase.copyInsertCategoryListTable(schemaName + "." + tableName, "../tmp/" + schemaName + "." + tableName+".cvs");
         bar.tick(4d, "Cap Init CategoryList 运行成功!");
         logger.info("Cap Init CategoryList 运行成功!");
 
