@@ -25,6 +25,7 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-list connection-id="c321e52c-03d6-48df-b90c-cd273f64e5a2" dataset="lee5hx.categorylist" active-filter-id="" />
     <filter-list connection-id="c321e52c-03d6-48df-b90c-cd273f64e5a2" dataset="pg_catalog.pg_cast" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
@@ -53,13 +54,13 @@
           <driver-source value="EXTERNAL" />
           <driver-library value="$PROJECT_DIR$/lib/postgresql-9.4-1201.jdbc4.jar" />
           <driver value="org.postgresql.Driver" />
-          <host value="192.168.189.130" />
+          <host value="192.168.189.138" />
           <port value="5432" />
           <database value="CAPDB" />
           <url-type value="DATABASE" />
           <os-authentication value="false" />
           <user value="postgres" />
-          <password value="cXdlcg==" />
+          <password value="UVdFUg==" />
         </database>
         <properties>
           <auto-commit value="false" />
@@ -239,11 +240,21 @@
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
+          <content-type name="CSS" enabled="true" />
           <content-type name="Java" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JPA QL" enabled="true" />
+          <content-type name="JavaScript" enabled="true" />
+          <content-type name="JSP" enabled="true" />
+          <content-type name="JSPx" enabled="true" />
           <content-type name="Groovy" enabled="true" />
+          <content-type name="FTL" enabled="true" />
+          <content-type name="ASP" enabled="true" />
+          <content-type name="VTL" enabled="true" />
           <content-type name="AIDL" enabled="true" />
+          <content-type name="YAML" enabled="true" />
+          <content-type name="Flex" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
       </qualified-text-editor>
