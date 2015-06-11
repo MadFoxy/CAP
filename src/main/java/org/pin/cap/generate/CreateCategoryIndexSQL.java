@@ -16,11 +16,13 @@ public class CreateCategoryIndexSQL implements IGenerate {
 
     private StringBuffer sqlbuf;
     private String schemaName;
+    private String tableName;
 
 
 
     private void init(Properties cap_properties){
         schemaName = cap_properties.getProperty("cap.targetName");
+        tableName = cap_properties.getProperty("cap.category.table.name");
     }
 
     public CreateCategoryIndexSQL(Properties cap_properties){
@@ -32,7 +34,7 @@ public class CreateCategoryIndexSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("CREATE INDEX categoryList_CombOrder_index ON "+schemaName+".CategoryList(Comb_Order);");
+        sqlbuf = new StringBuffer("CREATE INDEX "+tableName+"_CombOrder_index ON "+schemaName+"."+tableName+"(Comb_Order);");
 
         logger.debug("CategoryList CreateIndex:"+sqlbuf.toString());
         return sqlbuf.toString();

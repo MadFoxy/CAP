@@ -15,6 +15,7 @@ public class CreateCategoryTBSQL implements IGenerate {
 
     private StringBuffer sqlbuf;
     private String schemaName;
+    private String tableName;
     private char[] capOrder;
     private Properties cap_properties;
 
@@ -22,6 +23,7 @@ public class CreateCategoryTBSQL implements IGenerate {
         this.cap_properties = cap_properties;
         schemaName = cap_properties.getProperty("cap.targetName");
         capOrder = cap_properties.getProperty("cap.order").toCharArray();
+        tableName = cap_properties.getProperty("cap.category.table.name");
 
     }
 
@@ -33,7 +35,7 @@ public class CreateCategoryTBSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+".CategoryList(Condition_UUID varchar(32),Comb_Order varchar("+capOrder.length+")");
+        sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(Condition_UUID varchar(32),Comb_Order varchar("+capOrder.length+")");
         int i = 1;
         String tempStr = cap_properties.getProperty("cap.category."+i+".col");
         String[] tempArr;
@@ -46,7 +48,7 @@ public class CreateCategoryTBSQL implements IGenerate {
             i++;
             tempStr = cap_properties.getProperty("cap.category."+i+".col");
         }
-        sqlbuf.append(");");
+        sqlbuf.append(",PRIMARY KEY(Condition_UUID));");
         logger.debug("CategoryList CreateTable:"+sqlbuf.toString());
         return sqlbuf.toString();
     }

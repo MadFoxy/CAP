@@ -56,11 +56,9 @@ public class CategoryListInit extends Thread {
     }
 
     public void run() {
-
-
-
-
         String schemaName = capConf.getProperty("cap.targetName");
+        String tableName = capConf.getProperty("cap.category.table.name");
+
         bar.tick(1d, "正在清除历史.");
         cleanHistory(schemaName);
         bar.tick(2d, "正在清除历史完成!");
@@ -95,19 +93,9 @@ public class CategoryListInit extends Thread {
 
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
-        dbBase.copyInsertCategoryListTable(schemaName + ".CategoryList", "../tmp/" + schemaName + ".CategoryList.cvs");
+        dbBase.copyInsertCategoryListTable(schemaName + "."+tableName, "../tmp/" + schemaName + "."+tableName+".cvs");
         bar.tick(4d, "Cap Init CategoryList 运行成功!");
         logger.info("Cap Init CategoryList 运行成功!");
-
-
-
-//        InsertCategorySQL tco = new InsertCategorySQL();
-//        tco.generateSQL();
-
-
-
-//        dbBase.createSchema(schemaName);
-
 
     }
 }
