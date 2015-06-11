@@ -47,18 +47,15 @@ public class Main {
                         }catch (Exception e){
                             e.printStackTrace();
                         }
-//
                         if(bar._currentTick>=100d){
                             break;
                         }else if(bar._currentTick>=99d){
-                            //System.out.println(bar._currentTick);
                             bar.tick(100 - bar._currentTick, "Cap Init CategoryList 运行成功!");
                             break;
                         }
 
                     }
                     System.exit(0);
-                    //bar.tick(1d, "Cap initCategory 运行成功!");
                 }else{
                     System.out.println(args[0]+".properties不存在!请检查"+args[0]+".properties是否存在于conf/目录下.");
                 }
