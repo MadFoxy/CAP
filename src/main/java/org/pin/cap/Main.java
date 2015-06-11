@@ -84,9 +84,9 @@ public class Main {
             prop = new Properties();
             prop.load(fis);
             fis.close();
-            logger.info("CAP conf/"+confFile+".properties complete.");
+            logger.info("CAP load conf/"+confFile+".properties complete.");
         } catch (Exception e) {
-            logger.error("CAP conf/"+confFile+".properties Error:"+e);
+            logger.error("CAP load conf/"+confFile+".properties Error:"+e);
             //e.printStackTrace();
         }
         finally{
@@ -103,9 +103,9 @@ public class Main {
             fis = new FileInputStream(file);
             prop.load(fis);
             fis.close();
-            logger.info("CAP conf/db_conf.properties complete.");
+            logger.info("CAP load conf/db_conf.properties complete.");
         } catch (Exception e) {
-            logger.error("CAP conf/db_conf.properties Error:"+e);
+            logger.error("CAP load conf/db_conf.properties Error:"+e);
             //e.printStackTrace();
         }
         finally{
