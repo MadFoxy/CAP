@@ -51,9 +51,9 @@ public class Main {
                             break;
                         }else if(bar._currentTick>=99d){
                             bar.tick(100 - bar._currentTick, "Cap Init CategoryList 运行成功!");
+                            logger.info("Cap Init CategoryList 运行成功!");
                             break;
                         }
-
                     }
                     System.exit(0);
                 }else{
