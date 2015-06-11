@@ -55,7 +55,7 @@ public class InsertCategorySQL implements IGenerate {
         //File outfile = new File(conf.getProperty("leads.insert.savepath") + insertfile);
         file = new File("../tmp/"+cap_properties.getProperty("cap.targetName")+"."+cap_properties.getProperty("cap.category.table.name")+".cvs");
 
-
+        logger.debug("cvs.path:"+file.getPath());
 
     }
     public InsertCategorySQL(Properties cap_properties,ProgressBar bar){
@@ -65,13 +65,13 @@ public class InsertCategorySQL implements IGenerate {
 
     public String generateSQL(){
 
-        logger.info("正在生成InsertCategorySQL.");
+        logger.info("正在生成InsertCategory.cvs.");
         try {
             perm(order, 0, order.length - 1);
         }catch (Exception e){
             e.printStackTrace();
         }
-        logger.info("生成InsertCategorySQL完成.");
+        logger.info("生成InsertCategory.cvs完成.");
         return "";
     }
     public double getCount(){

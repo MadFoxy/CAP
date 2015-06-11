@@ -44,7 +44,7 @@ public class CategoryListInit extends Thread {
         File file  = new File("../tmp/"+schemaName+"."+tableName+".cvs");
         if(file.exists()){
             try {
-
+                logger.debug("force delete:"+file.getPath());
                 FileUtils.forceDelete(file);
             }catch (Exception e){
                 e.printStackTrace();
@@ -58,7 +58,7 @@ public class CategoryListInit extends Thread {
         String tableName = capConf.getProperty("cap.category.table.name");
 
         bar.tick(1d, "正在清除历史.");
-        cleanHistory(schemaName,tableName);
+        cleanHistory(schemaName, tableName);
         bar.tick(2d, "正在清除历史完成!");
 
         bar.tick(1d, "正在初始化DataSource.");
@@ -83,10 +83,10 @@ public class CategoryListInit extends Thread {
         dbBase.createCategoryListTableIndex(ig.generateSQL());
         bar.tick(2d, "创建CategoryListTable-Index完成.");
 
-        bar.tick(1d, "正在生成InsertCategorySQL.");
+        bar.tick(1d, "正在生成InsertCategory.cvs.");
         ig = new InsertCategorySQL(capConf,bar);
         ig.generateSQL();
-        bar.tick(2d, "生成InsertCategorySQL完成.");
+        bar.tick(2d, "生成InsertCategory.cvs完成.");
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
         dbBase.copyInsertCategoryListTable(schemaName + "." + tableName, "../tmp/" + schemaName + "." + tableName+".cvs");
