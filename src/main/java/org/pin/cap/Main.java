@@ -54,7 +54,7 @@ public class Main {
                         }
 
                     }
-
+                    System.exit(0);
                     //bar.tick(1d, "Cap initCategory 运行成功!");
                 }else{
                     System.out.println(args[0]+".properties不存在!请检查"+args[0]+".properties是否存在于conf/目录下.");
