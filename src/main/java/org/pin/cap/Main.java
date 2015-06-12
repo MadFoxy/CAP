@@ -10,7 +10,9 @@ import org.pin.cap.core.CategoryListInit;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.Properties;
+import java.util.TimeZone;
 
 
 /**
@@ -35,12 +37,14 @@ public class Main {
             if (args[0].equals("-help")) {
                 printUsage();
             }else if(args.length>1&&args[1].equals("-init")){
+
+                long starTime = System.currentTimeMillis();
                 logger.info("开始执行:cap "+args[0]+" "+args[1]);
                 Properties cap_properties = loadCapConf(args[0]);
                 Properties db_properties = loadDBConf();
                 ProgressBar bar = new ProgressBar( 50,100, Type.BOTH );
                 if(cap_properties!=null){
-                    new CategoryListInit(db_properties,cap_properties,bar).start();
+                    new CategoryListInit(starTime,db_properties,cap_properties,bar).start();
                     while (true){
                         try{
                             Thread.sleep(500);
@@ -50,8 +54,15 @@ public class Main {
                         if(bar._currentTick>=100d){
                             break;
                         }else if(bar._currentTick>=99d){
-                            bar.tick(100 - bar._currentTick, "Cap Init CategoryList 运行成功!");
-                            logger.info("Cap Init CategoryList 运行成功!");
+                            long endTime = System.currentTimeMillis();
+                            long diff =  (endTime - starTime);
+                            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
+                            formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
+                            String hms = formatter.format(diff);
+                            bar.tick(100 - bar._currentTick, "Cap Init CategoryList 运行成功! 用时 " + hms);
+                            logger.info("Cap Init CategoryList 运行成功! 用时 " + hms);
+
+
                             break;
                         }
                     }
