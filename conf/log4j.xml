@@ -21,7 +21,6 @@
     -->
     <root>
         <priority value="Debug" />
-
         <appender-ref ref="filelog" />
     </root>
 

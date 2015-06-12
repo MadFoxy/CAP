@@ -48,19 +48,16 @@ public class DBBase {
     }
 
     public void createSchema(String schemaName){
-
         logger.info("正在创建schema[" + schemaName+"]");
         String sql = "CREATE SCHEMA "+schemaName+";";
-        //logger.debug("rt["+i+"]:"+rt[i]);
         try {
-            //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
-
             logger.debug(sql);
             run.update(sql);
 
         } catch (SQLException e) {
             e.printStackTrace();
             logger.error(e.getMessage());
+            System.exit(109);
         }
         logger.info("创建schema["+schemaName+"]完成!");
     }
@@ -69,14 +66,12 @@ public class DBBase {
         logger.info("正在删除schema["+schemaName+"]及schema下所有的对象");
         String sql = "DROP SCHEMA "+schemaName+" CASCADE;";
         try {
-            //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
             logger.debug(sql);
             run.update(sql);
 
         } catch (SQLException e) {
             //e.printStackTrace();
             logger.error(e.getMessage());
-
         }
         logger.info("删除schema["+schemaName+"]完成!");
     }
@@ -84,10 +79,11 @@ public class DBBase {
         logger.info("正在创建CategoryListTable.");
         //logger.debug("rt["+i+"]:"+rt[i]);
         try {
-            //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
+
             run.update(sql);
         } catch (SQLException e) {
             //e.printStackTrace();
+            System.exit(110);
             logger.error(e.getMessage());
 
         }
@@ -104,19 +100,17 @@ public class DBBase {
         } catch (SQLException e) {
             //e.printStackTrace();
             logger.error(e.getMessage());
+            System.exit(111);
 
         }
         logger.info("创建CategoryListTable-Index完成.");
     }
-    public void copyInsertCategoryListTable(String schemaName, String tableName)
-    {
+    public void copyInsertCategoryListTable(String schemaName, String tableName) {
         String insertFile = "../tmp/" + schemaName + "." + tableName+".cvs";
         logger.info("正在将"+insertFile+",以Copy_Insert方式批量插入.");
         FileInputStream fileInputStream = null;
         String sql = "COPY " + schemaName + "." + tableName + " FROM STDIN WITH DELIMITER ','";
         try {
-            //Connection connection = dataSource.getConnection();
-
             DataSource ds1 = dataSource;
             DelegatingConnection del = new DelegatingConnection(ds1.getConnection());
             PGConnection con = (PGConnection)del.getInnermostDelegate();
@@ -125,21 +119,13 @@ public class DBBase {
             logger.debug(sql);
             copyManager.copyIn(sql, fileInputStream);
         }catch (Exception e){
+            System.exit(112);
             e.printStackTrace();
         }finally {
             IOUtils.closeQuietly(fileInputStream);
         }
         logger.info(insertFile+",以Copy_Insert批量插入完成!");
     }
-
-
-
-
-
-
-
-
-
     public static DataSource setupDataSource(Properties dbConf) {
         BasicDataSource ds = new BasicDataSource();
         //驱动
@@ -172,20 +158,4 @@ public class DBBase {
 
         return ds;
     }
-
-
-    public static void main(String agrs[]) throws Exception{
-
-        DataSource ds = setupDataSource(null);
-        DBBase db = new DBBase();
-        db.setDataSource(ds);
-        db.init();
-
-
-        run.query("select * from pg_catalog.pg_am",null);
-        System.out.println("xx");
-
-    }
-
-
 }

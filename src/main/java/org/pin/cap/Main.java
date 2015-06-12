@@ -36,7 +36,6 @@ public class Main {
             if (args[0].equals("-help")) {
                 printUsage();
             }else if(args.length>1&&args[1].equals("-init")){
-
                 long starTime = System.currentTimeMillis();
                 logger.info("开始执行:cap "+args[0]+" "+args[1]);
                 Properties cap_properties = loadCapConf(args[0]);
@@ -51,14 +50,12 @@ public class Main {
                             e.printStackTrace();
                         }
                         if(bar._currentTick>=100d){
-
                             long endTime = System.currentTimeMillis();
                             long diff =  (endTime - starTime);
                             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
                             formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
                             String hms = formatter.format(diff);
-
-                            logger.info("Cap Init CategoryList 运行成功! 用时 "+ hms);
+                            logger.info("Cap Init CategoryList 运行成功!("+hms+")");
                             break;
                         }else if(bar._currentTick>=99d){
                             long endTime = System.currentTimeMillis();
@@ -66,10 +63,8 @@ public class Main {
                             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
                             formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
                             String hms = formatter.format(diff);
-                            bar.tick(100 - bar._currentTick, "Cap Init CategoryList 运行成功! 用时 " + hms);
-                            logger.info("Cap Init CategoryList 运行成功! 用时 " + hms);
-
-
+                            bar.tick(100 - bar._currentTick, "Run Success!("+hms+")");
+                            logger.info("Cap Init CategoryList 运行成功!("+hms+")");
                             break;
                         }
                     }
@@ -77,7 +72,6 @@ public class Main {
                 }else{
                     System.out.println(args[0]+".properties不存在!请检查"+args[0]+".properties是否存在于conf/目录下.");
                 }
-
             }else{
                 printUsage();
             }
@@ -140,7 +134,7 @@ public class Main {
         msg.append("  [config_file].properties          配置文件" + lSep);
         msg.append("[action]:" + lSep);
         msg.append("  -init                              初始化" + lSep);
-      //  msg.append("  -start                             开始" + lSep); logger.debug("111");
+      //  msg.append("  -start                             开始" + lSep);
         System.out.println(msg.toString());
     }
     private static void noFun() {
