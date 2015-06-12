@@ -51,6 +51,14 @@ public class Main {
                             e.printStackTrace();
                         }
                         if(bar._currentTick>=100d){
+
+                            long endTime = System.currentTimeMillis();
+                            long diff =  (endTime - starTime);
+                            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
+                            formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
+                            String hms = formatter.format(diff);
+
+                            logger.info("Cap Init CategoryList 运行成功! 用时 "+ hms);
                             break;
                         }else if(bar._currentTick>=99d){
                             long endTime = System.currentTimeMillis();

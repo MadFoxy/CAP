@@ -104,7 +104,7 @@ public class CategoryListInit extends Thread {
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
         dbBase.copyInsertCategoryListTable(schemaName, tableName);
         bar.tick(4d, "Cap Init CategoryList 运行成功! 用时 "+hms);
-        logger.info("Cap Init CategoryList 运行成功! 用时 "+ hms);
+
 
     }
 }
