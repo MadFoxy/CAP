@@ -14,7 +14,6 @@ import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.TimeZone;
 
-
 /**
  * CAP Main
  * @author lee5hx
