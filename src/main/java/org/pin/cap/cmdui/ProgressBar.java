@@ -1,5 +1,10 @@
 package org.pin.cap.cmdui;
 
+
+/**
+ * ProgressBar
+ * @author lee5hx
+ * */
 public class ProgressBar {
 
   private double _lastIncrement = 0;
