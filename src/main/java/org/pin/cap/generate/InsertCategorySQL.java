@@ -55,8 +55,8 @@ public class InsertCategorySQL implements IGenerate {
         //File outfile = new File(conf.getProperty("leads.insert.savepath") + insertfile);
         file = new File("../tmp/"+cap_properties.getProperty("cap.targetName")+"."+cap_properties.getProperty("cap.category.table.name")+".cvs");
 
-        logger.debug("category.count:"+sumcount);
-        logger.debug("cvs.path:"+file.getPath());
+        logger.info("category.count:"+sumcount);
+        logger.info("cvs.path:"+file.getPath());
 
     }
     public InsertCategorySQL(Properties cap_properties,ProgressBar bar){

@@ -51,7 +51,7 @@ public class DBBase {
         logger.info("正在创建schema[" + schemaName+"]");
         String sql = "CREATE SCHEMA "+schemaName+";";
         try {
-            logger.debug(sql);
+            logger.info(sql);
             run.update(sql);
 
         } catch (SQLException e) {
@@ -66,7 +66,7 @@ public class DBBase {
         logger.info("正在删除schema["+schemaName+"]及schema下所有的对象");
         String sql = "DROP SCHEMA "+schemaName+" CASCADE;";
         try {
-            logger.debug(sql);
+            logger.info(sql);
             run.update(sql);
 
         } catch (SQLException e) {
@@ -77,7 +77,7 @@ public class DBBase {
     }
     public void createCategoryListTable(String sql){
         logger.info("正在创建CategoryListTable.");
-        //logger.debug("rt["+i+"]:"+rt[i]);
+        //logger.info("rt["+i+"]:"+rt[i]);
         try {
 
             run.update(sql);
@@ -92,10 +92,10 @@ public class DBBase {
 
     public void createCategoryListTableIndex(String sql){
         logger.info("正在创建CategoryListTable-Index.");
-        //logger.debug("rt["+i+"]:"+rt[i]);
+        //logger.info("rt["+i+"]:"+rt[i]);
         try {
             //int [] rt =run.batch("CREATE SCHEMA1 "+schemaName+";",n);
-            logger.debug("CategoryList CreateIndex:"+sql);
+            logger.info("CategoryList CreateIndex:"+sql);
             run.update(sql);
         } catch (SQLException e) {
             //e.printStackTrace();
@@ -116,7 +116,7 @@ public class DBBase {
             PGConnection con = (PGConnection)del.getInnermostDelegate();
             CopyManager copyManager = new CopyManager((BaseConnection)con);
             fileInputStream = new FileInputStream(insertFile);
-            logger.debug(sql);
+            logger.info(sql);
             copyManager.copyIn(sql, fileInputStream);
         }catch (Exception e){
             System.exit(112);
@@ -130,31 +130,31 @@ public class DBBase {
         BasicDataSource ds = new BasicDataSource();
         //驱动
         ds.setDriverClassName(dbConf.getProperty("cap.ds.driverClassName"));
-        logger.debug("cap.ds.driverClassName:"+dbConf.getProperty("cap.ds.driverClassName"));
+        logger.info("cap.ds.driverClassName:"+dbConf.getProperty("cap.ds.driverClassName"));
         //用户名
         ds.setUsername(dbConf.getProperty("cap.ds.username"));
-        logger.debug("cap.ds.username:"+dbConf.getProperty("cap.ds.username"));
+        logger.info("cap.ds.username:"+dbConf.getProperty("cap.ds.username"));
         //密码
         ds.setPassword(dbConf.getProperty("cap.ds.password"));
-        logger.debug("cap.ds.password:************");
+        logger.info("cap.ds.password:************");
         //地址
         ds.setUrl(dbConf.getProperty("cap.ds.url"));
-        logger.debug("cap.ds.url:"+dbConf.getProperty("cap.ds.url"));
+        logger.info("cap.ds.url:"+dbConf.getProperty("cap.ds.url"));
 
         ds.setInitialSize(Integer.parseInt(dbConf.getProperty("cap.ds.initialSize")));
-        logger.debug("cap.ds.initialSize:"+dbConf.getProperty("cap.ds.initialSize"));
+        logger.info("cap.ds.initialSize:"+dbConf.getProperty("cap.ds.initialSize"));
 
         ds.setMaxTotal(Integer.parseInt(dbConf.getProperty("cap.ds.maxtotal")));
-        logger.debug("cap.ds.maxtotal:"+dbConf.getProperty("cap.ds.maxtotal"));
+        logger.info("cap.ds.maxtotal:"+dbConf.getProperty("cap.ds.maxtotal"));
 
         ds.setMaxIdle(Integer.parseInt(dbConf.getProperty("cap.ds.maxIdle")));
-        logger.debug("cap.ds.maxIdle:"+dbConf.getProperty("cap.ds.maxIdle"));
+        logger.info("cap.ds.maxIdle:"+dbConf.getProperty("cap.ds.maxIdle"));
 
         ds.setMaxWaitMillis(Integer.parseInt(dbConf.getProperty("cap.ds.maxWaitMillis")));
-        logger.debug("cap.ds.maxWaitMillis:"+dbConf.getProperty("cap.ds.maxWaitMillis"));
+        logger.info("cap.ds.maxWaitMillis:"+dbConf.getProperty("cap.ds.maxWaitMillis"));
 
         ds.setMinIdle(Integer.parseInt(dbConf.getProperty("cap.ds.minIdle")));
-        logger.debug("cap.ds.minIdle:"+dbConf.getProperty("cap.ds.minIdle"));
+        logger.info("cap.ds.minIdle:"+dbConf.getProperty("cap.ds.minIdle"));
 
         return ds;
     }

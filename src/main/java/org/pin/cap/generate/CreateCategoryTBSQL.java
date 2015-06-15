@@ -49,7 +49,7 @@ public class CreateCategoryTBSQL implements IGenerate {
             tempStr = cap_properties.getProperty("cap.category."+i+".col");
         }
         sqlbuf.append(",PRIMARY KEY(Condition_UUID));");
-        logger.debug("CategoryList CreateTable:"+sqlbuf.toString());
+        logger.info("CategoryList CreateTable:"+sqlbuf.toString());
         return sqlbuf.toString();
     }
 }

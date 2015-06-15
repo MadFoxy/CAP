@@ -48,7 +48,7 @@ public class CategoryListInit extends Thread {
         File file  = new File("../tmp/"+schemaName+"."+tableName+".cvs");
         if(file.exists()){
             try {
-                logger.debug("force delete:"+file.getPath());
+                logger.info("force delete:"+file.getPath());
                 FileUtils.forceDelete(file);
             }catch (Exception e){
                 e.printStackTrace();
@@ -94,17 +94,14 @@ public class CategoryListInit extends Thread {
 
         long endTime = System.currentTimeMillis();
         long diff =  (endTime - startTime);
-        logger.debug("diff-time:" + diff);
+        logger.info("diff-time:" + diff);
 
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
         formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
         String hms = formatter.format(diff);
 
-
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
         dbBase.copyInsertCategoryListTable(schemaName, tableName);
         bar.tick(4d, "Run Success!("+hms+")");
-
-
     }
 }
