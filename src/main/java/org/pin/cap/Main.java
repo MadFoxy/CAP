@@ -134,7 +134,6 @@ public class Main {
         msg.append("  [config_file].properties          " + lSep);
         msg.append("[action]:" + lSep);
         msg.append("  -init                             " + lSep);
-      //  msg.append("  -start                             开始" + lSep);
         System.out.println(msg.toString());
     }
     private static void noFun() {
