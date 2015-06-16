@@ -70,7 +70,7 @@ public class Main {
                     }
                     System.exit(0);
                 }else{
-                    System.out.println(args[0]+".properties不存在!请检查"+args[0]+".properties是否存在于conf/目录下.");
+                    System.out.println(args[0]+".properties not found!pls check "+args[0]+".properties weather it exist in this path:conf/");
                 }
             }else{
                 printUsage();
@@ -131,15 +131,15 @@ public class Main {
         StringBuffer msg = new StringBuffer("");
         msg.append("cap [config_file] [action]  " + lSep);
         msg.append("[config_file]:" + lSep);
-        msg.append("  [config_file].properties          配置文件" + lSep);
+        msg.append("  [config_file].properties          " + lSep);
         msg.append("[action]:" + lSep);
-        msg.append("  -init                              初始化" + lSep);
+        msg.append("  -init                             " + lSep);
       //  msg.append("  -start                             开始" + lSep);
         System.out.println(msg.toString());
     }
     private static void noFun() {
         StringBuffer msg = new StringBuffer("");
-        msg.append("没有找到命令,请输入命令查看帮助:cap -help");
+        msg.append("Command not found,Enter the command:cap -help");
         System.out.println(msg.toString());
     }
 
