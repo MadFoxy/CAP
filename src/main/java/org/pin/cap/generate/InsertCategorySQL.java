@@ -4,7 +4,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.pin.cap.cmdui.ProgressBar;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -75,18 +74,6 @@ public class InsertCategorySQL implements IGenerate {
         logger.info("生成InsertCategory.cvs完成.");
         return "";
     }
-    public double getCount(){
-        return count;
-    }
-
-    public double getSumcount(){
-        return sumcount;
-    }
-//    public static void main(String[] args) {//5436271
-//        InsertCategorySQL tco = new InsertCategorySQL();
-//        tco.generateSQL();
-//        System.out.println(tco.getCount());
-//    }
     private boolean next(int ct[],int gz[]){
         int x = ct.length-1;//数组长度
         int y;//归零位数
