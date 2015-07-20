@@ -82,15 +82,23 @@ public class CategoryListInit extends Thread {
         dbBase.createCategoryListTable(ig.generateSQL());
         bar.tick(2d, "创建CategoryListTable成功!");
 
-        bar.tick(1d, "正在创建CategoryListTable-Index.");
-        ig = new CreateCategoryIndexSQL(capConf);
-        dbBase.createCategoryListTableIndex(ig.generateSQL());
-        bar.tick(2d, "创建CategoryListTable-Index完成.");
 
         bar.tick(1d, "正在生成InsertCategory.cvs.");
         ig = new InsertCategorySQL(capConf,bar);
         ig.generateSQL();
         bar.tick(2d, "生成InsertCategory.cvs完成.");
+
+
+        bar.tick(1d, "正在进行CopyInsert CategoryList.");
+        dbBase.copyInsertCategoryListTable(schemaName, tableName);
+        bar.tick(2d, "CopyInsert CategoryList 完成.");
+
+
+        bar.tick(1d, "正在创建CategoryListTable-Index.");
+        ig = new CreateCategoryIndexSQL(capConf);
+        dbBase.createCategoryListTableIndex(ig.generateSQL());
+        bar.tick(2d, "创建CategoryListTable-Index完成.");
+
 
         long endTime = System.currentTimeMillis();
         long diff =  (endTime - startTime);
@@ -100,8 +108,7 @@ public class CategoryListInit extends Thread {
         formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
         String hms = formatter.format(diff);
 
-        bar.tick(1d, "正在进行CopyInsert CategoryList.");
-        dbBase.copyInsertCategoryListTable(schemaName, tableName);
-        bar.tick(4d, "Run Success!("+hms+")");
+
+        bar.tick(2d, "Run Success!("+hms+")");
     }
 }

@@ -29,7 +29,7 @@ public class Main {
             exc.printStackTrace();
         }
     }
-    private void processArgs(String[] args) {
+    private void processArgs(String[] args)throws Exception{
         if(args.length == 0){
             noFun();
         }else{
@@ -44,11 +44,7 @@ public class Main {
                 if(cap_properties!=null){
                     new CategoryListInit(starTime,db_properties,cap_properties,bar).start();
                     while (true){
-                        try{
-                            Thread.sleep(500);
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
+                        Thread.sleep(500);
                         if(bar._currentTick>=100d){
                             long endTime = System.currentTimeMillis();
                             long diff =  (endTime - starTime);
@@ -90,6 +86,8 @@ public class Main {
     private static Properties loadCapConf(String confFile) {
         Properties prop =null;
         InputStream fis = null;
+
+
         try {
             File file = new File("../conf/"+confFile+".properties");
             fis = new FileInputStream(file);
