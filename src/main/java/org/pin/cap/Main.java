@@ -68,7 +68,10 @@ public class Main {
                 }else{
                     System.out.println(args[0]+".properties not found!pls check "+args[0]+".properties weather it exist in this path:conf/");
                 }
-            }else{
+            }else if(args.length>1&&args[1].equals("-load")){
+                System.out.println("load test");
+            }
+            else{
                 printUsage();
             }
         }
@@ -132,6 +135,7 @@ public class Main {
         msg.append("  [config_file].properties          " + lSep);
         msg.append("[action]:" + lSep);
         msg.append("  -init                             " + lSep);
+        msg.append("  -load                             " + lSep);
         System.out.println(msg.toString());
     }
     private static void noFun() {
