@@ -126,7 +126,6 @@ public class Main {
         }
         return prop;
     }
-
     private static void printUsage() {
         String lSep = System.getProperty("line.separator");
         StringBuffer msg = new StringBuffer("");
