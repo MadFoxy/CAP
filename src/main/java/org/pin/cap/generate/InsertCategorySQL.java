@@ -21,7 +21,7 @@ public class InsertCategorySQL implements IGenerate {
     private double count = 0;
     private List<String[]> aNList = new ArrayList();
     private char[] order;
-    private String table;
+   // private String table;
     private File file;
     private double sumcount = 1;
     private double _lastCount = 0;
@@ -49,7 +49,7 @@ public class InsertCategorySQL implements IGenerate {
             tempStr = cap_properties.getProperty("cap.category."+i+".col");
         }
 
-        table = cap_properties.getProperty("cap.targetName")+".CategoryList";
+        //table = cap_properties.getProperty("cap.targetName")+".CategoryList";
 
         //File outfile = new File(conf.getProperty("leads.insert.savepath") + insertfile);
         file = new File("../tmp/"+cap_properties.getProperty("cap.targetName")+"."+cap_properties.getProperty("cap.category.table.name")+".cvs");
