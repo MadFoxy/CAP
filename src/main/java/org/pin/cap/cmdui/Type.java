@@ -8,4 +8,4 @@ public enum Type {
     BAR,
     DATA,
     BOTH
-  }
+}
