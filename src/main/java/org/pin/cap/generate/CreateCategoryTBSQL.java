@@ -2,7 +2,6 @@ package org.pin.cap.generate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import java.util.Properties;
 
 /**
@@ -31,8 +30,6 @@ public class CreateCategoryTBSQL implements IGenerate {
         this.init(cap_properties);
     }
 
-
-
     @Override
     public String generateSQL() {
         sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(Condition_UUID varchar(32),Comb_Order varchar("+capOrder.length+")");
@@ -42,13 +39,12 @@ public class CreateCategoryTBSQL implements IGenerate {
         while (tempStr!=null){
             //  System.out.println(tempStr);
             tempArr = tempStr.split("\\|");
-            ;
             sqlbuf.append(","+tempArr[0]+" varchar("+tempArr[1]+")");
-
             i++;
             tempStr = cap_properties.getProperty("cap.category."+i+".col");
         }
-        sqlbuf.append(",PRIMARY KEY(Condition_UUID));");
+        //sqlbuf.append(",PRIMARY KEY(Condition_UUID));");
+        sqlbuf.append(");");
         logger.info("CategoryList CreateTable:"+sqlbuf.toString());
         return sqlbuf.toString();
     }
