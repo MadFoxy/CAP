@@ -15,13 +15,11 @@
     </properties>
 
     <dependencies>
-    <!--
+        <!--
             mvn install:install-file -DgroupId=net.sourceforge -DartifactId=jtds -Dversion=1.2.7 -Dpackaging=jar -Dfile=C:\Works\JavaWSK\lib\jtds.jar
             mvn install:install-file -DgroupId=com.ibm -DartifactId=db2jcc4 -Dversion=4.15.82 -Dpackaging=jar -Dfile=C:\Works\JavaWSK\lib\db2jcc4.jar
             mvn install:install-file -DgroupId=com.originyin -DartifactId=Log4j-originyin -Dversion=1.0.0 -Dpackaging=jar -Dfile=/home/lee5hx/java_works/originyin/customization/Log4j-originyin/out/artifacts/Log4j_originyin_jar/Log4j-originyin.jar
             mvn install:install-file -DgroupId=com.originyin -DartifactId=GetKey -Dversion=1.0.0 -Dpackaging=jar -Dfile=/home/lee5hx/java_works/originyin/customization/gout/customization/GetKey/lib/GetKey.jar
-
-
         -->
 
 
@@ -57,6 +55,8 @@
             <artifactId>commons-dbcp2</artifactId>
             <version>2.1</version>
         </dependency>
+
+
 
     </dependencies>
 
