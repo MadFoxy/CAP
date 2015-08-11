@@ -13,6 +13,8 @@ import javax.sql.DataSource;
 import java.io.FileInputStream;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -62,6 +64,20 @@ public class DBBase {
         logger.info("创建schema["+schemaName+"]完成!");
     }
 
+    public boolean existsTable(String table,String schema){
+        boolean rt = false;
+        try {
+            DatabaseMetaData metaData = run.getDataSource().getConnection().getMetaData();
+            ResultSet rs = metaData.getTables(run.getDataSource().getConnection().getCatalog(), schema, table, new String[]{"TABLE"});
+            while(rs.next()) {
+                rt = true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return rt;
+    }
     public void dropSchema(String schemaName){
         logger.info("正在删除schema["+schemaName+"]及schema下所有的对象");
         String sql = "DROP SCHEMA "+schemaName+" CASCADE;";
@@ -90,6 +106,30 @@ public class DBBase {
         logger.info("创建CategoryListTable完成!");
     }
 
+    public void createSourceTable(String sql){
+        logger.info("正在创建SourceTable.");
+        //logger.info("rt["+i+"]:"+rt[i]);
+        try {
+            run.update(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(210);
+            logger.error(e.getMessage());
+
+        }
+        logger.info("创建SourceTable完成!");
+    }
+    public void insertBatchSourceTable(String sql,Object[][] parms){
+        logger.info("正在执行 insert SourceTable.");
+        try {
+            run.batch(sql,parms);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(220);
+            logger.error(e.getMessage());
+        }
+        logger.info("执行 insert SourceTable完成!");
+    }
     public void createCategoryListTableIndex(String sql){
         logger.info("正在创建CategoryListTable-Index.");
         //logger.info("rt["+i+"]:"+rt[i]);

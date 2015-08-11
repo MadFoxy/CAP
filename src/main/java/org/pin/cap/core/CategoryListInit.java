@@ -63,6 +63,8 @@ public class CategoryListInit extends Thread {
         String schemaName = capConf.getProperty("cap.targetName");
         String tableName = capConf.getProperty("cap.category.table.name");
 
+
+
         bar.tick(1d, "正在清除历史.");
         cleanHistory(schemaName, tableName);
         bar.tick(2d, "正在清除历史完成!");
@@ -71,6 +73,7 @@ public class CategoryListInit extends Thread {
         initDBbase();
         bar.tick(3d, "初始化DataSource完成.");
         DBBase dbBase = DBBase.getInstance();
+
         bar.tick(1d, "正在删除schema[" + schemaName + "]及schema下所有的对象");
         dbBase.dropSchema(schemaName);
         bar.tick(2d, "删除schema[" + schemaName + "]完成!");
