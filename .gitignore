@@ -57,9 +57,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.xlsx
+*.txt
 
 /tmp/
 /logs/
 /.idea/
 /target/
 /lib/
+/source/
