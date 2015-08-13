@@ -122,9 +122,11 @@ public class DBBase {
     public void insertBatchSourceTable(String sql,Object[][] parms){
         logger.info("正在执行 insert SourceTable.");
         try {
+
             run.batch(sql,parms);
         } catch (SQLException e) {
             e.printStackTrace();
+
             System.exit(220);
             logger.error(e.getMessage());
         }

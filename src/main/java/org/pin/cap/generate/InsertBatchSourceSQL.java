@@ -31,7 +31,7 @@ public class InsertBatchSourceSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(");
+        sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(SDATA_UUID,");
         int i = 1;
         String tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
         String[] tempArr;
@@ -47,6 +47,7 @@ public class InsertBatchSourceSQL implements IGenerate {
         for(int j=0;j<i-1;j++){
             sqlbuf.append("?,");
         }
-        return sqlbuf.substring(0, sqlbuf.length()-1)+");";
+        sqlbuf.append("?);");
+        return sqlbuf.toString();
     }
 }

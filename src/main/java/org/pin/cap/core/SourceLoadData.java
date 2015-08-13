@@ -1,5 +1,6 @@
 package org.pin.cap.core;
 
+import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
@@ -104,13 +105,16 @@ public class SourceLoadData extends Thread {
             int columnCounnt = CapUitls.getSourceTableColumnCount(capConf);
             logger.info("linesCount:"+linesCount);
             logger.info("columnCounnt:"+columnCounnt);
-            Object params[][] = new Object[linesCount][columnCounnt];
+            Object params[][] = new Object[linesCount][columnCounnt+1];
             String[] values;
-            for(int i=0;i<linesCount;i++){  //3
-                values =  lines.get(i).split(capConf.getProperty("cap.load.data.source.file.del"), -1);
-                //System.out.println(values[21]);
-                for(int j=0;j<values.length;j++){
-                    params[i][j] = values[j];
+            for(int i=0;i<linesCount;i++){
+                values = lines.get(i).split(capConf.getProperty("cap.load.data.source.file.del"), -1);
+                for(int j=0;j<columnCounnt+1;j++){
+                    if(j==0){
+                        params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
+                    }else {
+                        params[i][j] = CapUitls.getValue(capConf.getProperty("cap.load.data.source.column."+j),values[j-1]);
+                    }
                 }
             }
             dbBase.insertBatchSourceTable(insertSql,params);
