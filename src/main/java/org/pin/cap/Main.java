@@ -101,8 +101,7 @@ public class Main {
             }
         }
     }
-    public static void run(String[] args,
-                           ClassLoader coreLoader) {
+    public static void run(String[] args,ClassLoader coreLoader) {
         Main m = new Main();
         m.start(args, coreLoader);
     }
@@ -114,8 +113,6 @@ public class Main {
     private static Properties loadCapConf(String confFile) {
         Properties prop =null;
         InputStream fis = null;
-
-
         try {
             File file = new File("../conf/"+confFile+".properties");
             fis = new FileInputStream(file);
@@ -158,8 +155,8 @@ public class Main {
         msg.append("[config_file]:" + lSep);
         msg.append("  [config_file].properties          " + lSep);
         msg.append("[action]:" + lSep);
-        msg.append("  -init                             " + lSep);
-        msg.append("  -load                             " + lSep);
+        msg.append("  -init         init categoryList." + lSep);
+        msg.append("  -load         import sourceData." + lSep);
         System.out.println(msg.toString());
     }
     private static void noFun() {
