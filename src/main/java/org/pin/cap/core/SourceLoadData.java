@@ -1,21 +1,14 @@
 package org.pin.cap.core;
 
-import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.LineIterator;
-import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.*;
 import org.pin.cap.utils.CapUitls;
-
 import javax.sql.DataSource;
 import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -80,7 +73,7 @@ public class SourceLoadData extends Thread {
         double tickCount = 95d/sourceFiles.size();
         String tableName;
         IGenerate igenerate;
-        String line;
+        //String line;
         String insertSql;
         for (Iterator iterator = sourceFiles.iterator(); iterator.hasNext();) {
             sourceFile  = (File) iterator.next();

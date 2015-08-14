@@ -1,9 +1,8 @@
 package org.pin.cap.utils;
 
-import com.sun.deploy.util.StringUtils;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Properties;
-import java.util.regex.Pattern;
 
 /**
  * Created by lee5hx on 15-8-8.
@@ -22,8 +21,6 @@ public class CapUitls {
         }
         return i-1;
     }
-
-
     public static Object getValue(String sourceColumn,String value) {
         Object rtValue = null;
         String[] tempArr = sourceColumn.split("\\|",-1);
@@ -36,9 +33,18 @@ public class CapUitls {
         }else if(tempArr[2].equals("double")){
             rtValue = Double.parseDouble(value);
         }
+        else if(tempArr[2].equals("datetime")){
+            SimpleDateFormat sdf =   new SimpleDateFormat(tempArr[3]);
+            try {
+                //java.sql.Date dateTime = new java.sql.Date(timeDate.getTime());//sql类型
+                //java.sql.Timestamp
+                rtValue = new java.sql.Timestamp(sdf.parse(value).getTime());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
         return rtValue;
     }
-
     public static void main(String agrs[]){
         //Integer.
         //System.out.println(CapUitls.isInteger("12333.00000"));
