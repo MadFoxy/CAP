@@ -80,13 +80,13 @@ public class Main {
                     new SourceLoadData(starTime,db_properties,cap_properties,bar).start();
                     while (true){
                         Thread.sleep(500);
-                        if(bar._currentTick>=99d){
+                        if(bar._currentTick>=99d||bar._currentTick>=98d){
                             long endTime = System.currentTimeMillis();
                             long diff =  (endTime - starTime);
                             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
                             formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
                             String hms = formatter.format(diff);
-                            bar.tick(1d, "Run Success!("+hms+")");
+                            bar.tick(100d-bar._currentTick, "Run Success!("+hms+")");
                             logger.info("Cap Load Source 运行成功!("+hms+")");
                             break;
                         }

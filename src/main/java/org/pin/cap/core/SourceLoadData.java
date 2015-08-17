@@ -9,6 +9,7 @@ import org.pin.cap.generate.*;
 import org.pin.cap.utils.CapUitls;
 import javax.sql.DataSource;
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -64,6 +65,9 @@ public class SourceLoadData extends Thread {
         String sfPath = capConf.getProperty("cap.load.data.source.file.path");
         String sfExtension =  capConf.getProperty("cap.load.data.source.file.extension");
 
+        File sbPath = new File(capConf.getProperty("cap.load.data.source.file.bak.path"));
+
+
         bar.tick(1d, "正在初始化DataSource.");
         initDBbase();
         bar.tick(3d, "初始化DataSource完成.");
@@ -73,7 +77,7 @@ public class SourceLoadData extends Thread {
         double tickCount = 95d/sourceFiles.size();
         String tableName;
         IGenerate igenerate;
-        double loadTick =  tickCount/5;
+        double loadTick =  tickCount/10;
         String insertSql;
         for (Iterator iterator = sourceFiles.iterator(); iterator.hasNext();) {
             sourceFile  = (File) iterator.next();
@@ -112,10 +116,20 @@ public class SourceLoadData extends Thread {
                         params[i][j] = CapUitls.getValue(capConf.getProperty("cap.load.data.source.column."+j),values[j-1]);
                     }
                 }
-                bar.tick((loadTick*4)/linesCount,null);
+                bar.tick((loadTick*7)/linesCount,null);
 
             }
-            dbBase.insertBatchSourceTable(insertSql,params);
+            dbBase.insertBatchSourceTable(insertSql, params);
+            bar.tick(loadTick, null);
+            try {
+                FileUtils.copyFileToDirectory(sourceFile, sbPath);
+                FileUtils.forceDelete(sourceFile);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
+            bar.tick(loadTick,null);
+
            // bar.tick(tickCount, "");
         }
     }
