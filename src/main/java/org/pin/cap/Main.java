@@ -39,7 +39,7 @@ public class Main {
                 if (args.length > 1 && args[1].equals("-init")) {
 
                     BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
-                    System.out.print("运行init,会清除Schema下所有的对象后，再次创建。您确认要运行吗?(yes/no)   ");
+                    System.out.print("运行init,会清除Schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
                     String str = strin.readLine();
                     if(!"yes".equals(str)){
                         System.exit(-808);
