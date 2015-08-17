@@ -73,7 +73,7 @@ public class SourceLoadData extends Thread {
         double tickCount = 95d/sourceFiles.size();
         String tableName;
         IGenerate igenerate;
-        //String line;
+        double loadTick =  tickCount/5;
         String insertSql;
         for (Iterator iterator = sourceFiles.iterator(); iterator.hasNext();) {
             sourceFile  = (File) iterator.next();
@@ -94,6 +94,9 @@ public class SourceLoadData extends Thread {
             }finally {
 
             }
+
+            bar.tick(loadTick,null);
+
             int linesCount =lines.size();
             int columnCounnt = CapUitls.getSourceTableColumnCount(capConf);
             logger.info("linesCount:"+linesCount);
@@ -109,9 +112,11 @@ public class SourceLoadData extends Thread {
                         params[i][j] = CapUitls.getValue(capConf.getProperty("cap.load.data.source.column."+j),values[j-1]);
                     }
                 }
+                bar.tick((loadTick*4)/linesCount,null);
+
             }
             dbBase.insertBatchSourceTable(insertSql,params);
-            bar.tick(tickCount, "");
+           // bar.tick(tickCount, "");
         }
     }
 }
