@@ -73,6 +73,12 @@ public class SourceLoadData extends Thread {
         bar.tick(3d, "初始化DataSource完成.");
         DBBase dbBase = DBBase.getInstance();
         Collection<File> sourceFiles =  getSourceFiles(sfPath, sfExtension);
+
+        if(sourceFiles.size()==0){
+            System.out.println(" source file not found!");
+            System.exit(-909);
+        }
+
         File sourceFile;
         double tickCount = 95d/sourceFiles.size();
         String tableName;
