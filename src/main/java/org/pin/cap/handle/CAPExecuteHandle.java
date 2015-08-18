@@ -5,8 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.pin.cap.Main;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
-import org.pin.cap.core.SourceLoadData;
-
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.TimeZone;

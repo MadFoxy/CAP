@@ -4,19 +4,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.pin.cap.cmdui.ProgressBar;
-import org.pin.cap.cmdui.Type;
-import org.pin.cap.core.CategoryListInit;
-import org.pin.cap.core.SourceLoadData;
 import org.pin.cap.handle.CAPExecuteHandle;
 import org.pin.cap.handle.CategoryListInitEH;
-import org.pin.cap.handle.ExecuteHandle;
 import org.pin.cap.handle.SourceLoadDataEH;
-
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.Properties;
-import java.util.TimeZone;
+
 
 /**
  * CAP Main
