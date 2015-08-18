@@ -8,6 +8,10 @@ import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
 import org.pin.cap.core.CategoryListInit;
 import org.pin.cap.core.SourceLoadData;
+import org.pin.cap.handle.CAPExecuteHandle;
+import org.pin.cap.handle.CategoryListInitEH;
+import org.pin.cap.handle.ExecuteHandle;
+import org.pin.cap.handle.SourceLoadDataEH;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -36,73 +40,34 @@ public class Main {
             if (args[0].equals("-help")) {
                 printUsage();
             }else {
+                CAPExecuteHandle capEH;
                 if (args.length > 1 && args[1].equals("-init")) {
-
                     BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
                     System.out.print("运行init,会清除Schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
                     String str = strin.readLine();
                     if(!"yes".equals(str)){
                         System.exit(-808);
                     }
-
-                    long starTime = System.currentTimeMillis();
-                    logger.info("开始执行:cap " + args[0] + " " + args[1]);
-                    Properties cap_properties = loadCapConf(args[0]);
-                    Properties db_properties = loadDBConf();
-                    ProgressBar bar = new ProgressBar(50, 100, Type.BOTH);
-                    if (cap_properties != null) {
-                        new CategoryListInit(starTime, db_properties, cap_properties, bar).start();
-                        while (true) {
-                            Thread.sleep(500);
-                            if (bar._currentTick >= 100d) {
-                                long endTime = System.currentTimeMillis();
-                                long diff = (endTime - starTime);
-                                SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
-                                formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
-                                String hms = formatter.format(diff);
-                                logger.info("Cap Init CategoryList 运行成功!(" + hms + ")");
-                                break;
-                            } else if (bar._currentTick >= 99d) {
-                                long endTime = System.currentTimeMillis();
-                                long diff = (endTime - starTime);
-                                SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
-                                formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
-                                String hms = formatter.format(diff);
-                                bar.tick(100 - bar._currentTick, "Run Success!(" + hms + ")");
-                                logger.info("Cap Init CategoryList 运行成功!(" + hms + ")");
-                                break;
-                            }
-                        }
-                        System.exit(0);
-                    } else {
-                        System.out.println(args[0] + ".properties not found!pls check " + args[0] + ".properties weather it exist in this path:conf/");
-                    }
+                    capEH = new CategoryListInitEH();
+                    capEH.exc(args);
                 } else if (args.length > 1 && args[1].equals("-load")) {
+                    capEH = new SourceLoadDataEH();
+                    capEH.exc(args);
+                } else if (args.length > 1 && args[1].equals("-genc")) {
                     long starTime = System.currentTimeMillis();
                     logger.info("开始执行:cap " + args[0] + " " + args[1]);
                     Properties cap_properties = loadCapConf(args[0]);
                     Properties db_properties = loadDBConf();
-                    ProgressBar bar = new ProgressBar(50, 100, Type.BOTH);
                     if (cap_properties != null) {
-                        new SourceLoadData(starTime, db_properties, cap_properties, bar).start();
-                        while (true) {
-                            Thread.sleep(500);
-                            if (bar._currentTick >= 99d || bar._currentTick >= 98d) {
-                                long endTime = System.currentTimeMillis();
-                                long diff = (endTime - starTime);
-                                SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
-                                formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
-                                String hms = formatter.format(diff);
-                                bar.tick(100d - bar._currentTick, "Run Success!(" + hms + ")");
-                                logger.info("Cap Load Source 运行成功!(" + hms + ")");
-                                break;
-                            }
-                        }
+                        System.out.println("正在开发.");
                         System.exit(0);
                     } else {
                         System.out.println(args[0] + ".properties not found!pls check " + args[0] + ".properties weather it exist in this path:conf/");
                     }
-                } else {
+
+                    System.out.println("待开发");
+                }
+                else {
                     printUsage();
                 }
             }
@@ -117,7 +82,7 @@ public class Main {
         run(agrs, null);
         System.exit(-1);
     }
-    private static Properties loadCapConf(String confFile) {
+    public static Properties loadCapConf(String confFile) {
         Properties prop =null;
         InputStream fis = null;
         try {
@@ -137,7 +102,7 @@ public class Main {
         return prop;
     }
 
-    private static Properties loadDBConf() {
+    public static Properties loadDBConf() {
         Properties prop = new Properties();
         InputStream fis = null;
         try {
@@ -162,8 +127,9 @@ public class Main {
         msg.append("[config_file]:" + lSep);
         msg.append("  [config_file].properties          " + lSep);
         msg.append("[action]:" + lSep);
-        msg.append("  -init         init categoryList." + lSep);
-        msg.append("  -load         import sourceData." + lSep);
+        msg.append("  -init         初始化环境与categoryList." + lSep);
+        msg.append("  -genc         重新生成categoryList." + lSep);
+        msg.append("  -load         导入sourceData." + lSep);
         System.out.println(msg.toString());
     }
     private static void noFun() {

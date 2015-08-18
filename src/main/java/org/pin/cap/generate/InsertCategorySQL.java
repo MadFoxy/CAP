@@ -64,10 +64,10 @@ public class InsertCategorySQL implements IGenerate {
     }
 
     public String generateSQL(){
-
         logger.info("正在生成InsertCategory.cvs.");
         try {
             perm(order, 0, order.length - 1);
+
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -26,7 +26,6 @@ public class CreateCategoryIndexSQL implements IGenerate {
     }
 
     public CreateCategoryIndexSQL(Properties cap_properties){
-
         this.init(cap_properties);
     }
 
