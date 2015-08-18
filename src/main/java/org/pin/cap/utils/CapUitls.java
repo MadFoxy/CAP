@@ -11,9 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 
-/**
- * Created by lee5hx on 15-8-8.
- */
+
 public class CapUitls {
 
     private static final Log logger  = LogFactory.getLog(CapUitls.class);
@@ -34,24 +32,29 @@ public class CapUitls {
     public static Object getValue(String sourceColumn,String value) {
         Object rtValue = null;
         String[] tempArr = sourceColumn.split("\\|",-1);
-        if(tempArr[2].equals("integer")){
-            rtValue =  Integer.parseInt(value);
-        }else if(tempArr[2].equals("string")){
-            rtValue = String.valueOf(value);
-        }else if(tempArr[2].equals("float")){
-            rtValue = Float.parseFloat(value);
-        }else if(tempArr[2].equals("double")){
-            rtValue = Double.parseDouble(value);
-        }
-        else if(tempArr[2].equals("datetime")){
-            SimpleDateFormat sdf =   new SimpleDateFormat(tempArr[3]);
-            try {
-                //java.sql.Date dateTime = new java.sql.Date(timeDate.getTime());//sql类型
-                //java.sql.Timestamp
-                rtValue = new java.sql.Timestamp(sdf.parse(value).getTime());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+        switch (tempArr[2]) {
+            case "integer":
+                rtValue = Integer.parseInt(value);
+                break;
+            case "string":
+                rtValue = String.valueOf(value);
+                break;
+            case "float":
+                rtValue = Float.parseFloat(value);
+                break;
+            case "double":
+                rtValue = Double.parseDouble(value);
+                break;
+            case "datetime":
+                SimpleDateFormat sdf = new SimpleDateFormat(tempArr[3]);
+                try {
+                    //java.sql.Date dateTime = new java.sql.Date(timeDate.getTime());//sql类型
+                    //java.sql.Timestamp
+                    rtValue = new java.sql.Timestamp(sdf.parse(value).getTime());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
         return rtValue;
     }
@@ -93,10 +96,5 @@ public class CapUitls {
             IOUtils.closeQuietly(fis);
         }
         return prop;
-    }
-
-    public static void main(String agrs[]){
-        //Integer.
-        //System.out.println(CapUitls.isInteger("12333.00000"));
     }
 }
