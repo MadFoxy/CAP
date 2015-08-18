@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.pin.cap.handle.CAPExecuteHandle;
+import org.pin.cap.handle.CategoryListGencEH;
 import org.pin.cap.handle.CategoryListInitEH;
 import org.pin.cap.handle.SourceLoadDataEH;
 import java.io.*;
@@ -33,7 +34,7 @@ public class Main {
             if (args[0].equals("-help")) {
                 printUsage();
             }else {
-                CAPExecuteHandle capEH;
+                CAPExecuteHandle capEH = null;
                 if (args.length > 1 && args[1].equals("-init")) {
                     BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
                     System.out.print("运行init,会清除Schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
@@ -42,26 +43,17 @@ public class Main {
                         System.exit(-808);
                     }
                     capEH = new CategoryListInitEH();
-                    capEH.exc(args);
                 } else if (args.length > 1 && args[1].equals("-load")) {
                     capEH = new SourceLoadDataEH();
-                    capEH.exc(args);
                 } else if (args.length > 1 && args[1].equals("-genc")) {
-                    long starTime = System.currentTimeMillis();
-                    logger.info("开始执行:cap " + args[0] + " " + args[1]);
-                    Properties cap_properties = loadCapConf(args[0]);
-                    Properties db_properties = loadDBConf();
-                    if (cap_properties != null) {
-                        System.out.println("正在开发.");
-                        System.exit(0);
-                    } else {
-                        System.out.println(args[0] + ".properties not found!pls check " + args[0] + ".properties weather it exist in this path:conf/");
-                    }
-
-                    System.out.println("待开发");
+                    capEH = new CategoryListGencEH();
                 }
                 else {
                     printUsage();
+                }
+
+                if(capEH!=null){
+                    capEH.exc(args);
                 }
             }
         }
