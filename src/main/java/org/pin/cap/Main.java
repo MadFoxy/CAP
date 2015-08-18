@@ -2,15 +2,12 @@ package org.pin.cap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.pin.cap.handle.CAPExecuteHandle;
 import org.pin.cap.handle.CategoryListGencEH;
 import org.pin.cap.handle.CategoryListInitEH;
 import org.pin.cap.handle.SourceLoadDataEH;
 import java.io.*;
-import java.util.Properties;
-
 
 /**
  * CAP Main
@@ -47,11 +44,9 @@ public class Main {
                     capEH = new SourceLoadDataEH();
                 } else if (args.length > 1 && args[1].equals("-genc")) {
                     capEH = new CategoryListGencEH();
-                }
-                else {
+                } else {
                     printUsage();
                 }
-
                 if(capEH!=null){
                     capEH.exc(args);
                 }
@@ -67,44 +62,7 @@ public class Main {
         run(agrs, null);
         System.exit(-1);
     }
-    public static Properties loadCapConf(String confFile) {
-        Properties prop =null;
-        InputStream fis = null;
-        try {
-            File file = new File("../conf/"+confFile+".properties");
-            fis = new FileInputStream(file);
-            prop = new Properties();
-            prop.load(fis);
-            fis.close();
-            logger.info("CAP load conf/"+confFile+".properties complete.");
-        } catch (Exception e) {
-            logger.error("CAP load conf/"+confFile+".properties Error:"+e);
-            //e.printStackTrace();
-        }
-        finally{
-            IOUtils.closeQuietly(fis);
-        }
-        return prop;
-    }
 
-    public static Properties loadDBConf() {
-        Properties prop = new Properties();
-        InputStream fis = null;
-        try {
-            File file = new File("../conf/db_conf.properties");
-            fis = new FileInputStream(file);
-            prop.load(fis);
-            fis.close();
-            logger.info("CAP load conf/db_conf.properties complete.");
-        } catch (Exception e) {
-            logger.error("CAP load conf/db_conf.properties Error:"+e);
-            //e.printStackTrace();
-        }
-        finally{
-            IOUtils.closeQuietly(fis);
-        }
-        return prop;
-    }
     private static void printUsage() {
         String lSep = System.getProperty("line.separator");
         StringBuffer msg = new StringBuffer("");

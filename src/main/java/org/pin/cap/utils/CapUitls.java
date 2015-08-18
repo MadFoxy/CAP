@@ -1,5 +1,12 @@
 package org.pin.cap.utils;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
@@ -8,6 +15,9 @@ import java.util.Properties;
  * Created by lee5hx on 15-8-8.
  */
 public class CapUitls {
+
+    private static final Log logger  = LogFactory.getLog(CapUitls.class);
+
     public static String getSourceTableName(String fileName){
         String[] tempStr = fileName.split("_");
         return tempStr[0];
@@ -45,6 +55,46 @@ public class CapUitls {
         }
         return rtValue;
     }
+
+    public static Properties loadCapConf(String confFile) {
+        Properties prop =null;
+        InputStream fis = null;
+        try {
+            File file = new File("../conf/"+confFile+".properties");
+            fis = new FileInputStream(file);
+            prop = new Properties();
+            prop.load(fis);
+            fis.close();
+            logger.info("CAP load conf/"+confFile+".properties complete.");
+        } catch (Exception e) {
+            logger.error("CAP load conf/"+confFile+".properties Error:"+e);
+            //e.printStackTrace();
+        }
+        finally{
+            IOUtils.closeQuietly(fis);
+        }
+        return prop;
+    }
+
+    public static Properties loadDBConf() {
+        Properties prop = new Properties();
+        InputStream fis = null;
+        try {
+            File file = new File("../conf/db_conf.properties");
+            fis = new FileInputStream(file);
+            prop.load(fis);
+            fis.close();
+            logger.info("CAP load conf/db_conf.properties complete.");
+        } catch (Exception e) {
+            logger.error("CAP load conf/db_conf.properties Error:"+e);
+            //e.printStackTrace();
+        }
+        finally{
+            IOUtils.closeQuietly(fis);
+        }
+        return prop;
+    }
+
     public static void main(String agrs[]){
         //Integer.
         //System.out.println(CapUitls.isInteger("12333.00000"));

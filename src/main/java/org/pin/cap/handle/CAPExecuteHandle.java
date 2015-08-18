@@ -2,9 +2,10 @@ package org.pin.cap.handle;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.pin.cap.Main;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
+import org.pin.cap.utils.CapUitls;
+
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.TimeZone;
@@ -19,8 +20,8 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
 
     public void exc(String args[]) throws Exception{
         logger.info("开始执行:cap " + args[0] + " " + args[1]);
-        Properties cap_properties = Main.loadCapConf(args[0]);
-        Properties db_properties = Main.loadDBConf();
+        Properties cap_properties = CapUitls.loadCapConf(args[0]);
+        Properties db_properties = CapUitls.loadDBConf();
         ProgressBar bar = new ProgressBar(50, 100, Type.BOTH);
         if (cap_properties != null) {
             long starTime = System.currentTimeMillis();
