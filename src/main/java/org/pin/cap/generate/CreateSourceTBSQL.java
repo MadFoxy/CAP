@@ -2,7 +2,6 @@ package org.pin.cap.generate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import java.util.Properties;
 
 /**
