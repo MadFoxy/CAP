@@ -9,8 +9,6 @@ import org.pin.cap.generate.CreateCategoryIndexSQL;
 import org.pin.cap.generate.CreateCategoryTBSQL;
 import org.pin.cap.generate.IGenerate;
 import org.pin.cap.generate.InsertCategorySQL;
-
-import javax.sql.DataSource;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
@@ -24,26 +22,16 @@ public class CategoryListGenc extends Thread {
 
     private static final Log logger  = LogFactory.getLog(CategoryListGenc.class);
 
-    private Properties dbConf;
     private Properties capConf;
     private ProgressBar bar;
     private Long startTime;
 
-    public CategoryListGenc(Long startTime, Properties dbConf, Properties capConf, ProgressBar bar){
-        this.dbConf = dbConf;
+    public CategoryListGenc(Long startTime, Properties capConf, ProgressBar bar){
         this.capConf = capConf;
         this.bar = bar;
         this.startTime = startTime;
     }
 
-    private void initDBbase(){
-        logger.info("正在初始化DataSource.");
-        DataSource ds = DBBase.setupDataSource(dbConf);
-        DBBase db = new DBBase();
-        db.setDataSource(ds);
-        db.init();
-        logger.info("初始化DataSource完成.");
-    }
 
     private void cleanHistory(String schemaName,String tableName){
         logger.info("正在清除历史.");
@@ -68,11 +56,7 @@ public class CategoryListGenc extends Thread {
         cleanHistory(schemaName, tableName);
         bar.tick(2d, "正在清除历史完成!");
 
-        bar.tick(1d, "正在初始化DataSource.");
-        initDBbase();
-        bar.tick(3d, "初始化DataSource完成.");
         DBBase dbBase = DBBase.getInstance();
-
 
         bar.tick(1d, "正在删除CategoryListTable");
         dbBase.dropCategoryListTable("DROP TABLE " + schemaName + "." + tableName + ";");
@@ -84,7 +68,7 @@ public class CategoryListGenc extends Thread {
         bar.tick(2d, "创建CategoryListTable成功!");
 
         bar.tick(1d, "正在生成InsertCategory.cvs.");
-        ig = new InsertCategorySQL(capConf,bar,76d);
+        ig = new InsertCategorySQL(capConf,bar,80d);
         ig.generateSQL();
         bar.tick(2d, "生成InsertCategory.cvs完成.");
 
@@ -109,14 +93,7 @@ public class CategoryListGenc extends Thread {
         formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
         String hms = formatter.format(diff);
 
-
-
-
         bar.tick(2d, "Run Success!("+hms+")");
-//        DBBase dbBase = DBBase.getInstance();
 
-
-
-       // bar.tick(95d, null);
     }
 }

@@ -2,7 +2,6 @@ package org.pin.cap;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.pin.cap.handle.*;
-
 import java.io.*;
 
 /**
@@ -66,7 +65,7 @@ public class Main {
         msg.append("[config_file]:" + lSep);
         msg.append("  [config_file].properties          " + lSep);
         msg.append("[action]:" + lSep);
-        msg.append("  -init         初始化环境与categoryList." + lSep);
+        msg.append("  -init         初始化环境与生成categoryList." + lSep);
         msg.append("  -genc         重新生成categoryList." + lSep);
         msg.append("  -load         导入sourceData." + lSep);
         System.out.println(msg.toString());

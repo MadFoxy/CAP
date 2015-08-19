@@ -4,7 +4,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
+import org.pin.cap.db.DBBase;
 import org.pin.cap.utils.CapUitls;
+
+import javax.sql.DataSource;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.TimeZone;
@@ -23,7 +26,8 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
         ProgressBar bar = new ProgressBar(50, 100, Type.BOTH);
         if (cap_properties != null) {
             long starTime = System.currentTimeMillis();
-            this.execute(starTime, cap_properties, db_properties, bar);
+            this.initDBbase(db_properties);
+            this.execute(starTime, cap_properties, bar);
             while (true) {
                     Thread.sleep(500);
                     if (bar._currentTick >= 100d) {
@@ -52,5 +56,15 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
         }
 
     }
+
+    private void initDBbase(Properties dbConf){
+        logger.info("正在初始化DataSource.");
+        DataSource ds = DBBase.setupDataSource(dbConf);
+        DBBase db = new DBBase();
+        db.setDataSource(ds);
+        db.init();
+        logger.info("初始化DataSource完成.");
+    }
+
 
 }

@@ -7,7 +7,6 @@ import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.*;
 import org.pin.cap.utils.CapUitls;
-import javax.sql.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -20,25 +19,15 @@ public class SourceLoadData extends Thread {
 
     private static final Log logger  = LogFactory.getLog(SourceLoadData.class);
 
-    private Properties dbConf;
+
     private Properties capConf;
     private ProgressBar bar;
-    private Long startTime;
 
-    public SourceLoadData(Long startTime, Properties dbConf, Properties capConf, ProgressBar bar){
-        this.dbConf = dbConf;
+    public SourceLoadData(Properties capConf, ProgressBar bar){
+
         this.capConf = capConf;
         this.bar = bar;
-        this.startTime = startTime;
-    }
 
-    private void initDBbase(){
-        logger.info("正在初始化DataSource.");
-        DataSource ds = DBBase.setupDataSource(dbConf);
-        DBBase db = new DBBase();
-        db.setDataSource(ds);
-        db.init();
-        logger.info("初始化DataSource完成.");
     }
 
     private Collection<File> getSourceFiles(String sourceFile,String extension){
@@ -46,41 +35,21 @@ public class SourceLoadData extends Thread {
     }
 
 
-    private void cleanHistory(String schemaName,String tableName){
-        logger.info("正在清除历史.");
-        File file  = new File("../tmp/"+schemaName+"."+tableName+".cvs");
-        if(file.exists()){
-            try {
-                logger.info("force delete:"+file.getPath());
-                FileUtils.forceDelete(file);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        logger.info("正在清除历史完成!");
-    }
-
     public void run() {
         String schemaName = capConf.getProperty("cap.targetName");
         String sfPath = capConf.getProperty("cap.load.data.source.file.path");
         String sfExtension =  capConf.getProperty("cap.load.data.source.file.extension");
-
         File sbPath = new File(capConf.getProperty("cap.load.data.source.file.bak.path"));
-
-
-        bar.tick(1d, "正在初始化DataSource.");
-        initDBbase();
-        bar.tick(3d, "初始化DataSource完成.");
         DBBase dbBase = DBBase.getInstance();
         Collection<File> sourceFiles =  getSourceFiles(sfPath, sfExtension);
 
         if(sourceFiles.size()==0){
-            System.out.println(" source file not found!");
+            System.out.println("sourceData file not found!");
             System.exit(-909);
         }
 
         File sourceFile;
-        double tickCount = 95d/sourceFiles.size();
+        double tickCount = 99d/sourceFiles.size();
         String tableName;
         IGenerate igenerate;
         double loadTick =  tickCount/10;

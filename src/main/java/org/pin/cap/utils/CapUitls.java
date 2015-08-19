@@ -48,8 +48,6 @@ public class CapUitls {
             case "datetime":
                 SimpleDateFormat sdf = new SimpleDateFormat(tempArr[3]);
                 try {
-                    //java.sql.Date dateTime = new java.sql.Date(timeDate.getTime());//sql类型
-                    //java.sql.Timestamp
                     rtValue = new java.sql.Timestamp(sdf.parse(value).getTime());
                 } catch (ParseException e) {
                     e.printStackTrace();

@@ -2,7 +2,6 @@ package org.pin.cap.handle;
 
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.core.CategoryListInit;
-
 import java.util.Properties;
 
 /**
@@ -11,7 +10,7 @@ import java.util.Properties;
 public class CategoryListInitEH extends CAPExecuteHandle {
 
     @Override
-    public void execute(long starTime,Properties cap, Properties db, ProgressBar bar) throws Exception {
-        new CategoryListInit(starTime, db, cap, bar).start();
+    public void execute(long starTime,Properties cap, ProgressBar bar) throws Exception {
+        new CategoryListInit(starTime, cap, bar).start();
     }
 }
