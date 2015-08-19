@@ -89,7 +89,7 @@ public class CategoryListInit extends Thread {
 
 
         bar.tick(1d, "正在生成InsertCategory.cvs.");
-        ig = new InsertCategorySQL(capConf,bar);
+        ig = new InsertCategorySQL(capConf,bar,73d);
         ig.generateSQL();
         bar.tick(2d, "生成InsertCategory.cvs完成.");
 

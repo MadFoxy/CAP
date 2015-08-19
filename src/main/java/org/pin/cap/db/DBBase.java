@@ -89,6 +89,20 @@ public class DBBase {
         }
         logger.info("删除schema["+schemaName+"]完成!");
     }
+    public void dropCategoryListTable(String sql){
+        logger.info("正在执行dropCategoryListTable.");
+        //logger.info("rt["+i+"]:"+rt[i]);
+        try {
+
+            run.update(sql);
+        } catch (SQLException e) {
+            //e.printStackTrace();
+            System.exit(610);
+            logger.error(e.getMessage());
+
+        }
+        logger.info("执行dropCategoryListTable完成!");
+    }
     public void createCategoryListTable(String sql){
         logger.info("正在创建CategoryListTable.");
         //logger.info("rt["+i+"]:"+rt[i]);

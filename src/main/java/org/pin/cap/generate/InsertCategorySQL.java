@@ -26,6 +26,7 @@ public class InsertCategorySQL implements IGenerate {
     private double sumcount = 1;
     private double _lastCount = 0;
     private double _currentCount = 0;
+    private double sCount=0;
 
     private ProgressBar bar;
 
@@ -58,8 +59,9 @@ public class InsertCategorySQL implements IGenerate {
         logger.info("cvs.path:"+file.getPath());
 
     }
-    public InsertCategorySQL(Properties cap_properties,ProgressBar bar){
+    public InsertCategorySQL(Properties cap_properties,ProgressBar bar,double sCount){
         this.bar = bar;
+        this.sCount = sCount;
         this.init(cap_properties);
     }
 
@@ -136,7 +138,7 @@ public class InsertCategorySQL implements IGenerate {
 
             count = count+1;
             _lastCount = _currentCount;
-            _currentCount = count/sumcount*73;
+            _currentCount = count/sumcount*sCount;
 
             bar.tick(_currentCount - _lastCount,"");
             //System.out.println();

@@ -5,16 +5,14 @@ import org.apache.commons.logging.LogFactory;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
 import org.pin.cap.utils.CapUitls;
-
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.TimeZone;
 
 /**
- * Created by lee5hx on 15-8-17.
+ *  CapExecuteHandle lee5hx
  */
 public abstract class CAPExecuteHandle implements ExecuteHandle {
-    //public void
 
     private static final Log logger  = LogFactory.getLog(CAPExecuteHandle.class);
 
