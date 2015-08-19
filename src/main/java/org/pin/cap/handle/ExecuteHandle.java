@@ -9,4 +9,6 @@ import java.util.Properties;
  */
 public interface ExecuteHandle {
     void execute(long starTime,Properties cap,Properties db,ProgressBar bar) throws Exception;
+
+    void exc(String args[]) throws Exception;
 }

@@ -1,10 +1,8 @@
 package org.pin.cap;
 
 import org.apache.log4j.xml.DOMConfigurator;
-import org.pin.cap.handle.CAPExecuteHandle;
-import org.pin.cap.handle.CategoryListGencEH;
-import org.pin.cap.handle.CategoryListInitEH;
-import org.pin.cap.handle.SourceLoadDataEH;
+import org.pin.cap.handle.*;
+
 import java.io.*;
 
 /**
@@ -29,7 +27,7 @@ public class Main {
             if (args[0].equals("-help")) {
                 printUsage();
             }else {
-                CAPExecuteHandle capEH = null;
+                ExecuteHandle eh = null;
                 if (args.length > 1 && args[1].equals("-init")) {
                     BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
                     System.out.print("运行init,会清除schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
@@ -37,16 +35,16 @@ public class Main {
                     if(!"yes".equals(str)){
                         System.exit(-808);
                     }
-                    capEH = new CategoryListInitEH();
+                    eh = new CategoryListInitEH();
                 } else if (args.length > 1 && args[1].equals("-load")) {
-                    capEH = new SourceLoadDataEH();
+                    eh = new SourceLoadDataEH();
                 } else if (args.length > 1 && args[1].equals("-genc")) {
-                    capEH = new CategoryListGencEH();
+                    eh = new CategoryListGencEH();
                 } else {
                     printUsage();
                 }
-                if(capEH!=null){
-                    capEH.exc(args);
+                if(eh!=null){
+                    eh.exc(args);
                 }
             }
         }
