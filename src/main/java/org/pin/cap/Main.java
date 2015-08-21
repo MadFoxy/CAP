@@ -10,41 +10,45 @@ import java.io.*;
  * */
 public class Main {
 
-    //private static final Log logger  = LogFactory.getLog(Main.class);
-
     public void start(String[] args, ClassLoader coreLoader) {
         try {
-            processArgs(args);
+            processArgs(args,coreLoader);
         } catch (Throwable exc) {
             exc.printStackTrace();
         }
     }
-    private void processArgs(String[] args)throws Exception{
+    private void processArgs(String[] args,ClassLoader coreLoader)throws Exception{
         if(args.length == 0){
             noFun();
         }else{
-            if (args[0].equals("-help")) {
-                printUsage();
-            }else {
-                ExecuteHandle eh = null;
-                if (args.length > 1 && args[1].equals("-init")) {
-                    BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
-                    System.out.print("运行init,会清除schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
-                    String str = strin.readLine();
-                    if(!"yes".equals(str)){
-                        System.exit(-808);
-                    }
-                    eh = new CategoryListInitEH();
-                } else if (args.length > 1 && args[1].equals("-load")) {
-                    eh = new SourceLoadDataEH();
-                } else if (args.length > 1 && args[1].equals("-genc")) {
-                    eh = new CategoryListGencEH();
-                } else {
+            switch (args[0]) {
+                case "-help":
                     printUsage();
-                }
-                if(eh!=null){
-                    eh.exc(args);
-                }
+                    break;
+                case "-version":
+                    printVersion();
+                    break;
+                default:
+                    ExecuteHandle eh = null;
+                    if (args.length > 1 && args[1].equals("-init")) {
+                        BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
+                        System.out.print("运行init,会清除schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
+                        String str = strin.readLine();
+                        if (!"yes".equals(str)) {
+                            System.exit(-808);
+                        }
+                        eh = new CategoryListInitEH();
+                    } else if (args.length > 1 && args[1].equals("-load")) {
+                        eh = new SourceLoadDataEH();
+                    } else if (args.length > 1 && args[1].equals("-genc")) {
+                        eh = new CategoryListGencEH();
+                    } else if (args.length > 1 && args[1].equals("-cset")) {
+                        eh = new ComputeDataSetEH();
+                    } else {
+                        printUsage();
+                    }
+                    if (eh != null) eh.exc(args);
+                    break;
             }
         }
     }
@@ -58,22 +62,26 @@ public class Main {
         System.exit(-1);
     }
 
-    private static void printUsage() {
+    private void printUsage() {
         String lSep = System.getProperty("line.separator");
-        StringBuffer msg = new StringBuffer();
-        msg.append("cap [config_file] [action]  " + lSep);
-        msg.append("[config_file]:" + lSep);
-        msg.append("  [config_file].properties          " + lSep);
-        msg.append("[action]:" + lSep);
-        msg.append("  -init         初始化环境与生成categoryList." + lSep);
-        msg.append("  -genc         重新生成categoryList." + lSep);
-        msg.append("  -load         导入sourceData." + lSep);
+        StringBuffer msg;
+        msg = new StringBuffer();
+        msg.append("cap [config_file] [action]  ").append(lSep);
+        msg.append("[config_file]:").append(lSep);
+        msg.append("  [config_file].properties          ").append(lSep);
+        msg.append("[action]:").append(lSep);
+        msg.append("  -init        初始化环境与生成categoryList.").append(lSep);
+        msg.append("  -genc        重新生成categoryList.").append(lSep);
+        msg.append("  -load        载入sourceData.").append(lSep);
+        msg.append("  -cset        计算DataSet.").append(lSep);
         System.out.println(msg.toString());
     }
+    private void printVersion() {
+        System.out.println("1.0-SNAPSHOT");
+    }
+
     private static void noFun() {
-        StringBuffer msg = new StringBuffer();
-        msg.append("Command not found,Enter the command:cap -help");
-        System.out.println(msg.toString());
+        System.out.println("Command not found,Enter the command:cap -help");
     }
 
 }
