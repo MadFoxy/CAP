@@ -19,7 +19,7 @@ public class Main {
     }
     private void processArgs(String[] args,ClassLoader coreLoader)throws Exception{
         if(args.length == 0){
-            noFun();
+            noFun(coreLoader);
         }else{
             switch (args[0]) {
                 case "-help":
@@ -80,8 +80,8 @@ public class Main {
         System.out.println("1.0-SNAPSHOT");
     }
 
-    private static void noFun() {
-        System.out.println("Command not found,Enter the command:cap -help");
+    private static void noFun(ClassLoader coreLoader) {
+        if(coreLoader==null) System.out.println("Command not found,Enter the command:cap -help");
     }
 
 }
