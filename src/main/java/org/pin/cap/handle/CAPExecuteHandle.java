@@ -48,7 +48,6 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
                         logger.info("Cap "+args[1]+" 运行成功!(" + hms + ")");
                         break;
                     }
-               //
             }
             System.exit(0);
         } else {
