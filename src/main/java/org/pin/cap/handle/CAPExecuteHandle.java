@@ -28,31 +28,29 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
             this.initDBbase(db_properties);
             this.execute(starTime, cap_properties, bar);
             while (true) {
-                    Thread.sleep(500);
-                    if (bar._currentTick >= 100d) {
-                        long endTime = System.currentTimeMillis();
-                        long diff = (endTime - starTime);
-                        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
-                        formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
-                        String hms = formatter.format(diff);
-                        logger.info("Cap "+args[1]+" 运行成功!(" + hms + ")");
-                        break;
-                    } else if (bar._currentTick >= 99d||bar._currentTick >= 98d) {
-                        long endTime = System.currentTimeMillis();
-                        long diff = (endTime - starTime);
-                        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
-                        formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
-                        String hms = formatter.format(diff);
-                        bar.tick(100d - bar._currentTick, "Run Success!(" + hms + ")");
-                        logger.info("Cap "+args[1]+" 运行成功!(" + hms + ")");
-                        break;
-                    }
+                Thread.sleep(500);
+                if (bar._currentTick >= 100d) {
+                    logger.info("Cap "+args[1]+" 运行成功!(" + getHMS(starTime) + ")");
+                    break;
+                } else if (bar._currentTick >= 99d||bar._currentTick >= 98d) {
+                    String hms = getHMS(starTime);
+                    bar.tick(100d - bar._currentTick, "Run Success!(" + hms + ")");
+                    logger.info("Cap "+args[1]+" 运行成功!(" + hms + ")");
+                    break;
+                }
             }
             System.exit(0);
         } else {
             System.out.println(args[0] + ".properties not found!pls check " + args[0] + ".properties weather it exist in this path:conf/");
         }
 
+    }
+    private String getHMS(long starTime){
+        long endTime = System.currentTimeMillis();
+        long diff = (endTime - starTime);
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");//初始化Formatter的转换格式。
+        formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
+        return formatter.format(diff);
     }
 
     private void initDBbase(Properties dbConf){
