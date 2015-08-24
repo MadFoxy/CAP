@@ -52,7 +52,6 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
         formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
         return formatter.format(diff);
     }
-
     private void initDBbase(Properties dbConf){
         logger.info("正在初始化DataSource.");
         DataSource ds = DBBase.setupDataSource(dbConf);
@@ -61,6 +60,4 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
         db.init();
         logger.info("初始化DataSource完成.");
     }
-
-
 }
