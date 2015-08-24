@@ -6,7 +6,6 @@ import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.utils.CapUitls;
-
 import javax.sql.DataSource;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
