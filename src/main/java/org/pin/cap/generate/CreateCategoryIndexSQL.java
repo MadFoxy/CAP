@@ -2,8 +2,7 @@ package org.pin.cap.generate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import java.util.Properties;
+import org.pin.CapDocument;
 
 /**
  * Created by lee5hx on 15-6-10.
@@ -19,13 +18,13 @@ public class CreateCategoryIndexSQL implements IGenerate {
 
 
 
-    private void init(Properties cap_properties){
-        schemaName = cap_properties.getProperty("cap.targetName");
-        tableName = cap_properties.getProperty("cap.category.table.name");
+    private void init(CapDocument.Cap cap){
+        schemaName = cap.getTargetName();
+        tableName = cap.getCategoryList().getTable().getName();
     }
 
-    public CreateCategoryIndexSQL(Properties cap_properties){
-        this.init(cap_properties);
+    public CreateCategoryIndexSQL(CapDocument.Cap cap){
+        this.init(cap);
     }
 
 

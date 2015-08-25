@@ -3,6 +3,7 @@ package org.pin.cap.core;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.CreateCategoryIndexSQL;
@@ -11,7 +12,6 @@ import org.pin.cap.generate.IGenerate;
 import org.pin.cap.generate.InsertCategorySQL;
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Properties;
 import java.util.TimeZone;
 
 
@@ -23,12 +23,12 @@ public class CategoryListInit extends Thread {
 
     private static final Log logger  = LogFactory.getLog(CategoryListInit.class);
 
-    private Properties capConf;
+    private CapDocument.Cap cap;
     private ProgressBar bar;
     private Long startTime;
 
-    public CategoryListInit(Long startTime,Properties capConf,ProgressBar bar){
-        this.capConf = capConf;
+    public CategoryListInit(Long startTime,CapDocument.Cap cap,ProgressBar bar){
+        this.cap = cap;
         this.bar = bar;
         this.startTime = startTime;
     }
@@ -48,8 +48,8 @@ public class CategoryListInit extends Thread {
     }
 
     public void run() {
-        String schemaName = capConf.getProperty("cap.targetName");
-        String tableName = capConf.getProperty("cap.category.table.name");
+        String schemaName = cap.getTargetName();
+        String tableName = cap.getCategoryList().getTable().getName();
 
 
 
@@ -71,13 +71,13 @@ public class CategoryListInit extends Thread {
         bar.tick(2d, "创建schema[" + schemaName + "]完成!");
 
         bar.tick(1d, "正在创建CategoryListTable");
-        IGenerate ig = new CreateCategoryTBSQL(capConf);
+        IGenerate ig = new CreateCategoryTBSQL(cap);
         dbBase.createCategoryListTable(ig.generateSQL());
         bar.tick(2d, "创建CategoryListTable成功!");
 
 
         bar.tick(1d, "正在生成InsertCategory.cvs.");
-        ig = new InsertCategorySQL(capConf,bar,77d);
+        ig = new InsertCategorySQL(cap,bar,77d);
         ig.generateSQL();
         bar.tick(2d, "生成InsertCategory.cvs完成.");
 
@@ -88,7 +88,7 @@ public class CategoryListInit extends Thread {
 
 
         bar.tick(1d, "正在创建CategoryListTable-Index.");
-        ig = new CreateCategoryIndexSQL(capConf);
+        ig = new CreateCategoryIndexSQL(cap);
         dbBase.createCategoryListTableIndex(ig.generateSQL());
         bar.tick(2d, "创建CategoryListTable-Index完成.");
 

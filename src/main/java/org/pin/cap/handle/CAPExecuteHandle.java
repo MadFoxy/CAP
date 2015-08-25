@@ -2,6 +2,7 @@ package org.pin.cap.handle;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.cmdui.Type;
 import org.pin.cap.db.DBBase;
@@ -20,15 +21,15 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
 
     public void exc(String args[]) throws Exception{
         logger.info("开始执行:cap " + args[0] + " " + args[1]);
-        Properties cap_properties = CapUitls.loadCapConf(args[0]);
+        CapDocument.Cap cap = CapUitls.loadCapConf(args[0]);
         Properties db_properties = CapUitls.loadDBConf();
         ProgressBar bar = new ProgressBar(50, 100, Type.BOTH);
-        if (cap_properties != null) {
+        if (cap != null) {
             long starTime = System.currentTimeMillis();
             this.initDBbase(db_properties);
-            this.execute(starTime, cap_properties, bar);
+            this.execute(starTime, cap, bar);
             while (true) {
-                Thread.sleep(500);
+                Thread.sleep(Long.parseLong(cap.getEnvironment().getThreadSleep()));
                 if (bar._currentTick >= 100d) {
                     logger.info("Cap "+args[1]+" 运行成功!(" + getHMS(starTime) + ")");
                     break;
@@ -41,7 +42,7 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
             }
             System.exit(0);
         } else {
-            System.out.println(args[0] + ".properties not found!pls check " + args[0] + ".properties weather it exist in this path:conf/");
+            System.out.println(args[0] + ".xml not found!pls check " + args[0] + ".xml weather it exist in this path:conf/");
         }
 
     }

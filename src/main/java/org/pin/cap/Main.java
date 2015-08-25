@@ -68,7 +68,7 @@ public class Main {
         msg = new StringBuffer();
         msg.append("cap [config_file] [action]  ").append(lSep);
         msg.append("[config_file]:").append(lSep);
-        msg.append("  [config_file].properties          ").append(lSep);
+        msg.append("  [config_file].xml          ").append(lSep);
         msg.append("[action]:").append(lSep);
         msg.append("  -init        初始化环境与生成categoryList.").append(lSep);
         msg.append("  -genc        重新生成categoryList.").append(lSep);

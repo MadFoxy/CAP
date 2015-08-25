@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.pin.org"
+           xmlns="http://www.pin.org"
+           elementFormDefault="qualified">
+    <xs:complexType name="categoryListColumnType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="name" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="length" type="xs:integer" use="required" ></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="sourceDataColumnType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="type" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="to-type" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="dateformat" type="xs:string" ></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="rangeType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:string" use="required" ></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="dataSetColumnType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="name" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="type" type="xs:string" use="required" ></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <xs:element name="cap">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="environment" maxOccurs="1" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="thread-sleep" maxOccurs="1" type="xs:string"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="version" maxOccurs="1" type="xs:string" ></xs:element>
+                <xs:element name="targetName" maxOccurs="1" type="xs:string" ></xs:element>
+
+                <xs:element name="categoryList" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="order" maxOccurs="1" type="xs:string"></xs:element>
+                            <xs:element name="table" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" maxOccurs="1" type="xs:string"></xs:element>
+                                        <xs:element name="columns" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="column" maxOccurs="unbounded" type="categoryListColumnType"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+
+                <xs:element name="sourceData" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="import-file" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="path" maxOccurs="1" type="xs:string" ></xs:element>
+                                        <xs:element name="bak-path" maxOccurs="1" type="xs:string"></xs:element>
+                                        <xs:element name="extension" maxOccurs="1" type="xs:string"></xs:element>
+                                        <xs:element name="del" maxOccurs="1" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="table" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="extension" maxOccurs="1" type="xs:string"></xs:element>
+                                        <xs:element name="columns" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="column" maxOccurs="unbounded" type="sourceDataColumnType"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="dataSet" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="source-name" maxOccurs="1" type="xs:string"></xs:element>
+
+                            <xs:element name="datetime" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="to" maxOccurs="1" type="xs:string" ></xs:element>
+                                        <xs:element name="from" maxOccurs="1" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="compute-js-path" maxOccurs="1" type="xs:string"></xs:element>
+
+
+                            <xs:element name="trend" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ranges" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="range" maxOccurs="unbounded" type="rangeType"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                        <xs:element name="table" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="extension" maxOccurs="1" type="xs:string"></xs:element>
+                                                    <xs:element name="columns" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="column" maxOccurs="unbounded" type="dataSetColumnType"></xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+
+
+
+
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+
+
+
+
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

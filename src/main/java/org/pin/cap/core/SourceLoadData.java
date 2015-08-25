@@ -3,6 +3,8 @@ package org.pin.cap.core;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
+import org.pin.SourceDataColumnType;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.*;
@@ -20,12 +22,12 @@ public class SourceLoadData extends Thread {
     private static final Log logger  = LogFactory.getLog(SourceLoadData.class);
 
 
-    private Properties capConf;
+    private CapDocument.Cap cap;
     private ProgressBar bar;
 
-    public SourceLoadData(Properties capConf, ProgressBar bar){
+    public SourceLoadData(CapDocument.Cap cap, ProgressBar bar){
 
-        this.capConf = capConf;
+        this.cap = cap;
         this.bar = bar;
 
     }
@@ -36,10 +38,13 @@ public class SourceLoadData extends Thread {
 
 
     public void run() {
-        String schemaName = capConf.getProperty("cap.targetName");
-        String sfPath = capConf.getProperty("cap.load.data.source.file.path");
-        String sfExtension =  capConf.getProperty("cap.load.data.source.file.extension");
-        File sbPath = new File(capConf.getProperty("cap.load.data.source.file.bak.path"));
+        String schemaName = cap.getTargetName();
+        //capConf.getProperty("cap.load.data.source.file.path");
+        String sfPath = cap.getSourceData().getImportFile().getPath();
+        //capConf.getProperty("cap.load.data.source.file.extension");
+        String sfExtension =  cap.getSourceData().getImportFile().getExtension();
+        //capConf.getProperty("cap.load.data.source.file.bak.path")
+        File sbPath = new File(cap.getSourceData().getImportFile().getBakPath());
         DBBase dbBase = DBBase.getInstance();
         Collection<File> sourceFiles =  getSourceFiles(sfPath, sfExtension);
 
@@ -56,13 +61,15 @@ public class SourceLoadData extends Thread {
         String insertSql;
         for (Iterator iterator = sourceFiles.iterator(); iterator.hasNext();) {
             sourceFile  = (File) iterator.next();
-            tableName = CapUitls.getSourceTableName(sourceFile.getName())+"_sdata";
+            tableName = CapUitls.getSourceTableName(sourceFile.getName())+"_"+cap.getSourceData().getTable().getExtension();
+
+
             if(!dbBase.existsTable(tableName,schemaName)){
-                igenerate = new CreateSourceTBSQL(capConf,tableName);
+                igenerate = new CreateSourceTBSQL(cap,tableName);
                 //System.out.println(igenerate.generateSQL());
                 dbBase.createSourceTable(igenerate.generateSQL());
             }
-            igenerate = new InsertBatchSourceSQL(capConf,tableName);
+            igenerate = new InsertBatchSourceSQL(cap,tableName);
             insertSql = igenerate.generateSQL();
             logger.info(insertSql);
             List<String> lines = null;
@@ -77,18 +84,21 @@ public class SourceLoadData extends Thread {
             bar.tick(loadTick,null);
 
             int linesCount =lines.size();
-            int columnCounnt = CapUitls.getSourceTableColumnCount(capConf);
+            SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
+            int columnCounnt = sdcts.length;
             logger.info("linesCount:"+linesCount);
             logger.info("columnCounnt:"+columnCounnt);
             Object params[][] = new Object[linesCount][columnCounnt+1];
             String[] values;
             for(int i=0;i<linesCount;i++){
-                values = lines.get(i).split(capConf.getProperty("cap.load.data.source.file.del"), -1);
+                //capConf.getProperty("cap.load.data.source.file.del")
+                values = lines.get(i).split(cap.getSourceData().getImportFile().getDel(), -1);
                 for(int j=0;j<columnCounnt+1;j++){
                     if(j==0){
                         params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
                     }else {
-                        params[i][j] = CapUitls.getValue(capConf.getProperty("cap.load.data.source.column."+j),values[j-1]);
+                        //capConf.getProperty("cap.load.data.source.column."+j)
+                        params[i][j] = CapUitls.getValue(sdcts[j-1],values[j-1]);
                     }
                 }
                 bar.tick((loadTick*7)/linesCount,null);

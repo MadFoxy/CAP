@@ -66,8 +66,14 @@ public class DBBase {
         boolean rt = false;
         try {
             DatabaseMetaData metaData = run.getDataSource().getConnection().getMetaData();
-            ResultSet rs = metaData.getTables(run.getDataSource().getConnection().getCatalog(), schema, table, new String[]{"TABLE"});
+            //table.toLowerCase()
+            //System.out.println(table);
+
+            // System.out.println(schema);
+            //System.out.println(table);
+            ResultSet rs = metaData.getTables(run.getDataSource().getConnection().getCatalog(), schema.toLowerCase(), table.toLowerCase(), new String[]{"TABLE"});
             while(rs.next()) {
+               // System.out.println(rs.getString(3));
                 rt = true;
             }
         }catch (Exception e){
@@ -138,9 +144,10 @@ public class DBBase {
             run.batch(sql,parms);
         } catch (SQLException e) {
             e.printStackTrace();
-
-            System.exit(220);
+            e.getNextException().getNextException().printStackTrace();
+            //System.out.println();
             logger.error(e.getMessage());
+            System.exit(220);
         }
         logger.info("执行 insert SourceTable完成!");
     }

@@ -3,6 +3,9 @@ package org.pin.cap.utils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
+import org.pin.CategoryListColumnType;
+import org.pin.SourceDataColumnType;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,19 +23,20 @@ public class CapUitls {
         String[] tempStr = fileName.split("_");
         return tempStr[0];
     }
-    public static int getSourceTableColumnCount(Properties cap_properties){
-        int i = 1;
-        String tempStr = cap_properties.getProperty("cap.load.data.source.column." + i);
-        while (tempStr!=null){
-            i++;
-            tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
-        }
-        return i-1;
+    public static SourceDataColumnType[]  getSourceTableColumns(CapDocument.Cap cap){
+        return cap.getSourceData().getTable().getColumns().getColumnArray();
     }
-    public static Object getValue(String sourceColumn,String value) {
+
+    public static CategoryListColumnType[] getCategoryListColumns(CapDocument.Cap cap){
+        return cap.getCategoryList().getTable().getColumns().getColumnArray();
+    }
+
+
+
+    public static Object getValue(SourceDataColumnType sdct,String value) {
         Object rtValue = null;
-        String[] tempArr = sourceColumn.split("\\|",-1);
-        switch (tempArr[2]) {
+       // String[] tempArr = sourceColumn.split("\\|",-1);
+        switch (sdct.getToType()) {
             case "integer":
                 rtValue = Integer.parseInt(value);
                 break;
@@ -46,7 +50,7 @@ public class CapUitls {
                 rtValue = Double.parseDouble(value);
                 break;
             case "datetime":
-                SimpleDateFormat sdf = new SimpleDateFormat(tempArr[3]);
+                SimpleDateFormat sdf = new SimpleDateFormat(sdct.getDateformat());
                 try {
                     rtValue = new java.sql.Timestamp(sdf.parse(value).getTime());
                 } catch (ParseException e) {
@@ -57,24 +61,20 @@ public class CapUitls {
         return rtValue;
     }
 
-    public static Properties loadCapConf(String confFile) {
-        Properties prop =null;
+    public static CapDocument.Cap loadCapConf(String confFile) {
+        CapDocument.Cap cap =null;
         InputStream fis = null;
         try {
-            File file = new File("../conf/"+confFile+".properties");
-            fis = new FileInputStream(file);
-            prop = new Properties();
-            prop.load(fis);
-            fis.close();
-            logger.info("CAP load conf/"+confFile+".properties complete.");
+            File file = new File("../conf/"+confFile+".xml");
+            cap = CapDocument.Factory.parse(file).getCap();
+            logger.info("CAP load conf/"+confFile+".xml to tasks complete.");
         } catch (Exception e) {
-            logger.error("CAP load conf/"+confFile+".properties Error:"+e);
-            //e.printStackTrace();
+            logger.error("CAP load conf/"+confFile+".xml to tasks Error:"+e);
         }
         finally{
             IOUtils.closeQuietly(fis);
         }
-        return prop;
+        return cap;
     }
 
     public static Properties loadDBConf() {

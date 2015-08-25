@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cap xmlns="http://www.pin.org"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.pin.org cap.xsd">
+    <environment>
+        <thread-sleep>500</thread-sleep>
+    </environment>
+    <version>1.1.0</version>
+    <targetName>FITX1</targetName>
+    <categoryList>
+        <order>1234567</order>
+        <table>
+            <name>category_list</name>
+            <columns>
+                <column name="A1" length="2">A1,B1,C1,I1</column>
+                <column name="A2" length="2">E2,F2</column>
+                <column name="A3" length="2">T3,FI,FT</column>
+                <column name="A4" length="3">T34,FI4,FT4</column>
+                <column name="A5" length="3">T35,FI5,FT5,DFU</column>
+                <column name="A6" length="3">Z1,J1</column>
+                <column name="A7" length="3">M6,O3</column>
+            </columns>
+        </table>
+    </categoryList>
+    <sourceData>
+        <import-file>
+            <path>/home/lee5hx/java_works/lee5hx/CAP/source/</path>
+            <bak-path>/home/lee5hx/java_works/lee5hx/CAP/source/bak/</bak-path>
+            <extension>csv</extension>
+            <del>,</del>
+        </import-file>
+        <table>
+            <extension>sdata</extension>
+            <columns>
+                <column type="varchar(12)"   to-type="string">Target_Name</column>
+                <column type="timestamp(0)"  to-type="datetime" dateformat="yyyy-MM-dd-HH-mm">Time</column>
+                <column type="integer"   to-type="integer">Bar_Number</column>
+                <column type="decimal(12,4)"   to-type="float">Open</column>
+                <column type="decimal(12,4)"   to-type="float">High</column>
+                <column type="decimal(12,4)"   to-type="float">Low</column>
+                <column type="decimal(12,4)"   to-type="float">Close</column>
+                <column type="varchar(12)"   to-type="string">Volumn</column>
+                <column type="varchar(12)"   to-type="string">CB</column>
+                <column type="varchar(12)"   to-type="string">trig</column>
+                <column type="varchar(12)"   to-type="string">pos</column>
+                <column type="decimal(12,2)"   to-type="float">K_Power</column>
+                <column type="integer"   to-type="integer">K_Ratio</column>
+                <column type="integer"   to-type="integer">K_Pattern</column>
+                <column type="varchar(12)"   to-type="string">Comb_Order</column>
+                <column type="varchar(12)"   to-type="string">A1</column>
+                <column type="varchar(12)"   to-type="string">A2</column>
+                <column type="varchar(12)"   to-type="string">A3</column>
+                <column type="varchar(12)"   to-type="string">A4</column>
+                <column type="varchar(12)"   to-type="string">A5</column>
+                <column type="varchar(12)"   to-type="string">A6</column>
+                <column type="varchar(12)"   to-type="string">A7</column>
+            </columns>
+        </table>
+    </sourceData>
+    <dataSet>
+        <source-name>s1</source-name>
+        <datetime>
+            <to>2015-08-13</to>
+            <from>2015-08-14</from>
+        </datetime>
+        <compute-js-path></compute-js-path>
+        <trend>
+            <ranges>
+                <range id="TR_1">11</range>
+                <range id="TR_2">21</range>
+                <range id="TR_3">34</range>
+            </ranges>
+            <table>
+                <extension>DataSet</extension>
+                <columns>
+                    <column name="Num_H"     type="integer">Num_H</column>
+                    <column name="Num_L"     type="integer">Num_L</column>
+                    <column name="Max_Price" type="decimal(12,4)">Max_Price</column>
+                    <column name="Max_Bars"  type="integer">Max_Bars</column>
+                    <column name="Min_Price" type="decimal(12,4)">Min_Price</column>
+                    <column name="Min_Bars"  type="integer">Min_Bars</column>
+                </columns>
+            </table>
+        </trend>
+    </dataSet>
+</cap>

@@ -2,8 +2,9 @@ package org.pin.cap.generate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import java.util.Properties;
+import org.pin.CapDocument;
+import org.pin.SourceDataColumnType;
+import org.pin.cap.utils.CapUitls;
 
 /**
  * Created by lee5hx on 15-8-10.
@@ -12,39 +13,51 @@ public class InsertBatchSourceSQL implements IGenerate {
 
     private static final Log logger  = LogFactory.getLog(InsertBatchSourceSQL.class);
 
-    private Properties cap_properties;
+    private CapDocument.Cap cap;
     private StringBuffer sqlbuf;
     private String tableName;
     private String schemaName;
 
 
-    private void init(Properties cap_properties){
-        this.cap_properties = cap_properties;
-        schemaName = cap_properties.getProperty("cap.targetName");
+    private void init(CapDocument.Cap cap){
+        this.cap = cap;
+        schemaName = cap.getTargetName();
     }
 
-    public InsertBatchSourceSQL(Properties cap_properties, String tableName){
+    public InsertBatchSourceSQL(CapDocument.Cap cap, String tableName){
         this.tableName = tableName;
-        this.init(cap_properties);
+        this.init(cap);
     }
 
 
     @Override
     public String generateSQL() {
         sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(SDATA_UUID,");
-        int i = 1;
-        String tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
-        String[] tempArr;
-        while (tempStr!=null){
-            //  System.out.println(tempStr);
-            tempArr = tempStr.split("\\|",-1);
-            sqlbuf.append(tempArr[0]+",");
+        //int i = 0;
 
-            i++;
-            tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
+        SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
+
+        for(SourceDataColumnType sdct: sdcts){
+            // tempArr = tempStr.split("\\|");
+            sqlbuf.append(sdct.getStringValue()+",");
         }
+
+
+//        String tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
+//        String[] tempArr;
+//        while (tempStr!=null){
+//            //  System.out.println(tempStr);
+//            tempArr = tempStr.split("\\|",-1);
+//            sqlbuf.append(tempArr[0]+",");
+//
+//            i++;
+//            tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
+//        }
+
+
+
         sqlbuf = new StringBuffer(sqlbuf.substring(0, sqlbuf.length()-1)+") VALUES (");
-        for(int j=0;j<i-1;j++){
+        for(int j=0;j<sdcts.length;j++){
             sqlbuf.append("?,");
         }
         sqlbuf.append("?);");

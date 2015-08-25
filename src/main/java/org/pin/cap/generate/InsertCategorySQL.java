@@ -3,12 +3,14 @@ package org.pin.cap.generate;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
+import org.pin.CategoryListColumnType;
 import org.pin.cap.cmdui.ProgressBar;
+import org.pin.cap.utils.CapUitls;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 import java.util.UUID;
 
 /**
@@ -30,39 +32,54 @@ public class InsertCategorySQL implements IGenerate {
 
     private ProgressBar bar;
 
-    private void init(Properties cap_properties){
+    private void init(CapDocument.Cap cap){
         aNList = new ArrayList();
-        order = cap_properties.getProperty("cap.order").toCharArray();
+        //cap_properties.getProperty("cap.order").toCharArray();
+        order = cap.getCategoryList().getOrder().toCharArray();
         for(int j = 1; j<=order.length;j++){
             sumcount = sumcount*j;
         }
-        int i = 1;
-        String tempStr = cap_properties.getProperty("cap.category."+i+".col");
-        String[] tempArr;
+//        int i = 1;
+//        String tempStr = cap_properties.getProperty("cap.category."+i+".col");
+//        String[] tempArr;
+//        String[] tempSlipStr;
+//        while (tempStr!=null){
+//            //  System.out.println(tempStr);
+//            tempArr = tempStr.split("\\|");
+//            tempSlipStr=tempArr[2].split(",");
+//            aNList.add(tempSlipStr);
+//            sumcount = sumcount*tempSlipStr.length;
+//            i++;
+//            tempStr = cap_properties.getProperty("cap.category."+i+".col");
+//        }
+        //String[] tempArr;
         String[] tempSlipStr;
-        while (tempStr!=null){
-            //  System.out.println(tempStr);
-            tempArr = tempStr.split("\\|");
-            tempSlipStr=tempArr[2].split(",");
+
+        CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
+        for(CategoryListColumnType clct :columnArray){
+            // = clct.getStringValue().split("\\|");
+            tempSlipStr=clct.getStringValue().split(",");
             aNList.add(tempSlipStr);
             sumcount = sumcount*tempSlipStr.length;
-            i++;
-            tempStr = cap_properties.getProperty("cap.category."+i+".col");
         }
+
+
+
 
         //table = cap_properties.getProperty("cap.targetName")+".CategoryList";
 
         //File outfile = new File(conf.getProperty("leads.insert.savepath") + insertfile);
-        file = new File("../tmp/"+cap_properties.getProperty("cap.targetName")+"."+cap_properties.getProperty("cap.category.table.name")+".cvs");
+        //cap_properties.getProperty("cap.category.table.name")
+        file = new File("../tmp/"+cap.getTargetName()+"."+cap.getCategoryList().getTable().getName()+".cvs");
 
         logger.info("category.count:"+sumcount);
         logger.info("cvs.path:"+file.getPath());
 
     }
-    public InsertCategorySQL(Properties cap_properties,ProgressBar bar,double sCount){
+    public InsertCategorySQL(CapDocument.Cap cap,ProgressBar bar,double sCount){
         this.bar = bar;
         this.sCount = sCount;
-        this.init(cap_properties);
+        this.init(cap);
     }
 
     public String generateSQL(){

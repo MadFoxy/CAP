@@ -3,6 +3,7 @@ package org.pin.cap.core;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.CreateSourceTBSQL;
@@ -23,12 +24,12 @@ public class ComputeDataSet extends Thread {
     private static final Log logger  = LogFactory.getLog(ComputeDataSet.class);
 
 
-    private Properties capConf;
+    private CapDocument.Cap cap;
     private ProgressBar bar;
 
-    public ComputeDataSet(Properties capConf, ProgressBar bar){
+    public ComputeDataSet(CapDocument.Cap cap, ProgressBar bar){
 
-        this.capConf = capConf;
+        this.cap = cap;
         this.bar = bar;
 
     }
