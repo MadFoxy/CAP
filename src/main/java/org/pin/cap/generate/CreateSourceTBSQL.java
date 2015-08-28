@@ -33,25 +33,12 @@ public class CreateSourceTBSQL implements IGenerate {
     @Override
     public String generateSQL() {
         sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(SDATA_UUID varchar(32),");
-//        int i = 1;
-//        String tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
-//        String[] tempArr;
-//        while (tempStr!=null){
-//            //  System.out.println(tempStr);
-//            tempArr = tempStr.split("\\|");
-//            sqlbuf.append(tempArr[0]+" "+tempArr[1]+",");
-//
-//            i++;
-//            tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
-//        }
-// cap.getSourceData().getTable().getColumns().getColumnArray();
         SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
-        //String[] tempArr;
         for(SourceDataColumnType sdct: sdcts){
-           // tempArr = tempStr.split("\\|");
             sqlbuf.append(sdct.getStringValue()+" "+sdct.getType()+",");
         }
         sqlbuf.append("PRIMARY KEY(SDATA_UUID));");
+        logger.info(sqlbuf.toString());
         return sqlbuf.toString();
     }
 }

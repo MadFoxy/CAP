@@ -3,6 +3,7 @@ package org.pin.cap.db;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbcp2.DelegatingConnection;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ArrayListHandler;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,6 +15,8 @@ import java.io.FileInputStream;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -109,6 +112,24 @@ public class DBBase {
         }
         logger.info("执行dropCategoryListTable完成!");
     }
+
+    public void deleteDataSetTable(String sql){
+        logger.info("正在执行deleteDataSetTable.");
+        //logger.info("rt["+i+"]:"+rt[i]);
+        try {
+            //System.out.println("sql:"+sql);
+            logger.info("sql:"+sql);
+            run.update(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(610);
+            logger.error(e.getMessage());
+
+        }
+        logger.info("执行deleteDataSetTable完成!");
+    }
+
+
     public void createCategoryListTable(String sql){
         logger.info("正在创建CategoryListTable.");
         //logger.info("rt["+i+"]:"+rt[i]);
@@ -124,6 +145,11 @@ public class DBBase {
         logger.info("创建CategoryListTable完成!");
     }
 
+    public String getCategoryUUID(String sql){
+        return "UUID11";
+    }
+
+
     public void createSourceTable(String sql){
         logger.info("正在创建SourceTable.");
         //logger.info("rt["+i+"]:"+rt[i]);
@@ -137,11 +163,28 @@ public class DBBase {
         }
         logger.info("创建SourceTable完成!");
     }
+
+    public void createDataSetTable(String sql){
+        logger.info("正在创建DataSetTable.");
+        //logger.info("rt["+i+"]:"+rt[i]);
+        try {
+            run.update(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(610);
+            logger.error(e.getMessage());
+
+        }
+        logger.info("创建DataSetTable完成!");
+    }
+
+
+
     public void insertBatchSourceTable(String sql,Object[][] parms){
         logger.info("正在执行 insert SourceTable.");
         try {
 
-            run.batch(sql,parms);
+            run.batch(sql, parms);
         } catch (SQLException e) {
             e.printStackTrace();
             e.getNextException().getNextException().printStackTrace();
@@ -150,6 +193,36 @@ public class DBBase {
             System.exit(220);
         }
         logger.info("执行 insert SourceTable完成!");
+    }
+
+    public void insertBatchDataSet(String sql,Object[][] parms){
+        logger.info("正在执行 insert DataSet.");
+        try {
+            run.batch(sql, parms);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            e.getNextException().printStackTrace();
+            e.getNextException().getNextException().printStackTrace();
+            //System.out.println();
+            logger.error(e.getMessage());
+            System.exit(280);
+        }
+        logger.info("执行 insert DataSet完成!");
+    }
+
+
+
+    public List<Object[]> query(String sql){
+        List<Object[]> arrayList = null;
+        try {
+            logger.info("正在查询"+sql);
+            arrayList = run.query(sql, new ArrayListHandler());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            System.exit(260);
+        }
+        return  arrayList;
     }
     public void createCategoryListTableIndex(String sql){
         logger.info("正在创建CategoryListTable-Index.");
