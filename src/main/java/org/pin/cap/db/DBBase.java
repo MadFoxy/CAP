@@ -15,7 +15,6 @@ import java.io.FileInputStream;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -146,7 +145,7 @@ public class DBBase {
     }
 
     public String getCategoryUUID(String sql){
-        return "UUID11";
+        return "xx1xx2xx3xx4xx5";
     }
 
 
