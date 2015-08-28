@@ -75,9 +75,7 @@ public class ComputeDataSet extends Thread {
 
         RangeType[] rts = CapUitls.getRangeTypes(cap);
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
-
         SourceDataColumnType[] SourceDataColumnTypes = CapUitls.getSourceTableColumns(cap);
-
         Object params[][] = new Object[arraySourceListSize][SourceDataColumnTypes.length+3+rts.length*getDataSetColumnTypes.length+1];
         Object[] sourceData;
         for(int i=0;i<arraySourceListSize;i++){
@@ -102,7 +100,6 @@ public class ComputeDataSet extends Thread {
                     arraySetSourceList,
                     ranges
             );
-
             for(int j=0;j<params[i].length+1;j++){
                 if(j==0){
                     params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
@@ -118,9 +115,7 @@ public class ComputeDataSet extends Thread {
             bar.tick(onetick, null);
         }
         InsertBatchDataSetSQL ibdss = new InsertBatchDataSetSQL(cap,tableName);
-
         dbBase.insertBatchDataSet(ibdss.generateSQL(),params);
-
         bar.tick(3d,null);
     }
 }

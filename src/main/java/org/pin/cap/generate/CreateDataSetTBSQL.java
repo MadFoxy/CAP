@@ -16,7 +16,6 @@ public class CreateDataSetTBSQL implements IGenerate {
     private static final Log logger  = LogFactory.getLog(CreateDataSetTBSQL.class);
 
     private CapDocument.Cap cap;
-    private StringBuffer sqlbuf;
     private String tableName;
     private String schemaName;
 
@@ -34,10 +33,10 @@ public class CreateDataSetTBSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(DS_UUID varchar(32),");
+        StringBuffer sqlbuf = new StringBuffer("CREATE TABLE " + schemaName + "." + tableName + "(DS_UUID varchar(32),");
         SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
         for(SourceDataColumnType sdct: sdcts){
-            sqlbuf.append(sdct.getStringValue()+" "+sdct.getType()+",");
+            sqlbuf.append(sdct.getStringValue() + " " + sdct.getType() + ",");
         }
         sqlbuf.append("Adj_K_Power varchar(32),");
         sqlbuf.append("Adj_K_Ratio varchar(32),");
@@ -46,7 +45,7 @@ public class CreateDataSetTBSQL implements IGenerate {
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         for(RangeType rt: rts){
             for(DataSetColumnType dsct :getDataSetColumnTypes){
-                sqlbuf.append(rt.getId()+"_"+dsct.getName()+" "+dsct.getType()+",");
+                sqlbuf.append(rt.getId() + "_" + dsct.getName() + " " + dsct.getType() + ",");
             }
         }
         sqlbuf.append("PRIMARY KEY(DS_UUID));");
