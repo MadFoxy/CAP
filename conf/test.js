@@ -1,6 +1,6 @@
 /*
     list = sourceData
-    ranges = [11,22,34]
+    ranges = trend range
 */
 function computeDataSet(list,ranges) {
     var rts = [];
