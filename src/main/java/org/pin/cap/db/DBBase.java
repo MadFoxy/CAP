@@ -177,8 +177,6 @@ public class DBBase {
         logger.info("创建DataSetTable完成!");
     }
 
-
-
     public void insertBatchSourceTable(String sql,Object[][] parms){
         logger.info("正在执行 insert SourceTable.");
         try {
