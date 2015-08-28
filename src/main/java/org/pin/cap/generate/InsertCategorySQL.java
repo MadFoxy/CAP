@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Created by lee5hx on 15-6-3.
+ * InsertCategorySQL by lee5hx on 15-6-3.
  */
 public class InsertCategorySQL implements IGenerate {
 
@@ -29,7 +29,6 @@ public class InsertCategorySQL implements IGenerate {
     private double _lastCount = 0;
     private double _currentCount = 0;
     private double sCount=0;
-
     private ProgressBar bar;
 
     private void init(CapDocument.Cap cap){

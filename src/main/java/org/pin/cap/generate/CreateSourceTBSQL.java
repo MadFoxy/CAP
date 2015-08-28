@@ -7,7 +7,7 @@ import org.pin.SourceDataColumnType;
 import org.pin.cap.utils.CapUitls;
 
 /**
- * Created by lee5hx on 15-8-10.
+ * CreateSourceTBSQL Created by lee5hx on 15-8-10.
  */
 public class CreateSourceTBSQL implements IGenerate {
 

@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.pin.CapDocument;
 
 /**
- * Created by lee5hx on 15-6-10.
+ *  CreateCategoryIndexSQL Created by lee5hx on 15-6-10.
  */
 public class CreateCategoryIndexSQL implements IGenerate {
 

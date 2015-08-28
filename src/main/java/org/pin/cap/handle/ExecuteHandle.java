@@ -4,7 +4,7 @@ import org.pin.CapDocument;
 import org.pin.cap.cmdui.ProgressBar;
 
 /**
- * Created by lee5hx on 15-8-17.
+ * ExecuteHandle
  */
 public interface ExecuteHandle {
     void execute(long starTime,CapDocument.Cap cap,ProgressBar bar) throws Exception;

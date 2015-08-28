@@ -5,7 +5,7 @@ import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.core.CategoryListInit;
 
 /**
- * Created by lee5hx on 15-8-17.
+ * CategoryListInitEH.
  */
 public class CategoryListInitEH extends CAPExecuteHandle {
 

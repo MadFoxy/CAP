@@ -17,7 +17,7 @@ import java.util.TimeZone;
 
 
 /**
- * Created by lee5hx on 2015/6/9.
+ * CategoryListInit Created by lee5hx on 2015/6/9.
  */
 public class CategoryListInit extends Thread {
 

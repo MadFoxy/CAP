@@ -9,7 +9,7 @@ import org.pin.SourceDataColumnType;
 import org.pin.cap.utils.CapUitls;
 
 /**
- * 82575360
+ * CreateDataSetTBSQL
  */
 public class CreateDataSetTBSQL implements IGenerate {
 

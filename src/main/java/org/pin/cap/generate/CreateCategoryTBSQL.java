@@ -7,7 +7,7 @@ import org.pin.CategoryListColumnType;
 import org.pin.cap.utils.CapUitls;
 
 /**
- * Created by lee5hx on 15-6-10.
+ * CreateCategoryTBSQL Created by lee5hx on 15-6-10.
  */
 public class CreateCategoryTBSQL implements IGenerate {
 
