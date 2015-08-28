@@ -35,6 +35,8 @@
             <xs:extension base="xs:string">
                 <xs:attribute name="name" type="xs:string" use="required" ></xs:attribute>
                 <xs:attribute name="type" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="to-type" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="dateformat" type="xs:string" ></xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -115,12 +117,17 @@
                             <xs:element name="datetime" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="to" maxOccurs="1" type="xs:string" ></xs:element>
                                         <xs:element name="from" maxOccurs="1" type="xs:string"></xs:element>
+                                        <xs:element name="to" maxOccurs="1" type="xs:string" ></xs:element>
                                     </xs:sequence>
+                                    <xs:attribute name="column" type="xs:string" use="required" ></xs:attribute>
+                                    <xs:attribute name="index" type="xs:integer" use="required" ></xs:attribute>
+
+
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="compute-js-path" maxOccurs="1" type="xs:string"></xs:element>
+                            <xs:element name="compute-js-method" maxOccurs="1" type="xs:string"></xs:element>
 
 
                             <xs:element name="trend" maxOccurs="1">
