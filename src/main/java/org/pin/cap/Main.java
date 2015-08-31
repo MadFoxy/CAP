@@ -32,7 +32,7 @@ public class Main {
                     ExecuteHandle eh = null;
                     if (args.length > 1 && args[1].equals("-init")) {
                         BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
-                        System.out.print("运行init,会清除schema下所有的对象后，再次创建。您确认要运行吗?(yes/no) ");
+                        System.out.print("After running init, it will remove all objects under the schema, create again. You sure you want to run it?(yes/no) ");
                         String str = strin.readLine();
                         if (!"yes".equals(str)) {
                             System.exit(-808);
@@ -70,10 +70,10 @@ public class Main {
         msg.append("[config_file]:").append(lSep);
         msg.append("  [config_file].xml          ").append(lSep);
         msg.append("[action]:").append(lSep);
-        msg.append("  -init        初始化环境与生成categoryList.").append(lSep);
-        msg.append("  -genc        重新生成categoryList.").append(lSep);
-        msg.append("  -load        载入sourceData.").append(lSep);
-        msg.append("  -cset        计算DataSet.").append(lSep);
+        msg.append("  -init        initialize the environment and generate CategoryList.").append(lSep);
+        msg.append("  -genc        regenerate CategoryList.").append(lSep);
+        msg.append("  -load        load SourceData.").append(lSep);
+        msg.append("  -cset        compute DataSet.").append(lSep);
         System.out.println(msg.toString());
     }
     private void printVersion() {
