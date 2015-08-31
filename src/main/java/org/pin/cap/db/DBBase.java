@@ -15,7 +15,6 @@ import javax.sql.DataSource;
 import java.io.FileInputStream;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
@@ -43,9 +42,6 @@ public class DBBase {
         this.dataSource = ds;
     }
 
-    public DataSource getDataSource(){
-        return this.dataSource;
-    }
 
     public static DBBase getInstance() {
         return dbBase;
@@ -145,11 +141,6 @@ public class DBBase {
         }
         logger.info("创建CategoryListTable完成!");
     }
-
-    public String getCategoryUUID(String sql){
-        return "xx1xx2xx3xx4xx5";
-    }
-
 
     public void createSourceTable(String sql){
         logger.info("正在创建SourceTable.");
