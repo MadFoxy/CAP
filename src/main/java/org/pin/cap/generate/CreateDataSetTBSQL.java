@@ -40,7 +40,7 @@ public class CreateDataSetTBSQL implements IGenerate {
         }
         sqlbuf.append("Adj_K_Power varchar(32),");
         sqlbuf.append("Adj_K_Ratio varchar(32),");
-        sqlbuf.append("Condition_Number varchar(32),");
+        sqlbuf.append("Condition_UUID varchar(32),");
         RangeType[] rts = CapUitls.getRangeTypes(cap);
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         for(RangeType rt: rts){

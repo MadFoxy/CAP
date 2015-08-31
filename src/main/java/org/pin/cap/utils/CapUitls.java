@@ -42,22 +42,22 @@ public class CapUitls {
         return cap.getCategoryList().getTable().getColumns().getColumnArray();
     }
 
-    public static void toValue(int i,int j,Object params[][],NativeArray nativeArray,CapDocument.Cap cap){
-        NativeObject object;
-        DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
-        params[i][j++] = "Adj_K_Power";
-        params[i][j++] = "Adj_K_Ratio";
-        params[i][j++] = DBBase.getInstance().getCategoryUUID("");
-        for(int x=0;x<nativeArray.size();x++){
-            object = (NativeObject)nativeArray.get(x);
-            for(int y=0;y<getDataSetColumnTypes.length;y++){
-               // NATIVE
-                //System.out.println((int)object.get(getDataSetColumnTypes[y].getStringValue()));
-                params[i][j] = getValue(getDataSetColumnTypes[y], object.get(getDataSetColumnTypes[y].getStringValue()).toString());
-                j++;
-            }
-        }
-    }
+//    public static void toValue(int i,int j,Object params[][],NativeArray nativeArray,CapDocument.Cap cap){
+//        NativeObject object;
+//        DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
+//        params[i][j++] = "Adj_K_Power";
+//        params[i][j++] = "Adj_K_Ratio";
+//        params[i][j++] = DBBase.getInstance().getCategoryUUID("");
+//        for(int x=0;x<nativeArray.size();x++){
+//            object = (NativeObject)nativeArray.get(x);
+//            for(int y=0;y<getDataSetColumnTypes.length;y++){
+//               // NATIVE
+//                //System.out.println((int)object.get(getDataSetColumnTypes[y].getStringValue()));
+//                params[i][j] = getValue(getDataSetColumnTypes[y], object.get(getDataSetColumnTypes[y].getStringValue()).toString());
+//                j++;
+//            }
+//        }
+//    }
 
     public static Object getValue(DataSetColumnType dsct,String value) {
         Object rtValue = null;

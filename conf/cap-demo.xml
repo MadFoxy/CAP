@@ -65,6 +65,7 @@
         </datetime>
         <compute-js-path>/home/lee5hx/java_works/lee5hx/CAP/conf/test.js</compute-js-path>
         <compute-js-method>computeDataSet</compute-js-method>
+        <condition-UUID-index>15</condition-UUID-index>
         <trend>
             <ranges>
                 <range id="TR_1">11</range>

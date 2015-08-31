@@ -11,7 +11,7 @@ import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.CreateDataSetTBSQL;
 import org.pin.cap.generate.IGenerate;
 import org.pin.cap.generate.InsertBatchDataSetSQL;
-import org.pin.cap.js.CapJSRun;
+import org.pin.cap.js.CapJS;
 import org.pin.cap.utils.CapUitls;
 import sun.org.mozilla.javascript.internal.NativeArray;
 import java.util.*;
@@ -62,7 +62,7 @@ public class ComputeDataSet extends Thread {
         List<Object[]> arraySetSourceList;
         bar.tick(3d, null);
         double onetick = 90d/arraySourceList.size();
-        CapJSRun capJSRun = new CapJSRun();
+        CapJS capjs = new CapJS();
         RangeType maxRangeType = cap.getDataSet().getTrend().getRanges().getRangeArray(cap.getDataSet().getTrend().getRanges().sizeOfRangeArray() - 1);
         int maxRange = Integer.parseInt(maxRangeType.getStringValue());
         int[] ranges = new int[cap.getDataSet().getTrend().getRanges().sizeOfRangeArray()];
@@ -94,7 +94,7 @@ public class ComputeDataSet extends Thread {
                 arrayBGSourceList = dbBase.query("select * from "+schemaName+"."+sourceTableName+" where "+orderColumn+"> timestamp '"+endDT+"' order by "+orderColumn+" asc LIMIT "+endcount+"");
                 arraySetSourceList.addAll(arrayBGSourceList);
             }
-            NativeArray nativeArray = capJSRun.executeDataSetJS(
+            NativeArray nativeArray = capjs.executeDataSetJS(
                     cap.getDataSet().getComputeJsPath(),
                     cap.getDataSet().getComputeJsMethod(),
                     arraySetSourceList,
@@ -105,8 +105,8 @@ public class ComputeDataSet extends Thread {
                     params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
                 }else {
                     if(j>SourceDataColumnTypes.length){
-                       CapUitls.toValue(i,j,params,nativeArray,cap);
-                       break;
+                        capjs.swapParams(i,j,params,nativeArray,cap);
+                        break;
                     }else{
                         params[i][j] = sourceData[j];
                     }

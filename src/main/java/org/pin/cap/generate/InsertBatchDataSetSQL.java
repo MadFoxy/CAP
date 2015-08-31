@@ -41,7 +41,7 @@ public class InsertBatchDataSetSQL implements IGenerate {
         }
         sqlbuf.append("Adj_K_Power,");
         sqlbuf.append("Adj_K_Ratio,");
-        sqlbuf.append("Condition_Number,");
+        sqlbuf.append("Condition_UUID,");
         RangeType[] rts = CapUitls.getRangeTypes(cap);
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         for(RangeType rt: rts){

@@ -8,9 +8,9 @@ function computeDataSet(list,ranges) {
     var rangeCount=0;
     var NumH=0;
     var NumL=1;
-    var MaxPrice=2;
+    var MaxPrice=2.0000;
     var MaxBars=3;
-    var MinPrice=4;
+    var MinPrice=4.0000;
     var MinBars=5;
     for(var i=0;i<list.size();i++){
         object = list.get(i);

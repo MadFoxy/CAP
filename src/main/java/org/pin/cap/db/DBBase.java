@@ -3,6 +3,7 @@ package org.pin.cap.db;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbcp2.DelegatingConnection;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.ArrayListHandler;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
@@ -14,6 +15,7 @@ import javax.sql.DataSource;
 import java.io.FileInputStream;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
@@ -207,6 +209,29 @@ public class DBBase {
         logger.info("执行 insert DataSet完成!");
     }
 
+
+    public String queryUUID(String sql,Object[] parms){
+        String uuid = null;
+        try {
+            logger.info("正在查询"+sql);
+            uuid = run.query(sql,
+                    new ResultSetHandler<String>() {
+                        public String handle(ResultSet rs) throws SQLException {
+                        String result = null;
+                        if (rs.next()) {
+                            result = rs.getString(1);
+                        }
+                        return result;
+                        }
+                    },
+                    parms);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            System.exit(266);
+        }
+        return uuid;
+    }
 
 
     public List<Object[]> query(String sql){
