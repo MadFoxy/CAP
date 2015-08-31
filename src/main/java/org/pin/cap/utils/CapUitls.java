@@ -3,11 +3,11 @@ package org.pin.cap.utils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.pin.*;
-import org.pin.cap.db.DBBase;
-import sun.org.mozilla.javascript.internal.NativeArray;
-import sun.org.mozilla.javascript.internal.NativeObject;
-
+import org.pin.CapDocument;
+import org.pin.SourceDataColumnType;
+import org.pin.RangeType;
+import org.pin.DataSetColumnType;
+import org.pin.CategoryListColumnType;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -36,8 +36,6 @@ public class CapUitls {
         return cap.getDataSet().getTrend().getTable().getColumns().getColumnArray();
     }
 
-
-
     public static CategoryListColumnType[] getCategoryListColumns(CapDocument.Cap cap){
         return cap.getCategoryList().getTable().getColumns().getColumnArray();
     }
@@ -65,7 +63,7 @@ public class CapUitls {
         //System.out.println(dsct.getName());
         switch (dsct.getToType()) {
             case "integer":
-                Double d = new Double(Double.parseDouble(value));
+                Double d = Double.parseDouble(value);
                 rtValue = d.intValue();
                 break;
             case "string":
@@ -88,10 +86,6 @@ public class CapUitls {
         }
         return rtValue;
     }
-
-
-
-
     public static Object getValue(SourceDataColumnType sdct,String value) {
         Object rtValue = null;
        // String[] tempArr = sourceColumn.split("\\|",-1);
@@ -119,10 +113,9 @@ public class CapUitls {
         }
         return rtValue;
     }
-
     public static CapDocument.Cap loadCapConf(String confFile) {
         CapDocument.Cap cap =null;
-        InputStream fis = null;
+        //InputStream fis = null;
         try {
             File file = new File("../conf/"+confFile+".xml");
             cap = CapDocument.Factory.parse(file).getCap();
@@ -130,12 +123,11 @@ public class CapUitls {
         } catch (Exception e) {
             logger.error("CAP load conf/"+confFile+".xml to tasks Error:"+e);
         }
-        finally{
-            IOUtils.closeQuietly(fis);
-        }
+//        finally{
+//            IOUtils.closeQuietly(fis);
+//        }
         return cap;
     }
-
     public static Properties loadDBConf() {
         Properties prop = new Properties();
         InputStream fis = null;
