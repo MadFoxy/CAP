@@ -6,7 +6,7 @@ import org.pin.*;
 import org.pin.cap.utils.CapUitls;
 
 /**
- * CreateDataSetTBSQL
+ * SelectOrderUUIDSQL
  */
 public class SelectOrderUUIDSQL implements IGenerate {
 
@@ -15,7 +15,6 @@ public class SelectOrderUUIDSQL implements IGenerate {
     private CapDocument.Cap cap;
     private String schemaName;
     private String cl_tableName;
-    private String sd_tableName;
 
 
     private void init(CapDocument.Cap cap){
@@ -24,12 +23,9 @@ public class SelectOrderUUIDSQL implements IGenerate {
     }
 
     public SelectOrderUUIDSQL(CapDocument.Cap cap){
-
         cl_tableName = cap.getCategoryList().getTable().getName();
-        sd_tableName = cap.getDataSet().getSourceName()+"_"+cap.getDataSet().getTrend().getTable().getExtension();
         this.init(cap);
     }
-
 
     @Override
     public String generateSQL() {
