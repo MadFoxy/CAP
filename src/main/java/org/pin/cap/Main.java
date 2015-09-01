@@ -61,7 +61,6 @@ public class Main {
         run(agrs, null);
         System.exit(-1);
     }
-
     private void printUsage() {
         String lSep = System.getProperty("line.separator");
         StringBuffer msg;
@@ -79,9 +78,7 @@ public class Main {
     private void printVersion() {
         System.out.println("1.0-SNAPSHOT");
     }
-
     private static void noFun(ClassLoader coreLoader) {
         if(coreLoader==null) System.out.println("Command not found,Enter the command:cap -help");
     }
-
 }
