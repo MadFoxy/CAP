@@ -81,7 +81,7 @@ public class ComputeDataSet extends Thread {
         for(int i=0;i<arraySourceListSize;i++){
             sourceData = arraySourceList.get(i);
             arraySetSourceList = new ArrayList<>();
-            for(int j=0;j<maxRange;j++){
+            for(int j=1;j<=maxRange;j++){
                 if(i+j>arraySourceListSize-1){
                     break;
                 }else {
@@ -89,14 +89,20 @@ public class ComputeDataSet extends Thread {
                 }
             }
             endcount = maxRange - arraySetSourceList.size();
+            //System.out.println(arraySetSourceList.size());
             if(endcount>0){
-                endDT = arraySetSourceList.get(arraySetSourceList.size()-1)[orderColumnindex].toString();
-                arrayBGSourceList = dbBase.query("select * from "+schemaName+"."+sourceTableName+" where "+orderColumn+"> timestamp '"+endDT+"' order by "+orderColumn+" asc LIMIT "+endcount+"");
+                if(endcount==maxRange){
+                    endDT = sourceData[orderColumnindex].toString();
+                }else{
+                    endDT = arraySetSourceList.get(arraySetSourceList.size()-1)[orderColumnindex].toString();
+                }
+                arrayBGSourceList = dbBase.query("select * from "+schemaName+"."+sourceTableName+" where "+orderColumn+"> timestamp '"+endDT+"' order by " + orderColumn+" asc LIMIT "+endcount+"");
                 arraySetSourceList.addAll(arrayBGSourceList);
             }
             NativeArray nativeArray = capjs.executeDataSetJS(
                     cap.getDataSet().getComputeJsPath(),
                     cap.getDataSet().getComputeJsMethod(),
+                    sourceData,
                     arraySetSourceList,
                     ranges
             );

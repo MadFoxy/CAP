@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.util.List;
 
 public class CapJS {
-    public NativeArray executeDataSetJS(String jspath,String method,List<Object[]> sourceDataArray,int[] ranges){
+    public NativeArray executeDataSetJS(String jspath,String method,Object[] tData,List<Object[]> sourceDataArray,int[] ranges){
         NativeArray object  = null;
         ScriptEngineManager sem = new ScriptEngineManager();
         ScriptEngine engine = sem.getEngineByName("javascript");
@@ -25,7 +25,7 @@ public class CapJS {
             CompiledScript script = compEngine.compile(reader);
             script.eval();
             Invocable invoke = (Invocable) engine;
-            object = (NativeArray)invoke.invokeFunction(method, sourceDataArray,ranges);
+            object = (NativeArray)invoke.invokeFunction(method, tData,sourceDataArray,ranges);
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1102);

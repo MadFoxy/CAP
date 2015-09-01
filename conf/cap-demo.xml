@@ -75,12 +75,12 @@
             <table>
                 <extension>DataSet</extension>
                 <columns>
-                    <column name="Num_H"     type="integer"  to-type="integer">NumH</column>
-                    <column name="Num_L"     type="integer"  to-type="integer">NumL</column>
-                    <column name="Max_Price" type="decimal(12,4)" to-type="float">MaxPrice</column>
-                    <column name="Max_Bars"  type="integer" to-type="integer">MaxBars</column>
-                    <column name="Min_Price" type="decimal(12,4)" to-type="float">MinPrice</column>
-                    <column name="Min_Bars"  type="integer" to-type="integer">MinBars</column>
+                    <column name="Num_Up"      type="integer"       to-type="integer">NumUp</column>
+                    <column name="Num_Dn"      type="integer"       to-type="integer">NumDn</column>
+                    <column name="Max_Up_Gap"  type="decimal(12,4)" to-type="float">MaxUpGap</column>
+                    <column name="Max_Up_Pos"  type="integer"       to-type="integer">MaxUpPos</column>
+                    <column name="Max_Dn_Gap"  type="decimal(12,4)" to-type="float">MaxDnGap</column>
+                    <column name="Max_Dn_Pos"  type="integer"       to-type="integer">MaxDnPos</column>
                 </columns>
             </table>
         </trend>
