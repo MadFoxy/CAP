@@ -59,14 +59,14 @@ function xNumDn(value,a,b){
 function xMaxUpGapAndPos(value,a,b,i){
     if(parseFloat(b[7]) - parseFloat(a[5])>value[0]){
         value[0] = parseFloat(b[7]) - parseFloat(a[5]);
-        value[1] = i;
+        value[1] = i+1;
     }
     return value;
 }
 function xMaxDnGapAndPos(value,a,b,i){
     if(parseFloat(a[6]) - parseFloat(b[7])>value[0]){
         value[0] = parseFloat(b[7]) - parseFloat(a[5]);
-        value[1] = i;
+        value[1] = i+1;
     }
     return value;
 }
