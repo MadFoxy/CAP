@@ -21,21 +21,17 @@ public class SourceLoadData extends Thread {
 
     private static final Log logger  = LogFactory.getLog(SourceLoadData.class);
 
-
     private CapDocument.Cap cap;
     private ProgressBar bar;
 
     public SourceLoadData(CapDocument.Cap cap, ProgressBar bar){
-
         this.cap = cap;
         this.bar = bar;
-
     }
 
     private Collection<File> getSourceFiles(String sourceFile,String extension){
         return FileUtils.listFiles(new File(sourceFile),new String[]{extension},false);
     }
-
 
     public void run() {
         String schemaName = cap.getTargetName();
@@ -47,23 +43,20 @@ public class SourceLoadData extends Thread {
         File sbPath = new File(cap.getSourceData().getImportFile().getBakPath());
         DBBase dbBase = DBBase.getInstance();
         Collection<File> sourceFiles =  getSourceFiles(sfPath, sfExtension);
-
         if(sourceFiles.size()==0){
             System.out.println("sourceData file not found!");
             System.exit(-909);
         }
-
         File sourceFile;
         double tickCount = 99d/sourceFiles.size();
         String tableName;
         IGenerate igenerate;
         double loadTick =  tickCount/10;
         String insertSql;
-        for (Iterator iterator = sourceFiles.iterator(); iterator.hasNext();) {
+        Iterator iterator = sourceFiles.iterator();
+        while (iterator.hasNext()) {
             sourceFile  = (File) iterator.next();
             tableName = CapUitls.getSourceTableName(sourceFile.getName())+"_"+cap.getSourceData().getTable().getExtension();
-
-
             if(!dbBase.existsTable(tableName,schemaName)){
                 igenerate = new CreateSourceTBSQL(cap,tableName);
                 //System.out.println(igenerate.generateSQL());
@@ -77,13 +70,9 @@ public class SourceLoadData extends Thread {
                  lines = FileUtils.readLines(sourceFile, "UTF-8");
             }catch (Exception e){
                 e.printStackTrace();
-            }finally {
-
             }
-
             bar.tick(loadTick,null);
-
-            int linesCount =lines.size();
+            int linesCount = lines.size();
             SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
             int columnCounnt = sdcts.length;
             logger.info("linesCount:"+linesCount);
@@ -102,7 +91,6 @@ public class SourceLoadData extends Thread {
                     }
                 }
                 bar.tick((loadTick*7)/linesCount,null);
-
             }
             dbBase.insertBatchSourceTable(insertSql, params);
             bar.tick(loadTick, null);
@@ -112,10 +100,8 @@ public class SourceLoadData extends Thread {
             }catch (IOException e){
                 e.printStackTrace();
             }
-
             bar.tick(loadTick,null);
-
-           // bar.tick(tickCount, "");
         }
     }
+
 }
