@@ -38,6 +38,7 @@ function computeDataSet(data,list,ranges) {
 * value = 需要返回的值
 * a = 当根行数据
 * b = 比较的行数据
+* i = 第几根
 * Open  4
   High  5
   Low   6
