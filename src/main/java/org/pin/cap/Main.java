@@ -34,7 +34,7 @@ public class Main {
                         BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
                         System.out.print("After running init, it will remove all objects under the schema, create again. You sure you want to run it?(yes/no) ");
                         String str = strin.readLine();
-                        if (!"yes".equals(str)) {
+                        if (!"yes".equals(str)||!"y".equals(str)) {
                             System.exit(-808);
                         }
                         eh = new CategoryListInitEH();
