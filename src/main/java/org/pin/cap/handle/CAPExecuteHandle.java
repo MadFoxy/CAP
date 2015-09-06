@@ -42,7 +42,7 @@ public abstract class CAPExecuteHandle implements ExecuteHandle {
             }
             System.exit(0);
         } else {
-            System.out.println(args[0] + ".xml not found!pls check " + args[0] + ".xml weather it exist in this path:conf/");
+            System.out.println(args[0] + " not found!pls check " + args[0] + " weather it exist in this path:conf/");
         }
 
     }

@@ -32,9 +32,9 @@ public class Main {
                     ExecuteHandle eh = null;
                     if (args.length > 1 && args[1].equals("-init")) {
                         BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
-                        System.out.print("After running init, it will remove all objects under the schema, create again. You sure you want to run it?(yes/no) ");
+                        System.out.print("After running init, it will remove all objects under the schema, create again. You sure you want to run it?(y/n) ");
                         String str = strin.readLine();
-                        if (!"yes".equals(str)||!"y".equals(str)) {
+                        if (!"y".equals(str)) {
                             System.exit(-808);
                         }
                         eh = new CategoryListInitEH();
@@ -67,7 +67,7 @@ public class Main {
         msg = new StringBuffer();
         msg.append("cap [config_file] [action]  ").append(lSep);
         msg.append("[config_file]:").append(lSep);
-        msg.append("  [config_file].xml          ").append(lSep);
+        msg.append("   config_file.xml       conf/config_file.xml ").append(lSep);
         msg.append("[action]:").append(lSep);
         msg.append("  -init        initialize the environment and generate CategoryList.").append(lSep);
         msg.append("  -genc        regenerate CategoryList.").append(lSep);

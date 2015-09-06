@@ -117,11 +117,11 @@ public class CapUitls {
         CapDocument.Cap cap =null;
         //InputStream fis = null;
         try {
-            File file = new File("../conf/"+confFile+".xml");
+            File file = new File("../conf/"+confFile);
             cap = CapDocument.Factory.parse(file).getCap();
-            logger.info("CAP load conf/"+confFile+".xml to tasks complete.");
+            logger.info("CAP load conf/"+confFile+" to tasks complete.");
         } catch (Exception e) {
-            logger.error("CAP load conf/"+confFile+".xml to tasks Error:"+e);
+            logger.error("CAP load conf/"+confFile+" to tasks Error:"+e);
         }
 //        finally{
 //            IOUtils.closeQuietly(fis);
