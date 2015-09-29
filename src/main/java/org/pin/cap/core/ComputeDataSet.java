@@ -2,18 +2,18 @@ package org.pin.cap.core;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.pin.CapDocument;
-import org.pin.DataSetColumnType;
-import org.pin.RangeType;
-import org.pin.SourceDataColumnType;
+import org.pin.*;
 import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.CreateDataSetTBSQL;
 import org.pin.cap.generate.IGenerate;
 import org.pin.cap.generate.InsertBatchDataSetSQL;
+import org.pin.cap.generate.SelectOrderUUIDSQL;
 import org.pin.cap.js.CapJS;
 import org.pin.cap.utils.CapUitls;
 import sun.org.mozilla.javascript.internal.NativeArray;
+import sun.org.mozilla.javascript.internal.NativeObject;
+
 import java.util.*;
 
 
@@ -38,7 +38,7 @@ public class ComputeDataSet extends Thread {
         String tableName = cap.getDataSet().getSourceName()+"_"+cap.getDataSet().getTrend().getTable().getExtension();
         String sourceTableName =cap.getDataSet().getSourceName()+"_"+cap.getSourceData().getTable().getExtension();
         String orderColumn = cap.getDataSet().getDatetime().getColumn();
-        int orderColumnindex = cap.getDataSet().getDatetime().getIndex().intValue();
+        //int orderColumnindex = cap.getDataSet().getDatetime().getIndex().intValue();
 
         String from = cap.getDataSet().getDatetime().getFrom();
         String to = cap.getDataSet().getDatetime().getTo();
@@ -57,9 +57,9 @@ public class ComputeDataSet extends Thread {
         //String tsql = ;
 
         logger.info("sql:" + sql);
-        List<Object[]> arraySourceList =  dbBase.query(sql);
-        List<Object[]> arrayBGSourceList;
-        List<Object[]> arraySetSourceList;
+        List<Map<String,Object>> arraySourceList =  dbBase.queryMap(sql);
+        List<Map<String,Object>> arrayBGSourceList;
+        List<Map<String,Object>> arraySetSourceList;
         bar.tick(3d, null);
         double onetick = 90d/arraySourceList.size();
         CapJS capjs = new CapJS();
@@ -77,7 +77,9 @@ public class ComputeDataSet extends Thread {
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         SourceDataColumnType[] SourceDataColumnTypes = CapUitls.getSourceTableColumns(cap);
         Object params[][] = new Object[arraySourceListSize][SourceDataColumnTypes.length+3+rts.length*getDataSetColumnTypes.length+1];
-        Object[] sourceData;
+        Map<String,Object> sourceData;
+        int xn=0;
+        NativeObject object;
         for(int i=0;i<arraySourceListSize;i++){
             sourceData = arraySourceList.get(i);
             arraySetSourceList = new ArrayList<>();
@@ -92,11 +94,12 @@ public class ComputeDataSet extends Thread {
             //System.out.println(arraySetSourceList.size());
             if(endcount>0){
                 if(endcount==maxRange){
-                    endDT = sourceData[orderColumnindex].toString();
+                    //endDT = sourceData[orderColumnindex].toString();
+                    endDT = sourceData.get(orderColumn).toString();
                 }else{
-                    endDT = arraySetSourceList.get(arraySetSourceList.size()-1)[orderColumnindex].toString();
+                    endDT = arraySetSourceList.get(arraySetSourceList.size()-1).get(orderColumn).toString();
                 }
-                arrayBGSourceList = dbBase.query("select * from "+schemaName+"."+sourceTableName+" where "+orderColumn+"> timestamp '"+endDT+"' order by " + orderColumn+" asc LIMIT "+endcount+"");
+                arrayBGSourceList = dbBase.queryMap("select * from "+schemaName+"."+sourceTableName+" where "+orderColumn+"> timestamp '"+endDT+"' order by " + orderColumn+" asc LIMIT "+endcount+"");
                 arraySetSourceList.addAll(arrayBGSourceList);
             }
             NativeArray nativeArray = capjs.executeDataSetJS(
@@ -106,17 +109,44 @@ public class ComputeDataSet extends Thread {
                     arraySetSourceList,
                     ranges
             );
-            for(int j=0;j<params[i].length+1;j++){
-                if(j==0){
-                    params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
-                }else {
-                    if(j>SourceDataColumnTypes.length){
-                        capjs.swapParams(i,j,params,nativeArray,cap);
-                        break;
-                    }else{
-                        params[i][j] = sourceData[j];
+            //赋值params
+            params[i][xn++] = UUID.randomUUID().toString().replaceAll("-", "");//替换UUID
+            Set<Map.Entry<String, Object>> set = sourceData.entrySet();
+            Iterator it = set.iterator();
+            Map.Entry<String, Object> entry;
+            //将map对象里面的属性循环遍历出来
+            while(it.hasNext()){//赋值DataSorce
+                //it.next();
+                if(xn==1){
+                    it.next();
+                }
+                entry = (Map.Entry<String, Object>) it.next();
+                params[i][xn++] = entry.getValue();
+            }
+
+            if(xn>SourceDataColumnTypes.length){
+
+                CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
+                Object[] ps = new Object[columnArray.length+1];
+                ps[0] = sourceData.get("comb_order");
+                //capjs.swapParams(i, xn, params, nativeArray, cap);
+                for(int k=1;k<ps.length;k++){
+                    ps[k] = sourceData.get(columnArray[k-1].getName());
+                    System.out.println(ps[k]);
+                }
+                params[i][xn++] = "Adj_K_Power";
+                params[i][xn++] = "Adj_K_Ratio";
+                params[i][xn++] = dbBase.queryUUID(new SelectOrderUUIDSQL(cap).generateSQL(),ps);
+                for(int x=0;x<nativeArray.size();x++){
+                    object = (NativeObject)nativeArray.get(x);
+                    for(int y=0;y<getDataSetColumnTypes.length;y++){
+                        // NATIVE
+                        //System.out.println((int)object.get(getDataSetColumnTypes[y].getStringValue()));
+                        params[i][xn++] = CapUitls.getValue(getDataSetColumnTypes[y], object.get(getDataSetColumnTypes[y].getStringValue()).toString());
+                       // xn++;
                     }
                 }
+                xn=0;
             }
             bar.tick(onetick, null);
         }

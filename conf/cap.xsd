@@ -120,12 +120,10 @@
                                         <xs:element name="to" maxOccurs="1" type="xs:string" ></xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="column" type="xs:string" use="required" ></xs:attribute>
-                                    <xs:attribute name="index" type="xs:integer" use="required" ></xs:attribute>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="compute-js-path" maxOccurs="1" type="xs:string"></xs:element>
                             <xs:element name="compute-js-method" maxOccurs="1" type="xs:string"></xs:element>
-                            <xs:element name="condition-UUID-index" maxOccurs="1" type="xs:integer"></xs:element>
                             <xs:element name="trend" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>

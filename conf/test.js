@@ -39,33 +39,29 @@ function computeDataSet(data,list,ranges) {
 * a = 当根行数据
 * b = 比较的行数据
 * i = 第几根
-* Open  4
-  High  5
-  Low   6
-  Close 7
 * */
 function xNumUp(value,a,b){
-    if(parseFloat(a[5])<parseFloat(b[7])){
+    if(parseFloat(a.get("high"))<parseFloat(b.get("close"))){
        value = value+1;
     }
     return value;
 }
 function xNumDn(value,a,b){
-    if(parseFloat(a[6])>parseFloat(b[7])){
+    if(parseFloat(a.get("low"))>parseFloat(b.get("close"))){
         value = value+1;
     }
     return value;
 }
 function xMaxUpGapAndPos(value,a,b,i){
-    if(parseFloat(b[7]) - parseFloat(a[5])>value[0]){
-        value[0] = parseFloat(b[7]) - parseFloat(a[5]);
+    if(parseFloat(b.get("close")) - parseFloat(a.get("high"))>value[0]){
+        value[0] = parseFloat(b.get("close")) - parseFloat(a.get("high"));
         value[1] = i+1;
     }
     return value;
 }
 function xMaxDnGapAndPos(value,a,b,i){
-    if(parseFloat(a[6]) - parseFloat(b[7])>value[0]){
-        value[0] = parseFloat(b[7]) - parseFloat(a[5]);
+    if(parseFloat(a.get("low")) - parseFloat(b.get("close"))>value[0]){
+        value[0] = parseFloat(b.get("close")) - parseFloat(a.get("high"));
         value[1] = i+1;
     }
     return value;

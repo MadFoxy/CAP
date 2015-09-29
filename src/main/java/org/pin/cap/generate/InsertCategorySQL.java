@@ -166,8 +166,9 @@ public class InsertCategorySQL implements IGenerate {
         if (start == end) {// 当只要求对数组中一个字母进行全排列时，只要就按该数组输出即可
             anfunc(String.valueOf(buf), aNList);
         } else {// 多个字母全排列
+            char temp;
             for (int i = start; i <= end; i++) {
-                char temp = buf[start];// 交换数组第一个元素与后续的元素
+                temp = buf[start];// 交换数组第一个元素与后续的元素
                 buf[start] = buf[i];
                 buf[i] = temp;
                 perm(buf, start + 1, end);// 后续元素递归全排列

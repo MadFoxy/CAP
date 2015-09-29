@@ -44,7 +44,8 @@ public class Main {
                         eh = new CategoryListGencEH();
                     } else if (args.length > 1 && args[1].equals("-cset")) {
                         eh = new ComputeDataSetEH();
-                    } else {
+                    }
+                    else {
                         printUsage();
                     }
                     if (eh != null) eh.exc(args);

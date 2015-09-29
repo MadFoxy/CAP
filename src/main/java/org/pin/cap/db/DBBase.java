@@ -5,6 +5,7 @@ import org.apache.commons.dbcp2.DelegatingConnection;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.ArrayListHandler;
+import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -17,6 +18,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 
@@ -204,7 +206,7 @@ public class DBBase {
     public String queryUUID(String sql,Object[] parms){
         String uuid = null;
         try {
-            logger.info("正在查询"+sql);
+            logger.debug("正在查询"+sql);
             uuid = run.query(sql,
                     new ResultSetHandler<String>() {
                         public String handle(ResultSet rs) throws SQLException {
@@ -223,8 +225,19 @@ public class DBBase {
         }
         return uuid;
     }
-
-
+        //MapListHandler
+    public List<Map<String,Object>> queryMap(String sql){
+        List<Map<String,Object>> arrayList = null;
+        try {
+            logger.info("正在查询"+sql);
+            arrayList = run.query(sql, new MapListHandler());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            System.exit(291);
+        }
+        return  arrayList;
+    }
     public List<Object[]> query(String sql){
         List<Object[]> arrayList = null;
         try {
