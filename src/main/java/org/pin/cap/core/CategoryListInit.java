@@ -33,19 +33,7 @@ public class CategoryListInit extends Thread {
         this.startTime = startTime;
     }
 
-    private void cleanHistory(String schemaName,String tableName){
-        logger.info("正在清除历史.");
-        File file  = new File("../tmp/"+schemaName+"."+tableName+".cvs");
-        if(file.exists()){
-            try {
-                logger.info("force delete:"+file.getPath());
-                FileUtils.forceDelete(file);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        logger.info("正在清除历史完成!");
-    }
+
 
     public void run() {
         String schemaName = cap.getTargetName();
@@ -53,27 +41,25 @@ public class CategoryListInit extends Thread {
 
 
 
-        bar.tick(1d, "正在清除历史.");
-        cleanHistory(schemaName, tableName);
-        bar.tick(2d, "正在清除历史完成!");
+
 
 //        bar.tick(1d, "正在初始化DataSource.");
 //        initDBbase();
 //        bar.tick(3d, "初始化DataSource完成.");
         DBBase dbBase = DBBase.getInstance();
-
-        bar.tick(1d, "正在删除schema[" + schemaName + "]及schema下所有的对象");
-        dbBase.dropSchema(schemaName);
-        bar.tick(2d, "删除schema[" + schemaName + "]完成!");
-
-        bar.tick(1d, "正在创建schema[" + schemaName + "]");
-        dbBase.createSchema(schemaName);
-        bar.tick(2d, "创建schema[" + schemaName + "]完成!");
-
-        bar.tick(1d, "正在创建CategoryListTable");
+//
+//        bar.tick(1d, "正在删除schema[" + schemaName + "]及schema下所有的对象");
+//        dbBase.dropSchema(schemaName);
+//        bar.tick(2d, "删除schema[" + schemaName + "]完成!");
+//
+//        bar.tick(1d, "正在创建schema[" + schemaName + "]");
+//        dbBase.createSchema(schemaName);
+//        bar.tick(2d, "创建schema[" + schemaName + "]完成!");
+//
+//        bar.tick(1d, "正在创建CategoryListTable");
         IGenerate ig = new CreateCategoryTBSQL(cap);
-        dbBase.createCategoryListTable(ig.generateSQL());
-        bar.tick(2d, "创建CategoryListTable成功!");
+//        dbBase.createCategoryListTable(ig.generateSQL());
+//        bar.tick(2d, "创建CategoryListTable成功!");
 
 
         bar.tick(1d, "正在生成InsertCategory.cvs.");
