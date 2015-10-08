@@ -132,7 +132,7 @@ public class ComputeDataSet extends Thread {
                 //capjs.swapParams(i, xn, params, nativeArray, cap);
                 for(int k=1;k<ps.length;k++){
                     ps[k] = sourceData.get(columnArray[k-1].getName());
-                    System.out.println(ps[k]);
+                    //System.out.println(ps[k]);
                 }
                 params[i][xn++] = "Adj_K_Power";
                 params[i][xn++] = "Adj_K_Ratio";

@@ -99,7 +99,9 @@ public class GenInsertCategoryCVS extends RecursiveAction {
             for(String s:An){
                 sb.append(",");
                 sb.append(s);
+                //System.out.print(s+"-");
             }
+            //System.out.println(sb);
             FileUtils.write(file, sb.toString() + System.getProperty("line.separator"), "UTF-8", true);
             //System.out.println(sb.toString());
             sb.delete(0, sb.length());

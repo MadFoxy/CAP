@@ -153,7 +153,6 @@ public class CategoryListInitEH extends CAPExecuteHandle {
     }
 
     private void norm(List<String[]> normList,CapDocument.Cap cap){
-
         List<String[]> aNList = new ArrayList();
         String[] tempSlipStr;
         CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
@@ -162,10 +161,12 @@ public class CategoryListInitEH extends CAPExecuteHandle {
             tempSlipStr=clct.getStringValue().split(",");
             aNList.add(tempSlipStr);
         }
-
         CapNormList cnl = new CapNormList(aNList);
+        String dd[];
         while (cnl.hasNext()){
-            normList.add(cnl.next());
+            dd = cnl.next();
+            ///System.out.println(dd[0] + "-" + dd[1]+"-"+dd[2] + "-" + dd[3]+"-"+dd[4]+"-"+dd[5]+"-"+dd[6]);
+            normList.add(dd.clone());
         }
 
     }
