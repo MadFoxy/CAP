@@ -33,14 +33,23 @@ public class CreateDataSetTBSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        StringBuffer sqlbuf = new StringBuffer("CREATE TABLE " + schemaName + "." + tableName + "(DS_UUID varchar(32),");
+
+        StringBuffer sqlbuf;
+        String pkgs = cap.getPrimaryKeyGenStrategy();
+        if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+            sqlbuf = new StringBuffer("CREATE TABLE " + schemaName + "." + tableName + "(DS_ID varchar(32),");
+        }else{
+            sqlbuf = new StringBuffer("CREATE TABLE " + schemaName + "." + tableName + "(DS_ID serial,");
+        }
+
+
         SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
         for(SourceDataColumnType sdct: sdcts){
             sqlbuf.append(sdct.getStringValue() + " " + sdct.getType() + ",");
         }
         sqlbuf.append("Adj_K_Power varchar(32),");
         sqlbuf.append("Adj_K_Ratio varchar(32),");
-        sqlbuf.append("Condition_UUID varchar(32),");
+        sqlbuf.append("Condition_ID varchar(32),");
         RangeType[] rts = CapUitls.getRangeTypes(cap);
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         for(RangeType rt: rts){
@@ -48,7 +57,7 @@ public class CreateDataSetTBSQL implements IGenerate {
                 sqlbuf.append(rt.getId() + "_" + dsct.getName() + " " + dsct.getType() + ",");
             }
         }
-        sqlbuf.append("PRIMARY KEY(DS_UUID));");
+        sqlbuf.append("PRIMARY KEY(DS_ID));");
         logger.info(sqlbuf.toString());
         return sqlbuf.toString();
     }

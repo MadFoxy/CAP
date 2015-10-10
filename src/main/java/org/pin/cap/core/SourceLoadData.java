@@ -75,19 +75,26 @@ public class SourceLoadData extends Thread {
             int linesCount = lines.size();
             SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
             int columnCounnt = sdcts.length;
+            //判断主键生成方式
+            String pkgs = cap.getPrimaryKeyGenStrategy();
+            int xj = 0;
+            if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+                columnCounnt = columnCounnt+1;
+                xj = 1;
+            }
             logger.info("linesCount:"+linesCount);
             logger.info("columnCounnt:"+columnCounnt);
-            Object params[][] = new Object[linesCount][columnCounnt+1];
+            Object params[][] = new Object[linesCount][columnCounnt];
             String[] values;
             for(int i=0;i<linesCount;i++){
                 //capConf.getProperty("cap.load.data.source.file.del")
                 values = lines.get(i).split(cap.getSourceData().getImportFile().getDel(), -1);
-                for(int j=0;j<columnCounnt+1;j++){
-                    if(j==0){
+                for(int j=0;j<columnCounnt;j++){
+                    if(pkgs.toLowerCase().equals("UUID".toLowerCase())&&j==0){
                         params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
                     }else {
                         //capConf.getProperty("cap.load.data.source.column."+j)
-                        params[i][j] = CapUitls.getValue(sdcts[j-1],values[j-1]);
+                        params[i][j] = CapUitls.getValue(sdcts[j-xj],values[j-xj]);
                     }
                 }
                 bar.tick((loadTick*7)/linesCount,null);

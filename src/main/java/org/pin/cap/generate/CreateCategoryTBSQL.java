@@ -36,7 +36,13 @@ public class CreateCategoryTBSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(Condition_UUID varchar(32),Comb_Order varchar("+capOrder.length+")");
+        String pkgs = cap.getPrimaryKeyGenStrategy();
+        if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+            sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(Condition_ID varchar(32),"+cap.getCategoryList().getOrderColumn()+" varchar("+capOrder.length+")");
+        }else{
+            sqlbuf = new StringBuffer("CREATE TABLE "+schemaName+"."+tableName+"(Condition_ID serial,"+cap.getCategoryList().getOrderColumn()+" varchar("+capOrder.length+")");
+        }
+
         CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
         for(CategoryListColumnType clct :columnArray){
             sqlbuf.append(","+clct.getName()+" varchar("+clct.getLength()+")");

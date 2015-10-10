@@ -76,7 +76,17 @@ public class ComputeDataSet extends Thread {
         RangeType[] rts = CapUitls.getRangeTypes(cap);
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         SourceDataColumnType[] SourceDataColumnTypes = CapUitls.getSourceTableColumns(cap);
-        Object params[][] = new Object[arraySourceListSize][SourceDataColumnTypes.length+3+rts.length*getDataSetColumnTypes.length+1];
+
+
+        //增加主键生成策略
+        String pkgs = cap.getPrimaryKeyGenStrategy();
+        int xj = 0;
+        if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+            xj = 1;
+        }
+
+
+        Object params[][] = new Object[arraySourceListSize][SourceDataColumnTypes.length+3+rts.length*getDataSetColumnTypes.length+xj];
         Map<String,Object> sourceData;
         int xn=0;
         NativeObject object;
@@ -110,25 +120,30 @@ public class ComputeDataSet extends Thread {
                     ranges
             );
             //赋值params
-            params[i][xn++] = UUID.randomUUID().toString().replaceAll("-", "");//替换UUID
+            if(xj>0){
+                params[i][xn++] = UUID.randomUUID().toString().replaceAll("-", "");//替换UUID
+            }
+
+
             Set<Map.Entry<String, Object>> set = sourceData.entrySet();
             Iterator it = set.iterator();
             Map.Entry<String, Object> entry;
             //将map对象里面的属性循环遍历出来
             while(it.hasNext()){//赋值DataSorce
                 //it.next();
-                if(xn==1){
+                if(xn==xj){
                     it.next();
                 }
                 entry = (Map.Entry<String, Object>) it.next();
                 params[i][xn++] = entry.getValue();
             }
-
-            if(xn>SourceDataColumnTypes.length){
+            //System.out.println(xn);
+            //System.out.println(SourceDataColumnTypes.length);
+            if(xn>=SourceDataColumnTypes.length){
 
                 CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
                 Object[] ps = new Object[columnArray.length+1];
-                ps[0] = sourceData.get("comb_order");
+                ps[0] = sourceData.get(cap.getCategoryList().getOrderColumn());
                 //capjs.swapParams(i, xn, params, nativeArray, cap);
                 for(int k=1;k<ps.length;k++){
                     ps[k] = sourceData.get(columnArray[k-1].getName());

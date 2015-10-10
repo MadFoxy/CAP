@@ -32,7 +32,7 @@ public class CreateCategoryIndexSQL implements IGenerate {
     @Override
     public String generateSQL() {
         sqlbuf = new StringBuffer("CREATE INDEX "+tableName+"_CombOrder_index ON "+schemaName+"."+tableName+"(Comb_Order);");
-        sqlbuf.append("alter table "+schemaName+"."+tableName+" add PRIMARY KEY(Condition_UUID);");
+        sqlbuf.append("alter table "+schemaName+"."+tableName+" add PRIMARY KEY(Condition_ID);");
         return sqlbuf.toString();
     }
 }

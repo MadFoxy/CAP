@@ -54,11 +54,13 @@
                 </xs:element>
                 <xs:element name="version" maxOccurs="1" type="xs:string" ></xs:element>
                 <xs:element name="targetName" maxOccurs="1" type="xs:string" ></xs:element>
+                <xs:element name="primary-key-gen-strategy" maxOccurs="1" type="xs:string" ></xs:element>
 
                 <xs:element name="categoryList" maxOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="order" maxOccurs="1" type="xs:string"></xs:element>
+                            <xs:element name="order-column" maxOccurs="1" type="xs:string" ></xs:element>
                             <xs:element name="table" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>

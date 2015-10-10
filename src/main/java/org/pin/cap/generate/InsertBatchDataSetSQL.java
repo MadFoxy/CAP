@@ -34,14 +34,22 @@ public class InsertBatchDataSetSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(DS_UUID,");
+        String pkgs = cap.getPrimaryKeyGenStrategy();
+        String endSQL;
+        if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+            sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(DS_ID,");
+            endSQL ="?);";
+        }else{
+            sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(");
+            endSQL=");";
+        }
         SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
         for(SourceDataColumnType sdct: sdcts){
             sqlbuf.append(sdct.getStringValue()+",");
         }
         sqlbuf.append("Adj_K_Power,");
         sqlbuf.append("Adj_K_Ratio,");
-        sqlbuf.append("Condition_UUID,");
+        sqlbuf.append("Condition_ID,");
         RangeType[] rts = CapUitls.getRangeTypes(cap);
         DataSetColumnType[] getDataSetColumnTypes = CapUitls.getDataSetColumnTypes(cap);
         for(RangeType rt: rts){
@@ -50,24 +58,18 @@ public class InsertBatchDataSetSQL implements IGenerate {
             }
         }
 
-//        String tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
-//        String[] tempArr;
-//        while (tempStr!=null){
-//            //  System.out.println(tempStr);
-//            tempArr = tempStr.split("\\|",-1);
-//            sqlbuf.append(tempArr[0]+",");
-//
-//            i++;
-//            tempStr = cap_properties.getProperty("cap.load.data.source.column."+i);
-//        }
-
-
-
         sqlbuf = new StringBuffer(sqlbuf.substring(0, sqlbuf.length()-1)+") VALUES (");
         for(int j=0;j<(sdcts.length+3+rts.length*getDataSetColumnTypes.length);j++){
             sqlbuf.append("?,");
         }
-        sqlbuf.append("?);");
+
+        if(endSQL.length()<3){
+            sqlbuf = new StringBuffer(sqlbuf.substring(0, sqlbuf.length()-1));
+        }
+
+        sqlbuf.append(endSQL);
+
+       // sqlbuf.append("?);");
         return sqlbuf.toString();
     }
 }

@@ -32,7 +32,16 @@ public class InsertBatchSourceSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(SDATA_UUID,");
+        String pkgs = cap.getPrimaryKeyGenStrategy();
+        String endSQL;
+        if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+            sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(SDATA_ID,");
+            endSQL ="?);";
+        }else{
+            sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(");
+            endSQL=");";
+        }
+        //sqlbuf = new StringBuffer("INSERT INTO "+schemaName+"."+tableName+"(SDATA_ID,");
         //int i = 0;
 
         SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
@@ -60,7 +69,12 @@ public class InsertBatchSourceSQL implements IGenerate {
         for(int j=0;j<sdcts.length;j++){
             sqlbuf.append("?,");
         }
-        sqlbuf.append("?);");
+        if(endSQL.length()<3){
+            sqlbuf = new StringBuffer(sqlbuf.substring(0, sqlbuf.length()-1));
+        }
+
+        sqlbuf.append(endSQL);
+        //System.out.println(sqlbuf.toString());
         return sqlbuf.toString();
     }
 }

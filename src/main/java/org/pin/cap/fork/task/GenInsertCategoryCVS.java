@@ -90,10 +90,13 @@ public class GenInsertCategoryCVS extends RecursiveAction {
 
         StringBuffer sb = new StringBuffer();
         String[] An;
+        String pkgs;
         for(int i=0;i<normList.size();i++){
-            sb.append(UUID.randomUUID().toString().replaceAll("-", ""));
-            //sb.append("'");
-            sb.append(',');
+            pkgs = cap.getPrimaryKeyGenStrategy();
+            if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+                sb.append(UUID.randomUUID().toString().replaceAll("-", ""));
+                sb.append(',');
+            }
             sb.append(order);
             An = normList.get(i);
             for(String s:An){

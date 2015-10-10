@@ -6,23 +6,19 @@ import org.apache.commons.logging.LogFactory;
 import org.pin.CapDocument;
 import org.pin.CategoryListColumnType;
 import org.pin.cap.cmdui.ProgressBar;
-import org.pin.cap.core.CategoryListInit;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.fork.task.GenInsertCategoryCVS;
 import org.pin.cap.generate.CreateCategoryIndexSQL;
 import org.pin.cap.generate.CreateCategoryTBSQL;
 import org.pin.cap.generate.IGenerate;
-import org.pin.cap.generate.InsertCategorySQL;
 import org.pin.cap.utils.CapNormList;
 import org.pin.cap.utils.CapUitls;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
-import java.util.UUID;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
@@ -110,7 +106,7 @@ public class CategoryListInitEH extends CAPExecuteHandle {
         pool.shutdown();
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
-        dbBase.copyInsertCategoryListTable(schemaName, tableName);
+        dbBase.copyInsertCategoryListTable(schemaName, tableName,cap);
         bar.tick(2d, "CopyInsert CategoryList 完成.");
 
 

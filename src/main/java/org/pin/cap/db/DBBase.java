@@ -9,6 +9,9 @@ import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.pin.CapDocument;
+import org.pin.CategoryListColumnType;
+import org.pin.cap.utils.CapUitls;
 import org.postgresql.PGConnection;
 import org.postgresql.copy.CopyManager;
 import org.postgresql.core.BaseConnection;
@@ -178,7 +181,7 @@ public class DBBase {
 
             run.batch(sql, parms);
         } catch (SQLException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             e.getNextException().getNextException().printStackTrace();
             //System.out.println();
             logger.error(e.getMessage());
@@ -206,7 +209,7 @@ public class DBBase {
     public String queryUUID(String sql,Object[] parms){
         String uuid = null;
         try {
-            logger.debug("正在查询"+sql);
+            logger.debug("正在查询" + sql);
             uuid = run.query(sql,
                     new ResultSetHandler<String>() {
                         public String handle(ResultSet rs) throws SQLException {
@@ -265,11 +268,28 @@ public class DBBase {
         }
         logger.info("创建CategoryListTable-Index完成.");
     }
-    public void copyInsertCategoryListTable(String schemaName, String tableName) {
+    public void copyInsertCategoryListTable(String schemaName, String tableName,CapDocument.Cap cap) {
         String insertFile = "../tmp/" + schemaName + "." + tableName+".cvs";
+        String pkType = cap.getPrimaryKeyGenStrategy();
         logger.info("正在将"+insertFile+",以Copy_Insert方式批量插入.");
         FileInputStream fileInputStream = null;
-        String sql = "COPY " + schemaName + "." + tableName + " FROM STDIN WITH DELIMITER ','";
+        String sql;
+        if(pkType.toLowerCase().equals("UUID".toLowerCase())){
+            sql = "COPY " + schemaName + "." + tableName + "  FROM STDIN WITH DELIMITER ','";
+        }else {
+            sql = "COPY " + schemaName + "." + tableName +"(";
+            CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
+
+            sql = sql+cap.getCategoryList().getOrderColumn();
+
+           // CategoryListColumnType clct;
+            for(int i=0;i<columnArray.length;i++){
+                sql = sql+","+columnArray[i].getName();
+
+            }
+            sql = sql+") FROM STDIN WITH DELIMITER ','";
+
+        }
         try {
             DataSource ds1 = dataSource;
             DelegatingConnection del = new DelegatingConnection(ds1.getConnection());
@@ -279,8 +299,9 @@ public class DBBase {
             logger.info(sql);
             copyManager.copyIn(sql, fileInputStream);
         }catch (Exception e){
-            System.exit(112);
             e.printStackTrace();
+            System.exit(112);
+
         }finally {
             IOUtils.closeQuietly(fileInputStream);
         }

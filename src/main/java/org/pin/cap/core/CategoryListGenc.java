@@ -76,7 +76,7 @@ public class CategoryListGenc extends Thread {
 
 
         bar.tick(1d, "正在进行CopyInsert CategoryList.");
-        dbBase.copyInsertCategoryListTable(schemaName, tableName);
+        dbBase.copyInsertCategoryListTable(schemaName, tableName,cap);
         bar.tick(2d, "CopyInsert CategoryList 完成.");
 
 

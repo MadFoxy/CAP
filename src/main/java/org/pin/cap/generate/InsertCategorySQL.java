@@ -31,8 +31,10 @@ public class InsertCategorySQL implements IGenerate {
     private double _currentCount = 0;
     private double sCount=0;
     private ProgressBar bar;
+    private String pkgs;
 
     private void init(CapDocument.Cap cap){
+        pkgs = cap.getPrimaryKeyGenStrategy();
         aNList = new ArrayList();
         //cap_properties.getProperty("cap.order").toCharArray();
         order = cap.getCategoryList().getOrder().toCharArray();
@@ -98,10 +100,13 @@ public class InsertCategorySQL implements IGenerate {
         CapNormList cnl = new CapNormList(aNList);
         StringBuffer sb = new StringBuffer();
         String[] An;
+
         while (cnl.hasNext()){
-            sb.append(UUID.randomUUID().toString().replaceAll("-", ""));
-            //sb.append("'");
-            sb.append(',');
+            if(pkgs.toLowerCase().equals("UUID".toLowerCase())){
+                sb.append(UUID.randomUUID().toString().replaceAll("-", ""));
+                //sb.append("'");
+                sb.append(',');
+            }
             sb.append(order);
             An = cnl.next();
             for(int i = 0 ; i < aNList.size() ; i++){
@@ -119,7 +124,6 @@ public class InsertCategorySQL implements IGenerate {
             bar.tick(_currentCount - _lastCount,"");
         }
     }
-
     private void perm(char[] buf, int start, int end) throws IOException{
         if (start == end) {// 当只要求对数组中一个字母进行全排列时，只要就按该数组输出即可
             anfunc(String.valueOf(buf), aNList);

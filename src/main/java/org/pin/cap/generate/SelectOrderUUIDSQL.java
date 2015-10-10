@@ -29,7 +29,7 @@ public class SelectOrderUUIDSQL implements IGenerate {
 
     @Override
     public String generateSQL() {
-        StringBuffer sqlbuf = new StringBuffer("SELECT a.condition_uuid from "+schemaName+"."+cl_tableName+" a where a.comb_order = ?");
+        StringBuffer sqlbuf = new StringBuffer("SELECT a.condition_id from "+schemaName+"."+cl_tableName+" a where a."+cap.getCategoryList().getOrderColumn()+" = ?");
         CategoryListColumnType[] columnArray = CapUitls.getCategoryListColumns(cap);
         for(CategoryListColumnType clct :columnArray){
            // sqlbuf.append(","+clct.getName()+" varchar("+clct.getLength()+")");
