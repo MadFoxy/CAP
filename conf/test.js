@@ -61,7 +61,7 @@ function xMaxUpGapAndPos(value,a,b,i){
 }
 function xMaxDnGapAndPos(value,a,b,i){
     if(parseFloat(a.get("low")) - parseFloat(b.get("close"))>value[0]){
-        value[0] = parseFloat(b.get("close")) - parseFloat(a.get("high"));
+        value[0] = parseFloat(b.get("low")) - parseFloat(a.get("close"));
         value[1] = i+1;
     }
     return value;
