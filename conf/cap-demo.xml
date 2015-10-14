@@ -10,7 +10,6 @@
     <!-- UUID,sequence -->
     <primary-key-gen-strategy>UUID</primary-key-gen-strategy>
 
-
     <categoryList>
         <order>1234567</order>
         <order-column>Comb_Order</order-column>
@@ -34,10 +33,13 @@
             <extension>csv</extension>
             <del>,</del>
         </import-file>
+        <error-list>
+            <path>/home/lee5hx/java_works/lee5hx/CAP/tmp/</path>
+        </error-list>
         <table>
             <extension>sdata</extension>
             <columns>
-                <column type="varchar(12)"     to-type="string">Target_Name</column>
+                <column type="varchar(12)"   regex="^[\d]{9,10}$"  to-type="string">Target_Name</column>
                 <column type="timestamp(0)"    to-type="datetime" dateformat="yyyy-MM-dd-HH-mm">DTime</column>
                 <column type="integer"         to-type="integer">Bar_Number</column>
                 <column type="decimal(12,4)"   to-type="float">Open</column>

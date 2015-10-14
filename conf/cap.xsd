@@ -15,6 +15,7 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute name="type" type="xs:string" use="required" ></xs:attribute>
+                <xs:attribute name="regex" type="xs:string"  ></xs:attribute>
                 <xs:attribute name="to-type" type="xs:string" use="required" ></xs:attribute>
                 <xs:attribute name="dateformat" type="xs:string" ></xs:attribute>
             </xs:extension>
@@ -93,6 +94,17 @@
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
+
+                            <xs:element name="error-list" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="path" maxOccurs="1" type="xs:string" ></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+
+
                             <xs:element name="table" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>

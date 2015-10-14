@@ -9,6 +9,8 @@ import org.pin.cap.cmdui.ProgressBar;
 import org.pin.cap.db.DBBase;
 import org.pin.cap.generate.*;
 import org.pin.cap.utils.CapUitls;
+import org.pin.cap.utils.SourceColumn;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -51,11 +53,17 @@ public class SourceLoadData extends Thread {
         double tickCount = 99d/sourceFiles.size();
         String tableName;
         IGenerate igenerate;
-        double loadTick =  tickCount/10;
+        double loadTick =  tickCount/20;//拆成20步
+
+        //System.out.println(loadTick);
         String insertSql;
         Iterator iterator = sourceFiles.iterator();
+
+        SourceColumn sc;
+
         while (iterator.hasNext()) {
             sourceFile  = (File) iterator.next();
+            sc = new SourceColumn(sourceFile.getName(),cap);
             tableName = CapUitls.getSourceTableName(sourceFile.getName())+"_"+cap.getSourceData().getTable().getExtension();
             if(!dbBase.existsTable(tableName,schemaName)){
                 igenerate = new CreateSourceTBSQL(cap,tableName);
@@ -71,7 +79,9 @@ public class SourceLoadData extends Thread {
             }catch (Exception e){
                 e.printStackTrace();
             }
-            bar.tick(loadTick,null);
+            //bar.tick(loadTick, null);
+
+
             int linesCount = lines.size();
             SourceDataColumnType[] sdcts = CapUitls.getSourceTableColumns(cap);
             int columnCounnt = sdcts.length;
@@ -87,20 +97,20 @@ public class SourceLoadData extends Thread {
             Object params[][] = new Object[linesCount][columnCounnt];
             String[] values;
             for(int i=0;i<linesCount;i++){
-                //capConf.getProperty("cap.load.data.source.file.del")
                 values = lines.get(i).split(cap.getSourceData().getImportFile().getDel(), -1);
                 for(int j=0;j<columnCounnt;j++){
                     if(pkgs.toLowerCase().equals("UUID".toLowerCase())&&j==0){
                         params[i][j] = UUID.randomUUID().toString().replaceAll("-", "");
                     }else {
-                        //capConf.getProperty("cap.load.data.source.column."+j)
-                        params[i][j] = CapUitls.getValue(sdcts[j-xj],values[j-xj]);
+                        sc.setColumn(sdcts,values,j-xj);//字段属性，字段行数据，索引定位数据
+                        //params[i][j] = CapUitls.getValue(sdcts[j-xj],values[j-xj]);
+                        params[i][j] = sc.getValue();
                     }
                 }
-                bar.tick((loadTick*7)/linesCount,null);
+                bar.tick((loadTick*19)/linesCount,null);
             }
             dbBase.insertBatchSourceTable(insertSql, params);
-            bar.tick(loadTick, null);
+           // bar.tick(loadTick, null);
             try {
                 FileUtils.copyFileToDirectory(sourceFile, sbPath);
                 FileUtils.forceDelete(sourceFile);
