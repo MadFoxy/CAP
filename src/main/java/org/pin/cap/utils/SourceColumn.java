@@ -5,7 +5,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.pin.CapDocument;
 import org.pin.SourceDataColumnType;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
@@ -18,7 +17,6 @@ import java.util.regex.Pattern;
 public class SourceColumn {
 
     private static final Log logger  = LogFactory.getLog(SourceColumn.class);
-
     private SourceDataColumnType[] sdct;
     private String[] value;
     private int index;
@@ -83,14 +81,11 @@ public class SourceColumn {
         }else{
             String errorStr = "Column:"+sdct[index].getStringValue()+" Regex:"+sdct[index].getRegex()+" Value:"+value[index]+" validation failure!";
             logger.debug(errorStr);
-
             try {
                 FileUtils.write(file, errorStr + System.getProperty("line.separator"), "UTF-8", true);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
         }
         return rtValue;
     }
