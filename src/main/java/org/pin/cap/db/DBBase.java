@@ -206,7 +206,7 @@ public class DBBase {
     }
 
 
-    public String queryUUID(String sql,Object[] parms){
+    public String queryCategoryID(String sql,Object[] parms){
         String uuid = null;
         try {
             logger.debug("正在查询" + sql);

@@ -13,7 +13,6 @@ import org.pin.cap.js.CapJS;
 import org.pin.cap.utils.CapUitls;
 import sun.org.mozilla.javascript.internal.NativeArray;
 import sun.org.mozilla.javascript.internal.NativeObject;
-
 import java.util.*;
 
 
@@ -23,8 +22,6 @@ import java.util.*;
 public class ComputeDataSet extends Thread {
 
     private static final Log logger  = LogFactory.getLog(ComputeDataSet.class);
-
-
     private CapDocument.Cap cap;
     private ProgressBar bar;
 
@@ -151,7 +148,8 @@ public class ComputeDataSet extends Thread {
                 }
                 params[i][xn++] = "Adj_K_Power";
                 params[i][xn++] = "Adj_K_Ratio";
-                params[i][xn++] = dbBase.queryUUID(new SelectOrderUUIDSQL(cap).generateSQL(),ps);
+                //查询Category List ID
+                params[i][xn++] = dbBase.queryCategoryID(new SelectOrderUUIDSQL(cap).generateSQL(),ps);
                 for(int x=0;x<nativeArray.size();x++){
                     object = (NativeObject)nativeArray.get(x);
                     for(int y=0;y<getDataSetColumnTypes.length;y++){
