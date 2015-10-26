@@ -8,7 +8,7 @@
     <version>1.1.0</version>
     <targetName>FITX1</targetName>
     <!-- UUID,sequence -->
-    <primary-key-gen-strategy>UUID</primary-key-gen-strategy>
+    <primary-key-gen-strategy>sequence</primary-key-gen-strategy>
 
     <categoryList>
         <order>1234567</order>
