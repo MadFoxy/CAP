@@ -1,6 +1,6 @@
 
 # CAP
-## CAP and postgres docker images 
+## CAP 和postgres DB docker镜像 
 
 Docker镜像由 CAP与postgres(DB)组成。
 
