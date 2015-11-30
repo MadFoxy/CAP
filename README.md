@@ -1,8 +1,8 @@
 
 # CAP
-## CAP 和postgres DB docker镜像 
+## CAP和postgres DB docker镜像 
 
-Docker镜像由 CAP与postgres(DB)组成。
+Docker镜像由CAP与postgres(DB)组成。
 
 1. 基于Dockerfile构建Postgres镜像,其中 `lee5hxi/postgres` 替换为自己的docker hub :
 
