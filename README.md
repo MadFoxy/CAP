@@ -4,7 +4,7 @@
 
 Docker镜像由 CAP与postgres(DB)组成。
 
-1.基于Dockerfile构建Postgres镜像,其中 `lee5hxi/postgres` 替换为自己的docker hub :
+1. 基于Dockerfile构建Postgres镜像,其中 `lee5hxi/postgres` 替换为自己的docker hub :
 
 	```bash
 	sudo docker build --rm -t="lee5hxi/postgres" .
