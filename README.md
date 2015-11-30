@@ -10,7 +10,7 @@ Docker镜像由 CAP与postgres(DB)组成。
 	sudo docker build --rm -t="lee5hxi/postgres" .
 	```
 
-2. :
+2. Postgres镜像运行容器:
 
 	```bash
 	sudo docker run --name some-postgres -e POSTGRES_PASSWORD=postgres -d -p 5432 lee5hxi/postgres
