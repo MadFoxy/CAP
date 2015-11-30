@@ -13,7 +13,7 @@ CAP `docker/cap`
 2. 基于CAP镜像运行容器,其中`/home/lee5hx/java_works/lee5hx/CAP` 替换为自己CAP目录 :
 
 	```bash
-	sudo docker run --name cap-run -d -v /home/lee5hx/java_works/lee5hx/CAP:/CAP lee5hxi/cap /bin/bash
+	sudo docker run -i -t --name cap-run --link some-postgres:cap-db -d -v /home/lee5hx/java_works/lee5hx/CAP:/CAP lee5hxi/cap /bin/bash
 	```
 3. 启动与关闭容器:
 
@@ -23,7 +23,11 @@ CAP `docker/cap`
 	```bash
 	sudo docker stop cap-run
 	```
+4. `/bin/bash`进入cap-run:
 
+	```bash
+	sudo docker exec -t -i cap-run /bin/bash
+	```
 
 PostgreSQL(DB) `docker/postgres`
 
