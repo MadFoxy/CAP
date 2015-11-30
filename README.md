@@ -13,14 +13,14 @@ Docker镜像由 CAP与postgres(DB)组成。
 2. Postgres镜像运行容器:
 
 	```bash
-	sudo docker run --name some-postgres -e POSTGRES_PASSWORD=postgres -d -p 5432 lee5hxi/postgres
+	sudo docker run --name cap-db -e POSTGRES_PASSWORD=postgres -d -p 5432 lee5hxi/postgres
 	```
 3. 启动与关闭容器:
 
 	```bash
-	sudo docker start some-postgres
+	sudo docker start cap-db
 	```
 	```bash
-	sudo docker stop some-postgres
+	sudo docker stop cap-db
 	```
 
