@@ -28,13 +28,13 @@
     </categoryList>
     <sourceData>
         <import-file>
-            <path>/home/lee5hx/java_works/lee5hx/CAP/source/</path>
-            <bak-path>/home/lee5hx/java_works/lee5hx/CAP/source/bak/</bak-path>
+            <path>/CAP/source/</path>
+            <bak-path>/CAP/source/bak/</bak-path>
             <extension>csv</extension>
             <del>,</del>
         </import-file>
         <error-list>
-            <path>/home/lee5hx/java_works/lee5hx/CAP/tmp/</path>
+            <path>/CAP/tmp/</path>
         </error-list>
         <table>
             <extension>sdata</extension>
@@ -70,7 +70,7 @@
             <from>2010-06-24 00:00:00</from>
             <to>2010-11-25 23:59:59</to>
         </datetime>
-        <compute-js-path>/home/lee5hx/java_works/lee5hx/CAP/conf/test.js</compute-js-path>
+        <compute-js-path>/CAP/conf/test.js</compute-js-path>
         <compute-js-method>computeDataSet</compute-js-method>
         <trend>
             <ranges>
