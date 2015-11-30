@@ -4,13 +4,13 @@
 
 CAP `docker/cap`
 
-1. 基于Dockerfile构建CAP镜像,其中 `lee5hxi/postgres` 替换为自己的docker hub :
+1. 基于Dockerfile构建CAP镜像,其中 `lee5hxi/cap` 替换为自己的docker hub :
 
 	```bash
 	sudo docker build --rm -t="lee5hxi/cap" .
 	```
 
-2. 基于CAP镜像运行容器:
+2. 基于CAP镜像运行容器,其中`/home/lee5hx/java_works/lee5hx/CAP` 替换为自己CAP目录 :
 
 	```bash
 	sudo docker run --name cap-run -d -v /home/lee5hx/java_works/lee5hx/CAP:/CAP lee5hxi/cap /bin/bash
