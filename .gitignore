@@ -59,7 +59,7 @@ $RECYCLE.BIN/
 *.lnk
 *.xlsx
 *.txt
-
+CAP.iml
 /tmp/
 /logs/
 /.idea/
