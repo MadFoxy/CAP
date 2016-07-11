@@ -1,17 +1,23 @@
 package org.pin.cap.js;
 
+import jdk.nashorn.internal.objects.NativeArray;
 import org.apache.commons.io.IOUtils;
-import sun.org.mozilla.javascript.internal.NativeArray;
+
 import javax.script.*;
 import java.io.FileReader;
 import java.util.List;
 import java.util.Map;
 
 public class CapJS {
+
+
+
+
+
     public NativeArray executeDataSetJS(String jspath,String method,Map<String,Object> tData,List<Map<String,Object>> sourceDataArray,int[] ranges){
         NativeArray object  = null;
         ScriptEngineManager sem = new ScriptEngineManager();
-        ScriptEngine engine = sem.getEngineByName("javascript");
+        ScriptEngine engine = sem.getEngineByName("nashorn");
         Compilable compEngine = (Compilable) engine;
         FileReader reader = null;
         try {

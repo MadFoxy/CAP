@@ -11,8 +11,8 @@ import org.pin.cap.generate.InsertBatchDataSetSQL;
 import org.pin.cap.generate.SelectOrderUUIDSQL;
 import org.pin.cap.js.CapJS;
 import org.pin.cap.utils.CapUitls;
-import sun.org.mozilla.javascript.internal.NativeArray;
-import sun.org.mozilla.javascript.internal.NativeObject;
+import jdk.nashorn.internal.objects.NativeArray;
+import jdk.nashorn.internal.objects.NativeObject;
 import java.util.*;
 
 
@@ -152,10 +152,12 @@ public class ComputeDataSet extends Thread {
                 params[i][xn++] = dbBase.queryCategoryID(new SelectOrderUUIDSQL(cap).generateSQL(),ps);
                 for(int x=0;x<nativeArray.size();x++){
                     object = (NativeObject)nativeArray.get(x);
+                    System.out.println(object);
                     for(int y=0;y<getDataSetColumnTypes.length;y++){
                         // NATIVE
                         //System.out.println((int)object.get(getDataSetColumnTypes[y].getStringValue()));
-                        params[i][xn++] = CapUitls.getValue(getDataSetColumnTypes[y], object.get(getDataSetColumnTypes[y].getStringValue()).toString());
+                        //object.get(getDataSetColumnTypes[y].getStringValue()).toString()
+                        params[i][xn++] = CapUitls.getValue(getDataSetColumnTypes[y],  "");
                        // xn++;
                     }
                 }

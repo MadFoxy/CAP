@@ -1,1 +1,1 @@
-./scomp -src build1/src -out build1/cxb.jar /home/lee5hx/java_works/lee5hx/CAP/conf/cap.xsd  -compiler /usr/lib/jvm/jdk1.7.0_75/bin/javac /home/lee5hx/java_works/lee5hx/CAP/conf/cap.xsdconfig
+./scomp -src build1/src -out build1/cxb.jar /Users/lee5hx/Works/java_projects/lee5hx-pr/CAP/conf/cap.xsd  -compiler /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/bin/javac /Users/lee5hx/Works/java_projects/lee5hx-pr/CAP/conf/cap.xsdconfig

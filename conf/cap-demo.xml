@@ -16,13 +16,13 @@
         <table>
             <name>category_list</name>
             <columns>
-                <column name="A1" length="2">D1,A1</column>
-                <column name="A2" length="2">D2,D1</column>
+                <column name="A1" length="2">D1</column>
+                <column name="A2" length="2">D2</column>
                 <column name="A3" length="2">D1</column>
-                <column name="A4" length="2">A1,D2</column>
-                <column name="A5" length="2">D1,D2</column>
-                <column name="A6" length="2">D2,A1</column>
-                <column name="A7" length="2">A2,D1</column>
+                <column name="A4" length="2">A1</column>
+                <column name="A5" length="2">D1</column>
+                <column name="A6" length="2">D2</column>
+                <column name="A7" length="2">A2</column>
             </columns>
         </table>
     </categoryList>
