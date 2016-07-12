@@ -38,8 +38,8 @@
         </error-list>
         <table>
             <extension>sdata</extension>
-            <columns>
-                <column type="varchar(12)"   regex="^[\d]{9,10}$"  to-type="string">Target_Name</column>
+            <columns><!--regex="^[\d]{9,10}$"-->
+                <column type="varchar(12)"     to-type="string">Target_Name</column>
                 <column type="timestamp(0)"    to-type="datetime" dateformat="yyyy-MM-dd-HH-mm">DTime</column>
                 <column type="integer"         to-type="integer">Bar_Number</column>
                 <column type="decimal(12,4)"   to-type="float">Open</column>

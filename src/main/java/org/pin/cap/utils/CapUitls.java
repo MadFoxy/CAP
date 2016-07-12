@@ -57,28 +57,28 @@ public class CapUitls {
 //        }
 //    }
 
-    public static Object getValue(DataSetColumnType dsct,String value) {
+    public static Object getValue(DataSetColumnType dsct,Object value) {
         Object rtValue = null;
         // String[] tempArr = sourceColumn.split("\\|",-1);
         //System.out.println(dsct.getName());
         switch (dsct.getToType()) {
             case "integer":
-                Double d = Double.parseDouble(value);
-                rtValue = d.intValue();
+                //Double d = (Double)value;
+                rtValue = value;
                 break;
             case "string":
-                rtValue = String.valueOf(value);
+                rtValue = value;
                 break;
             case "float":
-                rtValue = Float.parseFloat(value);
+                rtValue = value;
                 break;
             case "double":
-                rtValue = Double.parseDouble(value);
+                rtValue = value;
                 break;
             case "datetime":
                 SimpleDateFormat sdf = new SimpleDateFormat(dsct.getDateformat());
                 try {
-                    rtValue = new java.sql.Timestamp(sdf.parse(value).getTime());
+                    rtValue = new java.sql.Timestamp(sdf.parse(value.toString()).getTime());
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

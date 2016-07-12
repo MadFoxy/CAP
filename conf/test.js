@@ -3,8 +3,41 @@
     list = 最大范围的 sourceData List
     ranges = trend range
 */
+
+
+function OutcomeDataSet(NumUp, NumDn,MaxUpGap,MaxUpPos,MaxDnGap,MaxDnPos) {
+    this.NumUp = NumUp;
+    this.NumDn = NumDn;
+    this.MaxUpGap = MaxUpGap;
+    this.MaxUpPos = MaxUpPos;
+    this.MaxDnGap = MaxDnGap;
+    this.MaxDnPos = MaxDnPos;
+
+    this.getNumUp = function() {
+        return this.NumUp;
+    };
+    this.getNumDn = function() {
+        return this.NumDn;
+    };
+    this.getMaxUpGap = function() {
+        return this.MaxUpGap;
+    };
+    this.getMaxUpPos = function() {
+        return this.MaxUpPos;
+    };
+    this.getMaxDnGap = function() {
+        return this.MaxDnGap;
+    };
+    this.getMaxDnPos = function() {
+        return this.MaxDnPos;
+    }
+}
+
+
 function computeDataSet(data,list,ranges) {
-    var rts = [];
+    var ArrayList = Java.type('java.util.ArrayList');
+    //var ArrayList = Java.type('java.util.ArrayList');
+    var rts = new ArrayList();
     var object;
     var rangeCount=0;
     var NumUp=0;
@@ -12,6 +45,7 @@ function computeDataSet(data,list,ranges) {
     var MaxUpGapAndPos=[0.0000,0];
     var MaxDnGapAndPos=[0.0000,0];
     //println(data[0]+'='+list.get(0)[0]+':'+list.size());
+    var ods;
     for(var i=0;i<list.size();i++){
         object = list.get(i);
         NumUp = xNumUp(NumUp,data,object);
@@ -21,15 +55,18 @@ function computeDataSet(data,list,ranges) {
         MaxDnGapAndPos = xMaxDnGapAndPos(MaxDnGapAndPos,data,object,i);
         //MaxDnPos = xMaxDnPos(MaxDnPos,data,object);
         if(ranges[rangeCount]==(i+1)){
-            rts.push({
-                NumUp:NumUp,
-                NumDn:NumDn,
-                MaxUpGap:MaxUpGapAndPos[0],
-                MaxUpPos:MaxUpGapAndPos[1],
-                MaxDnGap:MaxDnGapAndPos[0],
-                MaxDnPos:MaxDnGapAndPos[1]
-            });
+            ods = new OutcomeDataSet(
+                NumUp,
+                NumDn,
+                MaxUpGapAndPos[0],
+                MaxUpGapAndPos[1],
+                MaxDnGapAndPos[0],
+                MaxDnGapAndPos[1]
+            );
+            rts.add(ods);
+            //rts.push();
             rangeCount++;
+
         }
     }
     return rts;

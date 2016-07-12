@@ -1,10 +1,15 @@
 package org.pin.cap.js;
 
-import jdk.nashorn.internal.objects.NativeArray;
+import jdk.nashorn.api.scripting.ScriptObjectMirror;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-import javax.script.*;
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,27 +17,34 @@ public class CapJS {
 
 
 
+    private static final Log logger  = LogFactory.getLog(CapJS.class);
 
 
-    public NativeArray executeDataSetJS(String jspath,String method,Map<String,Object> tData,List<Map<String,Object>> sourceDataArray,int[] ranges){
-        NativeArray object  = null;
-        ScriptEngineManager sem = new ScriptEngineManager();
-        ScriptEngine engine = sem.getEngineByName("nashorn");
-        Compilable compEngine = (Compilable) engine;
+    public List<ScriptObjectMirror> executeDataSetJS(String jspath,String method,Map<String,Object> tData,List<Map<String,Object>> sourceDataArray,int[] ranges){
+        List<ScriptObjectMirror> list  = null;
+        //ScriptEngineManager sem = new ScriptEngineManager();
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+        //Compilable compEngine = (Compilable) engine;
         FileReader reader = null;
         try {
             reader = new FileReader(jspath);
-            CompiledScript script = compEngine.compile(reader);
-            script.eval();
-            Invocable invoke = (Invocable) engine;
-            object = (NativeArray)invoke.invokeFunction(method, tData,sourceDataArray,ranges);
+            engine.eval(reader);
+            Invocable invocable = (Invocable) engine;
+            Object result = invocable.invokeFunction(method, tData,sourceDataArray,ranges);
+            list = (ArrayList)result;
+            //jdk.nashorn.api.scripting.ScriptObjectMirror
+//            ScriptObjectMirror som = list.get(0);
+//            System.out.println(som.callMember("getNumUp"));
+//            System.out.println(som.callMember("getMaxDnPos"));
+
+
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1102);
         }finally {
             IOUtils.closeQuietly(reader);
         }
-        return object;
+        return list;
     }
 
 //    public void swapParams(int i,int j,Object params[][],NativeArray nativeArray,CapDocument.Cap cap){

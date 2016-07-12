@@ -1,5 +1,6 @@
 package org.pin.cap.core;
 
+import jdk.nashorn.api.scripting.ScriptObjectMirror;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.pin.*;
@@ -11,8 +12,7 @@ import org.pin.cap.generate.InsertBatchDataSetSQL;
 import org.pin.cap.generate.SelectOrderUUIDSQL;
 import org.pin.cap.js.CapJS;
 import org.pin.cap.utils.CapUitls;
-import jdk.nashorn.internal.objects.NativeArray;
-import jdk.nashorn.internal.objects.NativeObject;
+
 import java.util.*;
 
 
@@ -86,7 +86,7 @@ public class ComputeDataSet extends Thread {
         Object params[][] = new Object[arraySourceListSize][SourceDataColumnTypes.length+3+rts.length*getDataSetColumnTypes.length+xj];
         Map<String,Object> sourceData;
         int xn=0;
-        NativeObject object;
+        ScriptObjectMirror somObject;
         for(int i=0;i<arraySourceListSize;i++){
             sourceData = arraySourceList.get(i);
             arraySetSourceList = new ArrayList<>();
@@ -109,7 +109,8 @@ public class ComputeDataSet extends Thread {
                 arrayBGSourceList = dbBase.queryMap("select * from "+schemaName+"."+sourceTableName+" where "+orderColumn+"> timestamp '"+endDT+"' order by " + orderColumn+" asc LIMIT "+endcount+"");
                 arraySetSourceList.addAll(arrayBGSourceList);
             }
-            NativeArray nativeArray = capjs.executeDataSetJS(
+
+            List<ScriptObjectMirror> somList = capjs.executeDataSetJS(
                     cap.getDataSet().getComputeJsPath(),
                     cap.getDataSet().getComputeJsMethod(),
                     sourceData,
@@ -150,14 +151,13 @@ public class ComputeDataSet extends Thread {
                 params[i][xn++] = "Adj_K_Ratio";
                 //查询Category List ID
                 params[i][xn++] = dbBase.queryCategoryID(new SelectOrderUUIDSQL(cap).generateSQL(),ps);
-                for(int x=0;x<nativeArray.size();x++){
-                    object = (NativeObject)nativeArray.get(x);
-                    System.out.println(object);
+                for(int x=0;x<somList.size();x++){
+                    somObject = somList.get(x);
+                    //System.out.println(somObject.);
                     for(int y=0;y<getDataSetColumnTypes.length;y++){
                         // NATIVE
-                        //System.out.println((int)object.get(getDataSetColumnTypes[y].getStringValue()));
                         //object.get(getDataSetColumnTypes[y].getStringValue()).toString()
-                        params[i][xn++] = CapUitls.getValue(getDataSetColumnTypes[y],  "");
+                        params[i][xn++] = CapUitls.getValue(getDataSetColumnTypes[y],  somObject.callMember("get"+getDataSetColumnTypes[y].getStringValue()));
                        // xn++;
                     }
                 }
