@@ -15,16 +15,11 @@ import java.util.Map;
 
 public class CapJS {
 
-
-
     private static final Log logger  = LogFactory.getLog(CapJS.class);
-
 
     public List<ScriptObjectMirror> executeDataSetJS(String jspath,String method,Map<String,Object> tData,List<Map<String,Object>> sourceDataArray,int[] ranges){
         List<ScriptObjectMirror> list  = null;
-        //ScriptEngineManager sem = new ScriptEngineManager();
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        //Compilable compEngine = (Compilable) engine;
         FileReader reader = null;
         try {
             reader = new FileReader(jspath);

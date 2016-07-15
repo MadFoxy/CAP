@@ -1,10 +1,7 @@
+
 /*
-    data = 当根sourceData
-    list = 最大范围的 sourceData List
-    ranges = trend range
-*/
-
-
+    为了返回给java端的封装。
+ */
 function OutcomeDataSet(NumUp, NumDn,MaxUpGap,MaxUpPos,MaxDnGap,MaxDnPos) {
     this.NumUp = NumUp;
     this.NumDn = NumDn;
@@ -33,6 +30,11 @@ function OutcomeDataSet(NumUp, NumDn,MaxUpGap,MaxUpPos,MaxDnGap,MaxDnPos) {
     }
 }
 
+/*
+ data = 当根sourceData
+ list = 最大范围的 sourceData List
+ ranges = trend range
+ */
 
 function computeDataSet(data,list,ranges) {
     var ArrayList = Java.type('java.util.ArrayList');
@@ -66,7 +68,6 @@ function computeDataSet(data,list,ranges) {
             rts.add(ods);
             //rts.push();
             rangeCount++;
-
         }
     }
     return rts;
